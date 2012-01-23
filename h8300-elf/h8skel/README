@@ -1,0 +1,15 @@
+Akizuki Denshi skeleton
+
+-- Features --
+
+*	Stack is configured at the top of the
+	internal SRAM.
+
+*	Allows perfomance sensitive code/data 
+	to be relocated from DRAM to internal
+	SRAM on startup. 
+
+
+-- Known Issues --
+
+

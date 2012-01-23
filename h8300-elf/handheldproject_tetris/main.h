@@ -1,0 +1,12 @@
+uint8_t *tetromapcurrent;
+
+
+#define STATE_INTRO_0 0x00
+#define STATE_INTRO_1 0x01
+#define STATE_INTRO_2 0x02
+#define STATE_INTRO_3 0x03
+#define STATE_GAME_DROPPING_0 0x04
+#define STATE_GAME_DROPPING_1 0x05
+#define STATE_GAME_CLEARING 0x06
+#define STATE_GAME_GRACE 0x07
+#define STATE_EXIT 0xFF
