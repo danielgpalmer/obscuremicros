@@ -1,4 +1,6 @@
-.PHONY: toolchains
+.PHONY: clean toolchains
+
+clean:
 
 toolchains:
 	cd toolchains && ./mkchain.sh arm-softfloat-eabi
