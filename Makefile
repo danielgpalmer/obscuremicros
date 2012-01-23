@@ -1,3 +1,5 @@
+all: toolchains
+
 .PHONY: clean toolchains
 
 clean:
