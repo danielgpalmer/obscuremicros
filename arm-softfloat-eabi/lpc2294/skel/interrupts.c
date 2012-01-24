@@ -5,6 +5,7 @@
  *      Author: daniel
  */
 
+#include <stdio.h>
 #include "lpc22xx.h"
 
 #define IRQ_MASK 0x00000080
