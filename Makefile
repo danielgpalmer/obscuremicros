@@ -1,4 +1,5 @@
 all: toolchains
+	$(MAKE) -C arm-softfloat-eabi
 
 .PHONY: clean toolchains
 
