@@ -14,7 +14,10 @@
 
 // #warning "this is a reduced version of the R O Software code"
 
+#include <stdint.h>
+
 #include "lpc21xx.h"
+
 #include "uart.h"
 
 /* on LPC210x: UART0 TX-Pin=P0.2, RX-Pin=P0.1 
@@ -215,6 +218,11 @@ int uart0Getch(void)
 
 int uart1Getch(void)
 {
+
+	if(U1LSR & ULSR_OE){
+		printf("RX fifo has overflowed!\n");
+	}
+
 	if (U1LSR & ULSR_RDR)                 // check if character is available
 		return U1RBR;                     // return character
 

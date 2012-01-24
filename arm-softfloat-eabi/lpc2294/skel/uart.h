@@ -10,7 +10,7 @@
 #ifndef INC_UART_H
 #define INC_UART_H
 
-#include "inttypes.h"
+#include <stdint.h>
 
 #include "lpc21xx.h"
 #include "lpcUART.h"
@@ -65,6 +65,10 @@ int uart0TxEmpty(void);
 void uart0TxFlush(void);
 int uart0Getch(void); /* return -1 if no char avail */
 int uart0GetchW(void); /* wait for char */
+
+int uart1Getch(void); /* return -1 if no char avail */
+int uart1GetchW(void); /* wait for char */
+int uart1Putch(int ch);
 
 void uart_putc(unsigned char ch);
 unsigned char uart_getc(void);
