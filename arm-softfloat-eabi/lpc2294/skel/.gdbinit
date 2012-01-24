@@ -10,4 +10,4 @@ monitor mww 0xFFE00000 0x1000348F
 monitor mww 0xFFE00004 0x2000040F
 monitor load_image main-extram.bin 0x81000000
 monitor sleep 500
-load main-extram.elf
+file main-extram.elf
