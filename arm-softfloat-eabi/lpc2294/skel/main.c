@@ -1,10 +1,7 @@
 void Initialize(void);
 void feed(void);
 
-void IRQ_Routine(void) __attribute__ ((interrupt("IRQ")));
-void FIQ_Routine(void) __attribute__ ((interrupt("FIQ")));
-void SWI_Routine(void) __attribute__ ((interrupt("SWI")));
-void UNDEF_Routine(void) __attribute__ ((interrupt("UNDEF")));
+
 
 #include "lpc21xx.h"
 #include "uart.h"
@@ -76,24 +73,4 @@ void Initialize(void) {
 void feed(void) {
 	PLLFEED = PLL_FEED1;
 	PLLFEED = PLL_FEED2;
-}
-
-void IRQ_Routine(void) {
-	while (1)
-		;
-}
-
-void FIQ_Routine(void) {
-	while (1)
-		;
-}
-
-void SWI_Routine(void) {
-	while (1)
-		;
-}
-
-void UNDEF_Routine(void) {
-	while (1)
-		;
 }
