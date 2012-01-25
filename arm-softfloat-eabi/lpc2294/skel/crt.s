@@ -53,8 +53,8 @@ _vectors:       ldr     PC, Reset_Addr
 Reset_Addr:     .word   Reset_Handler		/* defined in this module below  */
 Undef_Addr:     .word   UNDEF_Routine		/* defined in main.c  */
 SWI_Addr:       .word   SWI_Routine			/* defined in main.c  */
-PAbt_Addr:      .word   UNDEF_Routine		/* defined in main.c  */
-DAbt_Addr:      .word   UNDEF_Routine		/* defined in main.c  */
+PAbt_Addr:      .word   PREFETCHABORT_Routine	/* defined in main.c  */
+DAbt_Addr:      .word   DATAABORT_Routine		/* defined in main.c  */
 IRQ_Addr:       .word   IRQ_Routine			/* defined in main.c  */
 FIQ_Addr:       .word   FIQ_Routine			/* defined in main.c  */
                 .word   0					/* rounds the vectors and ISR addresses to 64 bytes total  */
