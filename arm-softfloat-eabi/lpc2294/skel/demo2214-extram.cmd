@@ -1,175 +1,35 @@
-/* ****************************************************************************************************** */
-/*   demo2106_blink_flash.cmd				LINKER  SCRIPT                                                */
-/*                                                                                                        */
-/*                                                                                                        */
-/*   The Linker Script defines how the code and data emitted by the GNU C compiler and assembler are  	  */
-/*   to be loaded into memory (code goes into FLASH, variables go into RAM).                 			  */
-/*                                                                                                        */
-/*   Any symbols defined in the Linker Script are automatically global and available to the rest of the   */
-/*   program.                                                                                             */
-/*                                                                                                        */
-/*   To force the linker to use this LINKER SCRIPT, just add the -T demo2106_blink_flash.cmd directive    */
-/*   to the linker flags in the makefile.                                                                 */
-/*                                                                                                        */
-/*   			LFLAGS  =  -Map main.map -nostartfiles -T demo2106_blink_flash.cmd                        */
-/*                                                                                                        */
-/*                                                                                                        */
-/*   The Philips boot loader supports the ISP (In System Programming) via the serial port and the IAP     */
-/*   (In Application Programming) for flash programming from within your application.                     */
-/*                                                                                                        */
-/*   The boot loader uses RAM memory and we MUST NOT load variables or code in these areas.               */
-/*                                                                                                        */
-/*   RAM used by boot loader:  0x40000120 - 0x400001FF  (223 bytes) for ISP variables                     */
-/*                             0x4000FFE0 - 0x4000FFFF  (32 bytes)  for ISP and IAP variables             */
-/*                             0x4000FEE0 - 0x4000FFDF  (256 bytes) stack for ISP and IAP                 */
-/*                                                                                                        */
-/*                                                                                                        */
-/*                              MEMORY MAP                                                                */
-/*                      |                                 |0x40010000                                     */
-/*            .-------->|---------------------------------|                                               */
-/*            .         |                                 |0x4000FFFF                                     */
-/*         ram_isp_high |     variables and stack         |                                               */
-/*            .         |     for Philips boot loader     |                                               */
-/*            .         |         288 bytes               |                                     		  */
-/*            .         |   Do not put anything here      |0x4000FEE0                                     */
-/*            .-------->|---------------------------------|                                               */
-/*                      |    UDF Stack  4 bytes           |0x4000FEDC  <---------- _stack_end             */
-/*            .-------->|---------------------------------|                                               */
-/*                      |    ABT Stack  4 bytes           |0x4000FED8                                     */
-/*            .-------->|---------------------------------|                                               */
-/*                      |    FIQ Stack  4 bytes           |0x4000FED4                                     */
-/*            .-------->|---------------------------------|                                               */
-/*                      |    IRQ Stack  4 bytes           |0x4000FED0                                     */
-/*            .-------->|---------------------------------|                                               */
-/*                      |    SVC Stack  4 bytes           |0x4000FECC                                     */
-/*            .-------->|---------------------------------|                                               */
-/*            .         |                                 |0x4000FEC8 			                          */
-/*            .         |     stack area for user program |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |          free ram               |                                               */
-/*           ram        |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |.................................|0x40000234 <---------- _bss_end                */
-/*            .         |                                 |                                               */
-/*            .         |  .bss   uninitialized variables |                                               */
-/*            .         |.................................|0x40000218 <---------- _bss_start, _edata      */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |  .data  initialized variables   |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |                                               */
-/*            .         |                                 |0x40000200 <---------- _data                   */
-/*            .-------->|---------------------------------|                                               */
-/*            .         |     variables used by           |0x400001FF                                     */
-/*         ram_isp_low  |     Philips boot loader         |                                               */
-/*            .         |           223 bytes             |0x40000120                                     */
-/*            .-------->|---------------------------------|                                               */
-/*            .         |                                 |0x4000011F                                     */
-/*         ram_vectors  |          free ram               |                                               */
-/*            .         |---------------------------------|0x40000040                                     */
-/*            .         |                                 |0x4000003F                                     */
-/*            .         |  Interrupt Vectors (re-mapped)  |                                               */
-/*            .         |          64 bytes               |0x40000000                                     */
-/*            .-------->|---------------------------------|                                               */
-/*                      |                                 |                                               */
-/*                                                                                                        */
-/*                                                                                                        */
-/*                                                                                                        */
-/*                      |                                 |                                               */
-/*           .--------> |---------------------------------|                                               */
-/*           .          |                                 |0x0001FFFF                                     */
-/*           .          |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |       unused flash eprom        |                                               */
-/*           .          |                                 |                                               */
-/*           .          |.................................|                                               */
-/*           .          |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |      copy of .data area         |                                               */
-/*         flash        |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |                                 |                                               */
-/*           .          |---------------------------------|0x00000284 <----------- _etext                 */
-/*           .          |                                 |                                               */
-/*           .          |                                 |0x00000180  main                               */
-/*           .          |                                 |0x00000104  Initialize                         */
-/*           .          |            C code               |0x00000100  UNDEF_Routine                      */
-/*           .          |                                 |0x000000fc  SWI_Routine                        */
-/*           .          |                                 |0x000000f8  FIQ_Routine                        */
-/*           .          |                                 |0x000000f4  IRQ_Routine                        */
-/*           .          |---------------------------------|0x000000d8  feed                               */
-/*           .          |                                 |0x000000D4                                     */
-/*           .          |         Startup Code            |                                               */
-/*           .          |         (assembler)             |                                               */
-/*           .          |                                 |                                               */
-/*           .          |---------------------------------|0x00000040 Reset_Handler                       */
-/*           .          |                                 |0x0000003F                                     */
-/*           .          | Interrupt Vector Table (unused) |                                               */
-/*           .          |          64 bytes               |                                               */
-/*           .--------->|---------------------------------|0x00000000 _startup                            *
-/*                                                                                                        */
-/*                                                                                                        */
-/*    The easy way to prevent the linker from loading anything into a memory area is to define            */
-/*    a MEMORY region for it and then avoid assigning any .text, .data or .bss sections into it.          */
-/*                                                                                                        */
-/*                                                                                                        */
-/*             MEMORY                                                                                     */
-/*             {                                                                                          */
-/*                ram_isp_low(A)  : ORIGIN = 0x40000120, LENGTH = 223                                     */
-/*                                                                                                        */
-/*             }                                                                                          */
-/*                                                                                                        */
-/*                                                                                                        */
-/*  Author:  James P. Lynch                                                                               */
-/*                                                                                                        */
-/* ****************************************************************************************************** */
-
-
-/* identify the Entry Point  */
+/*	
+	This linker script will link everything so that you can load it via JTAG
+	into the external SRAM and execute it from there. The stack is in the 
+	internal SRAM for performance. The advantages of using the external SRAM
+	is that it's quicker to write than the flash(internal and external), it's
+	bigger than the internal SRAM (so you can actually load something that uses
+	libc stuff) and because SRAM is writable you can have as many software
+	breakpoints as you want. 
+	
+	You must use the crt-ram.s startup code with this linker script for this to
+	work correctly!
+*/
 
 ENTRY(_startup)
-
-
-
-/* specify the LPC2294 memory areas  */
 
 MEMORY 
 {
 	flash     			: ORIGIN = 0,          LENGTH = 256K	/* FLASH ROM                            	*/	
-	ram_isp_low(A)			: ORIGIN = 0x40000120, LENGTH = 223		/* variables used by Philips ISP bootloader	*/		 
-	ram   				: ORIGIN = 0x40000200, LENGTH = 15840	/* free RAM area							*/
-	ram_isp_high(A)			: ORIGIN = 0x40001FE0, LENGTH = 32		/* variables used by Philips ISP bootloader	*/
-	extram				: ORIGIN = 0x81000000, LENGTH = 1024K
+	ram_isp_low(A)		: ORIGIN = 0x40000120, LENGTH = 223		/* variables used by Philips ISP bootloader	*/		 
+	ram					: ORIGIN = 0x40000200, LENGTH = 15840	/* free RAM area							*/
+	ram_isp_high(A)		: ORIGIN = 0x40001FE0, LENGTH = 32		/* variables used by Philips ISP bootloader	*/
+	extram				: ORIGIN = 0x81000000, LENGTH = 1024K	/* External SRAM */
 }
-
-
-
-/* define a global symbol _stack_end  */
 
 _stack_end = 0x40001EDC;
 
-
-
-/* now define the output sections  */
-
 SECTIONS 
 {
-	startup : { *(.startup)} > extram	/* the startup code goes into FLASH */
+	startup : {
+		*(.startup)
+	} > extram							
 	
-	
-
 	.text :								/* collect all sections that should go into FLASH after startup  */ 
 	{
 		*(.text)						/* all .text sections (code)  */
@@ -180,9 +40,6 @@ SECTIONS
 		_etext = .;						/* define a global symbol _etext just after the last code byte */
 	} > extram
 	
-
-	
-
 	.data :								/* collect all initialized .data sections that go into RAM  */ 
 	{
 		_data = .;						/* create a global symbol marking the start of the .data section  */
