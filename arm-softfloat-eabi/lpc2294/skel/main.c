@@ -1,12 +1,10 @@
-void Initialize(void);
-void feed(void);
-
-
-
+#include <stdio.h>
 #include "lpc21xx.h"
 #include "uart.h"
 #include "config.h"
 
+void Initialize(void);
+void feed(void);
 /**********************************************************
  MAIN
  **********************************************************/

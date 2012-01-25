@@ -220,7 +220,7 @@ int uart1Getch(void)
 {
 
 	if(U1LSR & ULSR_OE){
-		printf("RX fifo has overflowed!\n");
+		//printf("RX fifo has overflowed!\n");
 	}
 
 	if (U1LSR & ULSR_RDR)                 // check if character is available
