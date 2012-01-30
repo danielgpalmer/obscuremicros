@@ -364,4 +364,3 @@
 #define WDTV           (*((volatile uint32_t *) 0xE000000C))
 
 #endif  // __LPC21xx_H
-/*----------------------- END OF FILE ----------------------------------*/
