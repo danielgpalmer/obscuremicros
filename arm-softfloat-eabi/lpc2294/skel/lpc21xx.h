@@ -104,7 +104,7 @@
 #define T0CR2          (*((volatile uint32_t *) 0xE0004034))
 #define T0CR3          (*((volatile uint32_t *) 0xE0004038))
 #define T0EMR          (*((volatile uint32_t *) 0xE000403C))
-
+//#define T0CTCR		   (*((volatile uint32_t *) 0xE0004070)) // Only on /01 parts
 /* Timer 1 */
 #define T1IR           (*((volatile uint32_t *) 0xE0008000))
 #define T1TCR          (*((volatile uint32_t *) 0xE0008004))
@@ -122,6 +122,7 @@
 #define T1CR2          (*((volatile uint32_t *) 0xE0008034))
 #define T1CR3          (*((volatile uint32_t *) 0xE0008038))
 #define T1EMR          (*((volatile uint32_t *) 0xE000803C))
+//#define T1TCR		   (*((volatile uint32_t *) 0xE0008070)) // Only on /01 parts
 
 /* Pulse Width Modulator (PWM) */
 #define PWMIR          (*((volatile uint32_t *) 0xE0014000))

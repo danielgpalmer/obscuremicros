@@ -73,7 +73,7 @@
 #define TIMER_EMATCH_EM2 (1 << 2)
 #define TIMER_EMATCH_EM3 (1 << 3)
 
-void timer_setup(unsigned int which);
+void timer_reset(unsigned int which);
 void timer_start(unsigned int which);
 
 #endif /* TIMER_H_ */
