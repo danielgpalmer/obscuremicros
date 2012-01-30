@@ -12,10 +12,10 @@ void timer_setup(unsigned int which) {
 
 	switch (which) {
 		case 0:
-			T0TCR = TIMER_ENABLE | TIMER_RESET;
+			T0TCR = TIMER_CONTROL_ENABLE | TIMER_CONTROL_RESET;
 			break;
 		case 1:
-			T1TCR = TIMER_ENABLE | TIMER_RESET;
+			T1TCR = TIMER_CONTROL_ENABLE | TIMER_CONTROL_RESET;
 			break;
 	}
 
@@ -25,10 +25,10 @@ void timer_start(unsigned int which) {
 
 	switch (which) {
 		case 0:
-			T0TCR &= ~TIMER_RESET;
+			T0TCR &= ~TIMER_CONTROL_RESET;
 			break;
 		case 1:
-			T1TCR &= ~TIMER_RESET;
+			T1TCR &= ~TIMER_CONTROL_RESET;
 			break;
 	}
 
