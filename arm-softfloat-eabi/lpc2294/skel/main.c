@@ -1,18 +1,14 @@
 #include <stdio.h>
-#include "lpc21xx.h"
+#include "lpc22xx.h"
 #include "uart.h"
 #include "config.h"
 
-void Initialize(void);
+void initialize(void);
 void feed(void);
-/**********************************************************
- MAIN
- **********************************************************/
-void main() {
-	int j; // loop counter (stack variable)
 
-	// Initialize the system
-	Initialize();
+void main() {
+
+	initialize();
 	PINSEL1 = 0;
 	IODIR0 |= 0x40000000; // P0.30 output
 	IOSET0 = 0x00000000;
@@ -20,27 +16,25 @@ void main() {
 	//bring UART0 up
 	uart0Init(UART_BAUD(115200), UART_8N1, UART_FIFO_8);
 
-	printf("\n\nHello, World!\n");
+	printf("Hello, World!\n");
 
-	// endless loop to toggle the two leds
+	// endless loop to toggle the led
 	while (1) {
-
-		for (j = 0; j < 500000; j++)
+		for (int j = 0; j < 500000; j++)
 			; // wait 500 msec
 		IOSET0 = 0x40000000;
 		IOCLR0 = 0x00000000;
-		for (j = 0; j < 500000; j++)
+		for (int j = 0; j < 500000; j++)
 			; // wait 500 msec
 		IOSET0 = 0x00000000;
 		IOCLR0 = 0x40000000;
-		uart0Putch(0x2e);
 	}
 
 }
 
 #define PLOCK 0x400
 
-void Initialize(void) {
+void initialize(void) {
 
 	// Setting Multiplier and Divider values
 	//PLLCFG=0x23;

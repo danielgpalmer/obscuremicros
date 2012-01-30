@@ -18,6 +18,8 @@ int _write(int file, char * ptr, int len) {
 		}
 		return 0;
 	}
+
+	return 0;
 }
 
 int _read(int file, char * ptr, int len) {
@@ -86,7 +88,7 @@ caddr_t _sbrk(int incr) {
 		abort ();
 #else
 		errno = ENOMEM;
-		return (caddr_t) - 1;
+		return (caddr_t) -1;
 #endif
 	}
 

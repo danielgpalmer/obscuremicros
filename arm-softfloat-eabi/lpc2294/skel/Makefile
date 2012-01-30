@@ -2,11 +2,12 @@ NAME   = demo2294_blink_flash
 
 TCPREFIX = ../../../toolchains/inst/arm-softfloat-eabi/bin
 CC      = $(TCPREFIX)/arm-softfloat-eabi-gcc
-LD      = $(TCPREFIX)/arm-softfloat-eabi-ld -v
+LD      = $(TCPREFIX)/arm-softfloat-eabi-ld
 AR      = $(TCPREFIX)/arm-softfloat-eabi-ar
 AS      = $(TCPREFIX)/arm-softfloat-eabi-as
 CP      = $(TCPREFIX)/arm-softfloat-eabi-objcopy
 OD	= $(TCPREFIX)/arm-softfloat-eabi-objdump
+GDB	= $(TCPREFIX)/arm-softfloat-eabi-gdb
 
 CFLAGS  = -I./ -c -fno-common -O0 -ggdb --std=gnu99
 AFLAGS  = -mapcs-32
@@ -61,3 +62,6 @@ main.o: main.c
 
 syscalls.o: syscalls.c syscalls.h
 	$(CC) $(CFLAGS) syscalls.c
+
+debug: main-extram.bin main-extram.elf
+	$(GDB)
