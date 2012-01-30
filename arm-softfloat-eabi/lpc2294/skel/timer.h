@@ -75,5 +75,6 @@
 
 void timer_reset(unsigned int which);
 void timer_start(unsigned int which);
+void timer_dumpregisters();
 
 #endif /* TIMER_H_ */

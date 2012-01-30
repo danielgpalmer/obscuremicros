@@ -41,3 +41,22 @@ void timer_start(unsigned int which) {
 	}
 
 }
+
+void timer_dumpregisters() {
+
+	printf("--\n");
+	printf("T0IR 0x%08x\n", T0IR);
+	printf("T0TC 0x%08x\n", T0TC);
+	printf("T0PR 0x%08x\n", T0PR);
+	printf("T0PC 0x%08x\n", T0PC);
+	printf("T0MR0 0x%08x\n", T0MR0);
+	printf("T0MR1 0x%08x\n", T0MR1);
+	printf("T0MR2 0x%08x\n", T0MR2);
+	printf("T0MR3 0x%08x\n", T0MR3);
+	printf("T0MCR 0x%08x\n", T0MCR);
+	printf("T0CR0 0x%08x\n", T0CR0);
+	printf("T0CR1 0x%08x\n", T0CR1);
+	printf("T0CR2 0x%08x\n", T0CR2);
+	printf("T0CR3 0x%08x\n", T0CR3);
+	printf("T0CCR 0x%08x\n", T0CCR);
+}

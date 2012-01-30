@@ -2,9 +2,49 @@
 #include "lpc22xx.h"
 #include "uart.h"
 #include "config.h"
+#include "interrupts.h"
 
 void initialize(void);
 void feed(void);
+
+void timerhandler(void) __attribute__ ((interrupt("IRQ")));
+
+void timerhandler(void) {
+
+	T0IR = 0x0001;
+	VICVectAddr = 0;
+	printf("t\n");
+
+}
+
+void setuptimer() {
+	printf("Starting timer0..\n");
+	dumpInterruptRegisters();
+
+	VICIntSelect = 0;
+	VICIntEnClr = 0xFFFF;
+
+	T0TCR = 0x0003; // enable and reset the counter.. hold it.
+	T0IR = 0x0001;
+	T0PR = 0xFFFF; // timer0 prescaler
+	T0MR0 = 0x0001; // match
+	T0MCR = 0x0003;
+	//T0MR1 = 0x01FE;
+	//T0MCR = 0x0019;  // match; fire interrupt, reset counter.
+	VICIntEnable |= 0x0010; // enable timer0 interrupt
+
+	VICVectCntl0 = 0x0024;
+	VICVectAddr0 = (uint32_t) timerhandler;
+
+	//VICIntSelect = 0x0010; // make timer0 interrupts FIQ
+	T0TCR = 0x0001; // go!
+
+	enableIRQ();
+	//enableFIQ();
+
+	dumpInterruptRegisters();
+
+}
 
 void main() {
 
@@ -18,6 +58,8 @@ void main() {
 
 	printf("Hello, World!\n");
 
+	setuptimer();
+
 	// endless loop to toggle the led
 	while (1) {
 		for (int j = 0; j < 500000; j++)
@@ -28,6 +70,8 @@ void main() {
 			; // wait 500 msec
 		IOSET0 = 0x00000000;
 		IOCLR0 = 0x40000000;
+		dumpInterruptRegisters();
+		timer_dumpregisters();
 	}
 
 }
@@ -66,3 +110,4 @@ void feed(void) {
 	PLLFEED = PLL_FEED1;
 	PLLFEED = PLL_FEED2;
 }
+

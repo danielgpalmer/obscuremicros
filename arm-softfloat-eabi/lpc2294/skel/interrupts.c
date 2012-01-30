@@ -44,9 +44,10 @@ void disableInterrupts(void) {
 }
 
 void dumpInterruptRegisters(void) {
-	printf("VICIRQStatus 0x%x\n", VICIRQStatus);
-	printf("VICFIQStatus 0x%x\n", VICFIQStatus);
-	printf("VICRawIntr 0x%x\n", VICRawIntr);
-	printf("VICIntSelect 0x%x\n", VICIntSelect);
-	printf("VICIntEnable 0x%x\n", VICIntEnable);
+	printf("--\n");
+	printf("VICIRQStatus	0x%04x\n", VICIRQStatus);
+	printf("VICFIQStatus	0x%04x\n", VICFIQStatus);
+	printf("VICRawIntr		0x%04x\n", VICRawIntr);
+	printf("VICIntSelect	0x%04x\n", VICIntSelect);
+	printf("VICIntEnable	0x%04x\n", VICIntEnable);
 }

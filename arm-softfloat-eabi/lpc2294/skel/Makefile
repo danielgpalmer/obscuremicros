@@ -33,14 +33,14 @@ main-extram.bin: main-extram.elf
 	$(CP) $(CPFLAGS) main-extram.elf main-extram.bin
 	$(OD) $(ODFLAGS) main-extram.elf > main-extram.dmp
 
-main.elf: crt.o uart.o main.o syscalls.o interrupts.o exceptions.o ldscript-intflash.x 
-	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o  main.o
+main.elf: crt.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o ldscript-intflash.x 
+	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o main.o
 
-main-ram.elf: crt-ram.o uart.o main.o syscalls.o interrupts.o exceptions.o ldscript-intram.x
-	$(CC) -Tldscript-intram.x $(LFLAGS) -o main-ram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o  main.o
+main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o ldscript-intram.x
+	$(CC) -Tldscript-intram.x $(LFLAGS) -o main-ram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o main.o
 
-main-extram.elf: crt-ram.o uart.o main.o syscalls.o interrupts.o exceptions.o ldscript-extram.x
-	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o  main.o
+main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o ldscript-extram.x
+	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o  main.o
 
 crt-ram.o: crt-ram.s
 	$(AS) $(AFLAGS) crt-ram.s -o crt-ram.o
@@ -50,6 +50,9 @@ crt.o: crt.s
 
 uart.o: uart.c
 	$(CC) $(CFLAGS) uart.c
+
+timer.o: timer.c
+	$(CC) $(CFLAGS) timer.c
 
 interrupts.o: interrupts.c
 	$(CC) $(CFLAGS) interrupts.c
