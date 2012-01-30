@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "lpc22xx.h"
 #include "uart.h"
 #include "config.h"
 #include "interrupts.h"
+#include "timer.h"
 
 void initialize(void);
 void feed(void);
@@ -11,44 +13,48 @@ void timerhandler(void) __attribute__ ((interrupt("IRQ")));
 
 void timerhandler(void) {
 
+	static bool on = false;
+
+	if (on) {
+		IOSET0 = 0x40000000;
+		IOCLR0 = 0x00000000;
+	}
+	else {
+		IOSET0 = 0x00000000;
+		IOCLR0 = 0x40000000;
+	}
+
+	on = !on;
+
 	T0IR = 0x0001;
 	VICVectAddr = 0;
-	printf("t\n");
 
 }
 
 void setuptimer() {
-	printf("Starting timer0..\n");
-	dumpInterruptRegisters();
+	printf("config timer 0..\n");
 
-	VICIntSelect = 0;
-	VICIntEnClr = 0xFFFF;
+	timer_reset(0);
 
-	T0TCR = 0x0003; // enable and reset the counter.. hold it.
-	T0IR = 0x0001;
 	T0PR = 0xFFFF; // timer0 prescaler
-	T0MR0 = 0x0001; // match
-	T0MCR = 0x0003;
-	//T0MR1 = 0x01FE;
-	//T0MCR = 0x0019;  // match; fire interrupt, reset counter.
-	VICIntEnable |= 0x0010; // enable timer0 interrupt
+	T0MR0 = 0x00FF; // match
 
-	VICVectCntl0 = 0x0024;
+	T0MCR = TIMER_MATCHCONTROL_MR0I | TIMER_MATCHCONTROL_MR0R;
+
+	VICIntEnable = INTERRUPT_MASK_TIMER0; // enable timer0 interrupt
+	VICVectCntl0 = INTERRUPT_CHANNEL_ENABLE | INTERRUPT_CHANNEL_TIMER0;
 	VICVectAddr0 = (uint32_t) timerhandler;
 
-	//VICIntSelect = 0x0010; // make timer0 interrupts FIQ
-	T0TCR = 0x0001; // go!
+	timer_start(0);
 
 	enableIRQ();
-	//enableFIQ();
-
-	dumpInterruptRegisters();
 
 }
 
 void main() {
 
 	initialize();
+	interrupts_reset();
 	PINSEL1 = 0;
 	IODIR0 |= 0x40000000; // P0.30 output
 	IOSET0 = 0x00000000;
@@ -60,18 +66,7 @@ void main() {
 
 	setuptimer();
 
-	// endless loop to toggle the led
 	while (1) {
-		for (int j = 0; j < 500000; j++)
-			; // wait 500 msec
-		IOSET0 = 0x40000000;
-		IOCLR0 = 0x00000000;
-		for (int j = 0; j < 500000; j++)
-			; // wait 500 msec
-		IOSET0 = 0x00000000;
-		IOCLR0 = 0x40000000;
-		dumpInterruptRegisters();
-		timer_dumpregisters();
 	}
 
 }

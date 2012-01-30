@@ -1,14 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#include "exceptions.h"
 #include "uart.h"
 #include "interrupts.h"
-
-void DATAABORT_Routine(void) __attribute__ ((interrupt("ABORT")));
-void IRQ_Routine(void) __attribute__ ((interrupt("IRQ")));
-void FIQ_Routine(void) __attribute__ ((interrupt("FIQ")));
-void SWI_Routine(void) __attribute__ ((interrupt("SWI")));
-void UNDEF_Routine(void) __attribute__ ((interrupt("UNDEF")));
 
 void DATAABORT_Routine(void) {
 
@@ -34,11 +29,13 @@ void PREFETCHABORT_Routine(void) {
 }
 
 void IRQ_Routine(void) {
+	printf("IRQ\n");
 	while (1)
 		;
 }
 
 void FIQ_Routine(void) {
+	printf("FIQ\n");
 	while (1)
 		;
 }
@@ -49,6 +46,13 @@ void SWI_Routine(void) {
 }
 
 void UNDEF_Routine(void) {
+	printf("UNDEF\n");
+	while (1)
+		;
+}
+
+void VICDefault_Routine(void) {
+	printf("VIC Default\n");
 	while (1)
 		;
 }

@@ -7,6 +7,7 @@
 
 #include "timer.h"
 #include "lpc22xx.h"
+#include <stdio.h>
 
 void timer_reset(unsigned int which) {
 
