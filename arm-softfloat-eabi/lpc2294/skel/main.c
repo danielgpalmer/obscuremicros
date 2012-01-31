@@ -45,9 +45,10 @@ void setuptimer() {
 	VICVectCntl0 = INTERRUPT_CHANNEL_ENABLE | INTERRUPT_CHANNEL_TIMER0;
 	VICVectAddr0 = (uint32_t) timerhandler;
 
+	enableIRQ();
+
 	timer_start(0);
 
-	enableIRQ();
 
 }
 
