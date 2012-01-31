@@ -7,6 +7,7 @@
 
 #include "wdt.h"
 #include "lpc21xx.h"
+#include <stdint.h>
 #include <stdbool.h>
 
 #define FEEDFIRST 0xAA

@@ -8,6 +8,7 @@
 #ifndef WDT_H_
 #define WDT_H_
 
+#include <stdint.h>
 #include <stdbool.h>
 
 void wdt_enable(uint32_t constant, bool reset);

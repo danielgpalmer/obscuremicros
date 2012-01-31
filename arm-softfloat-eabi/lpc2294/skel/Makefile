@@ -33,14 +33,14 @@ main-extram.bin: main-extram.elf
 	$(CP) $(CPFLAGS) main-extram.elf main-extram.bin
 	$(OD) $(ODFLAGS) main-extram.elf > main-extram.dmp
 
-main.elf: crt.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o ldscript-intflash.x 
-	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o main.o
+main.elf: crt.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o ldscript-intflash.x 
+	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o main.o
 
-main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o ldscript-intram.x
-	$(CC) -Tldscript-intram.x $(LFLAGS) -o main-ram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o main.o
+main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o ldscript-intram.x
+	$(CC) -Tldscript-intram.x $(LFLAGS) -o main-ram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o main.o
 
-main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o ldscript-extram.x
-	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o  main.o
+main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o ldscript-extram.x
+	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o main.o
 
 crt-ram.o: crt-ram.s
 	$(AS) $(AFLAGS) crt-ram.s -o crt-ram.o
@@ -65,6 +65,16 @@ main.o: main.c
 
 syscalls.o: syscalls.c syscalls.h
 	$(CC) $(CFLAGS) syscalls.c
+
+wdt.o: wdt.c wdt.h
+	$(CC) $(CFLAGS) wdt.c
+
+audio.o: audio.c audio.h
+	$(CC) $(CFLAGS) audio.c
+
+rtc.o: rtc.c rtc.h
+	$(CC) $(CFLAGS) rtc.c
+
 
 debug: main-extram.bin main-extram.elf
 	$(GDB)
