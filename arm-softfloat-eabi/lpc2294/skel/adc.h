@@ -32,4 +32,27 @@
 #define ADC_ADCR_START_MAT10	(110 << ADC_ADCR_START_SHIFT)
 #define ADC_ADCR_START_MAT11	(111 << ADC_ADCR_START_SHIFT)
 #define ADC_ADCR_EDGE			(1 << 27)
+
+// ADSTAT
+
+#define ADC_ADSTAT_DONE0	1
+#define ADC_ADSTAT_DONE1	(1 << 1)
+#define ADC_ADSTAT_DONE2	(1 << 2)
+#define ADC_ADSTAT_DONE3	(1 << 3)
+#define ADC_ADSTAT_DONE4	(1 << 4)
+#define ADC_ADSTAT_DONE5	(1 << 5)
+#define ADC_ADSTAT_DONE6	(1 << 6)
+#define ADC_ADSTAT_DONE7	(1 << 7)
+#define ADC_ADSTAT_OVERRUN0 (1 << 8)
+#define ADC_ADSTAT_OVERRUN1 (1 << 9)
+#define ADC_ADSTAT_OVERRUN2 (1 << 10)
+#define ADC_ADSTAT_OVERRUN3 (1 << 11)
+#define ADC_ADSTAT_OVERRUN4 (1 << 12)
+#define ADC_ADSTAT_OVERRUN5 (1 << 13)
+#define ADC_ADSTAT_OVERRUN6 (1 << 14)
+#define ADC_ADSTAT_OVERRUN7 (1 << 15)
+#define ADC_ADSTAT_ADINT	(1 << 16)
+
+// ADINTEN
+
 #endif /* ADC_H_ */
