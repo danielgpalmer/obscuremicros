@@ -3,12 +3,17 @@
 #include <sys/stat.h>
 
 #include <string.h>
+#include <sys/time.h>
 
 #include "uart.h"
 
 #define STDIN_FILENO 0 /* standard input file descriptor */
 #define STDOUT_FILENO 1 /* standard output file descriptor */
 #define STDERR_FILENO 2 /* standard error file descriptor */
+
+int _gettimeofday(struct timeval *tv, struct timezone *tz) {
+	return 0;
+}
 
 int _write(int file, char * ptr, int len) {
 	if (file == STDOUT_FILENO) {
@@ -36,12 +41,10 @@ int _read(int file, char * ptr, int len) {
 }
 
 int _close(int file) {
-	uart_putc('c');
 	return 0;
 }
 
 int _lseek(int file, int ptr, int dir) {
-	uart_putc('l');
 	return 0;
 }
 

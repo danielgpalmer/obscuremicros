@@ -5,6 +5,7 @@
 #include "config.h"
 #include "interrupts.h"
 #include "timer.h"
+#include <time.h>
 
 void initialize(void);
 void feed(void);
@@ -49,7 +50,6 @@ void setuptimer() {
 
 	timer_start(0);
 
-
 }
 
 void main() {
@@ -66,6 +66,12 @@ void main() {
 	printf("Hello, World!\n");
 
 	setuptimer();
+
+	struct tm tm;
+	rtc_gettime(&tm);
+
+	timer_t timer = time(NULL);
+	printf("%s\n", ctime(&timer));
 
 	while (1) {
 	}
