@@ -72,9 +72,15 @@ wdt.o: wdt.c wdt.h
 audio.o: audio.c audio.h
 	$(CC) $(CFLAGS) audio.c
 
-rtc.o: rtc.c rtc.h
+rtc.o: rtc.c rtc.h rtcpreload.h
 	$(CC) $(CFLAGS) rtc.c
-
 
 debug: main-extram.bin main-extram.elf
 	$(GDB)
+
+
+.PHONY: rtcpreload.h
+
+rtcpreload.h:
+	./mkrtcpreload.sh > rtcpreload.h
+

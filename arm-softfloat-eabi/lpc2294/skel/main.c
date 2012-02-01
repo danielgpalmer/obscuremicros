@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <stdbool.h>
 #include "lpc22xx.h"
 #include "uart.h"
@@ -67,13 +68,17 @@ void main() {
 
 	setuptimer();
 
-	struct tm tm;
-	rtc_gettime(&tm);
-
-	timer_t timer = time(NULL);
-	printf("%s\n", ctime(&timer));
+	rtc_start();
 
 	while (1) {
+
+		for (unsigned i = 0; i < 500000; i++) {
+
+		}
+		rtc_dumpregisters();
+		timer_t timer = time(NULL);
+		char* timestring = ctime(&timer);
+		printf("%s\n", timestring);
 	}
 
 }

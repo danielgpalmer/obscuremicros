@@ -33,6 +33,9 @@
 #define RTC_AMT_AMRMON	(1 << 6)
 #define RTC_AMT_AMRYEAR	(1 << 7)
 
+void rtc_start();
 void rtc_gettime(struct tm* tm);
+void rtc_gettimeofday(struct timeval *tv);
+void rtc_dumpregisters();
 
 #endif /* RTC_H_ */
