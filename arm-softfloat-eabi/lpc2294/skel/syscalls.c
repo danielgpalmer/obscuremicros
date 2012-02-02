@@ -12,9 +12,8 @@
 #define STDOUT_FILENO 1 /* standard output file descriptor */
 #define STDERR_FILENO 2 /* standard error file descriptor */
 
-int _gettimeofday(struct timeval *tv, struct timezone *tz) {
-
-	rtc_gettimeofday(&tv);
+int _gettimeofday(struct timeval *tv, void* tz) {
+	rtc_gettimeofday(tv);
 	return 0;
 }
 

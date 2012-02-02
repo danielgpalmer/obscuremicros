@@ -7,6 +7,7 @@
 #include "interrupts.h"
 #include "timer.h"
 #include <time.h>
+#include <sys/time.h>
 
 void initialize(void);
 void feed(void);
@@ -76,8 +77,9 @@ void main() {
 
 		}
 		rtc_dumpregisters();
-		timer_t timer = time(NULL);
-		char* timestring = ctime(&timer);
+		struct timeval time;
+		gettimeofday(&time, NULL);
+		char* timestring = ctime(&(time.tv_sec));
 		printf("%s\n", timestring);
 	}
 

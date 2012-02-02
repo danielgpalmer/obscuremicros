@@ -43,15 +43,14 @@ void rtc_gettime(struct tm* tm) {
 	tm->tm_mday = DOM;
 	tm->tm_yday = DOY;
 	tm->tm_year = (YEAR - 1900);
-	tm->tm_mon = MONTH;
+	tm->tm_mon = (MONTH - 1);
 	tm->tm_isdst = -1;
+
 }
 
 void rtc_gettimeofday(struct timeval *tv) {
-
 	struct tm tm;
 	rtc_gettime(&tm);
-	printf("%d\n", mktime(&tm));
 	tv->tv_sec = mktime(&tm);
 }
 
