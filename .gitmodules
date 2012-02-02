@@ -1,3 +1,6 @@
 [submodule "toolchains"]
 	path = toolchains
 	url = https://code.google.com/p/obscuremicros.toolchains/
+[submodule "thirdparty/lwip"]
+	path = thirdparty/lwip
+	url = git://git.savannah.nongnu.org/lwip.git

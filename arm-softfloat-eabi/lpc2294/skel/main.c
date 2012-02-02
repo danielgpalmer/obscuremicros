@@ -71,13 +71,13 @@ void main() {
 
 	rtc_start();
 
+	struct timeval time;
+
 	while (1) {
 
-		for (unsigned i = 0; i < 500000; i++) {
+		for (unsigned i = 0; i < 5000000; i++) {
 
 		}
-		rtc_dumpregisters();
-		struct timeval time;
 		gettimeofday(&time, NULL);
 		char* timestring = ctime(&(time.tv_sec));
 		printf("%s\n", timestring);
