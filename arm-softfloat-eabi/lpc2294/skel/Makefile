@@ -25,39 +25,11 @@ main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions
 main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o ldscript-extram.x
 	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o main.o
 
-uart.o: uart.c
-	$(CC) $(CFLAGS) uart.c
-
-timer.o: timer.c
-	$(CC) $(CFLAGS) timer.c
-
-interrupts.o: interrupts.c
-	$(CC) $(CFLAGS) interrupts.c
-
-exceptions.o: exceptions.c
-	$(CC) $(CFLAGS) exceptions.c
-
-main.o: main.c
-	$(CC) $(CFLAGS) main.c
-
-syscalls.o: syscalls.c syscalls.h
-	$(CC) $(CFLAGS) syscalls.c
-
-wdt.o: wdt.c wdt.h
-	$(CC) $(CFLAGS) wdt.c
-
-audio.o: audio.c audio.h
-	$(CC) $(CFLAGS) audio.c
-
-rtc.o: rtc.c rtc.h rtcpreload.h
-	$(CC) $(CFLAGS) rtc.c
-
-i2c.o: i2c.c i2c.h
-	$(CC) $(CFLAGS) i2c.c
+include ./sys.mk
+include ./peripherals.mk
 
 debug: main-extram.bin main-extram.elf
 	$(GDB)
-
 
 .PHONY: clean rtcpreload.h
 
