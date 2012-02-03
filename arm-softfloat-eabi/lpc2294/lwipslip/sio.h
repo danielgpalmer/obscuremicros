@@ -8,9 +8,10 @@
 #ifndef SIOEXTENDED_H_
 #define SIOEXTENDED_H_
 
+#include <arch/cc.h>
+
 u32_t sio_bytesinring();
 void sio_setuprxint();
 void sio_rxinthandler();
-
 
 #endif /* SIOEXTENDED_H_ */

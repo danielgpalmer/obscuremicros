@@ -7,12 +7,13 @@
 #include "exceptions.h"
 #include "interrupts.h"
 #include "net.h"
+#include "sio.h"
 
 #include <lwip/inet.h>
 #include "ping.h"
 #include "core.h"
 
-void starttimer(){
+void starttimer() {
 
 	printf("Starting timer0..\n");
 	dumpInterruptRegisters();
@@ -27,8 +28,7 @@ void starttimer(){
 	VICIntEnable |= 0x0010; // enable timer0 interrupt
 
 	VICVectCntl0 = 0x0024;
-	VICVectAddr0=(uint32_t) IRQ_Routine;
-
+	VICVectAddr0 = (uint32_t) IRQ_Routine;
 
 	//VICIntSelect = 0x0010; // make timer0 interrupts FIQ
 	T0TCR = 0x0001; // go!
@@ -39,27 +39,34 @@ void starttimer(){
 	dumpInterruptRegisters();
 }
 
-
-void main(){ 
+void main() {
 
 	VICIntSelect = 0;
 	VICIntEnClr = 0xFFFF;
 
-	
 	// Initialize the system
 	initialize();
-	PINSEL1=0;
-	IODIR0 |= 0x60000000;	// P0.29 & P0.30 output
-	IOSET0 =  0x00000000;
- 
+	PINSEL1 = 0;
+	IODIR0 |= 0x60000000; // P0.29 & P0.30 output
+	IOSET0 = 0x00000000;
+
 	//bring UART0 up
 	uart0Init(UART_BAUD(115200), UART_8N1, UART_FIFO_8);
 	uart1Init(UART_BAUD(115200), UART_8N1, UART_FIFO_14);
-	
 
 	printf("hello\n");
 
-	while(1){
+	net_init();
+	sio_setuprxint();
+
+	while (1) {
+
+		for (int i = 0; i < 50000; i++) {
+
+		}
+
+		printf("loop\n");
+		net_loop();
 	}
 
 }

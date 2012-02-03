@@ -39,13 +39,11 @@ OUTPUT=liblwip.a
 all: $(REALSOURCES) $(OUTPUT) 
 	
 $(OUTPUT): $(OBJECTS) sys_now.o 
-	@ echo "creating library"
 	$(AR) rcs $(OUTPUT) $(OBJECTS) sys_now.o
 
 .PHONY: all depend clean
 
 sys_now.o: sys_now.c
-	@ echo ".compiling"
 	$(CC) $(CFLAGS) $(LWIPINC) sys_now.c
 
 %.o:
