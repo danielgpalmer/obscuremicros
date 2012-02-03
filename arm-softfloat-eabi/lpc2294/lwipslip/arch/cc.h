@@ -66,6 +66,8 @@ typedef u32_t mem_ptr_t;
 #define PACK_STRUCT_END
 
 
+#include <stdio.h>
+
 /* Plaform specific diagnostic output */
 #define LWIP_PLATFORM_DIAG(args) printf args
 

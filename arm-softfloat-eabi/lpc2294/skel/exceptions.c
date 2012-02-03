@@ -1,3 +1,9 @@
+/**
+ * These are default handlers for all of the exceptions that can happen.
+ * The ones you wish to handle should replace these by defining them somewhere else.
+ * The versions here are all marked as weak so that you can replace them :)
+ */
+
 #include <stdio.h>
 #include <stdint.h>
 
