@@ -1,72 +1,57 @@
 include ./common.mk
 
-all: ram
+LWIPCFLAGS = -I ./lwip/src/include/ -I ./lwip/src/include/ipv4/ -I./lwip/src/include/ipv6/
 
-clean:
-	-rm crt.lst main.lst crt.o uart.o printf.o sio.o syscalls.o main.o main.out main.hex main.map main.dmp main.bin ping.0
+all: main-extram.bin
 
-rom: main.out
-	@ echo "...copying rom version"
+include ./startup.mk
+include ./sys.mk
+include ./peripherals.mk
+
+rom: main.elf
 	$(CP) $(CPFLAGS) main.out main.bin
 	$(OD) $(ODFLAGS) main.out > main.dmp
 
-ram: main-ram.out
-	@ echo "...copying ram version"
+main-extram.bin: main-extram.elf
 	$(CP) $(CPFLAGS) main-ram.out main-ram.bin
-	$(OD) $(ODFLAGS) main-ram.out > main-ram.dmp
 
-main-ram.out: crt-ram.o uart.o main.o syscalls.o demo2214-extram.cmd printf.o sio.o net.o echo.o exceptions.o interrupts.o ping.o
-	@ echo "..linking ram version"
-	##$(LD) $(LFLAGS) -o main.out  crt.o uart.o  main.o
-	$(CC) $(LFLAGSRAM) -o main-ram.out crt.o syscalls.o uart.o  main.o printf.o sio.o net.o echo.o exceptions.o interrupts.o ping.o -llwip 
+main-extram.elf: ldscript-extram.x crt-ram.o uart.o main.o syscalls.o sio.o net.o echo.o exceptions.o interrupts.o ping.o liblwip.a
+	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-ram.out crt-ram.o syscalls.o uart.o  main.o sio.o net.o echo.o exceptions.o interrupts.o ping.o -llwip 
 
-main.out: crt.o uart.o main.o syscalls.o demo2214.cmd printf.o
+main.elf: crt.o uart.o main.o syscalls.o printf.o
 	@ echo "..linking rom version"
-	##$(LD) $(LFLAGS) -o main.out  crt.o uart.o  main.o
 	$(CC) $(LFLAGS) -o main.out -llwip crt.o syscalls.o uart.o  main.o printf.o sio.o -llwip -llwip
 
-crt-ram.o: crt-ram.s
-	$(AS) $(AFLAGS) crt-ram.s > crt-ram.ls
+#main.elf: crt.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o i2c.o ldscript-intflash.x 
+#        $(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o main.o
 
-crt.o: crt.s
-	@ echo ".assembling"
-	$(AS) $(AFLAGS) crt.s > crt.lst
+#main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o i2c.o ldscript-intram.x
+#        $(CC) -Tldscript-intram.x $(LFLAGS) -o main-ram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o main.o
 
-uart.o: uart.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) uart.c
-	
+#main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o ldscript-extram.x
+#        $(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o main.o
+
 
 sio.o: sio.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) sio.c
+	$(CC) $(CFLAGS) $(LWIPCFLAGS) sio.c
 
 net.o: net.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) net.c
+	$(CC) $(CFLAGS) $(LWIPCFLAGS) net.c
 
 echo.o: echo.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) echo.c
-
-exceptions.o: exceptions.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) exceptions.c
-
-interrupts.o: interrupts.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) interrupts.c
+	$(CC) $(CFLAGS) $(LWIPCFLAGS) echo.c
 
 ping.o: ping.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) ping.c
+	$(CC) $(CFLAGS) $(LWIPCFLAGS) ping.c
 	
 main.o: main.c
-	@ echo ".compiling"
-	$(CC) $(CFLAGS) main.c
+	$(CC) $(CFLAGS) $(LWIPCFLAGS) main.c
 
+.PHONY: clean liblwip.a
 
+liblwip.a:
+	$(MAKE) -f lwip.mk
 
-syscalls.o: syscalls.c syscalls.h
-	$(CC) $(CFLAGS) syscalls.c
+clean:	
+	rm -f *.o
 

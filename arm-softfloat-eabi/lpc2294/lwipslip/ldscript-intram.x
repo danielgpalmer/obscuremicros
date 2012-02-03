@@ -1,0 +1,1 @@
+../skel/ldscript-intram.x

@@ -4,9 +4,6 @@ uart.o: uart.c
 timer.o: timer.c
 	$(CC) $(CFLAGS) timer.c
 
-main.o: main.c
-	$(CC) $(CFLAGS) main.c
-
 wdt.o: wdt.c wdt.h
 	$(CC) $(CFLAGS) wdt.c
 

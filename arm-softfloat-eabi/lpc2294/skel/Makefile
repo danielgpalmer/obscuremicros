@@ -3,6 +3,8 @@ include ./common.mk
 all: main.bin main-extram.bin
 
 include ./startup.mk
+include ./sys.mk
+include ./peripherals.mk
 
 main.bin: main.elf
 	$(CP) $(CPFLAGS) main.elf main.bin
@@ -25,8 +27,8 @@ main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions
 main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o ldscript-extram.x
 	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o main.o
 
-include ./sys.mk
-include ./peripherals.mk
+main.o: main.c
+	$(CC) $(CFLAGS) main.c
 
 debug: main-extram.bin main-extram.elf
 	$(GDB)
