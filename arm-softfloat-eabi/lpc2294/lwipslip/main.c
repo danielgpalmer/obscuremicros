@@ -10,6 +10,7 @@
 
 #include <lwip/inet.h>
 #include "ping.h"
+#include "core.h"
 
 void starttimer(){
 
@@ -46,7 +47,7 @@ void main(){
 
 	
 	// Initialize the system
-	Initialize();
+	initialize();
 	PINSEL1=0;
 	IODIR0 |= 0x60000000;	// P0.29 & P0.30 output
 	IOSET0 =  0x00000000;
@@ -62,69 +63,4 @@ void main(){
 	}
 
 }
-
-/**********************************************************
-                      Initialize
-**********************************************************/
-
-#define PLOCK 0x400
-
-void Initialize(void)  {
-
-   
-	// Setting Multiplier and Divider values
-  	//PLLCFG=0x23;
-  	PLLCFG=0x23;
-	feed();
-  
-	// Enabling the PLL */	
-	PLLCON=0x1;
-	feed();
-  
-	// Wait for the PLL to lock to set frequency
-	while(!(PLLSTAT & PLOCK)) ;
-  
-	// Connect the PLL as the clock source
-	PLLCON=0x3;
-	feed();
-  
-
-
-	//PINSEL2 = 0x0F000924;
-	//BCFG0=0x1000348F;
-	//BCFG1=0x2000040F;
-
-
-	//MEMMAP = 2;
-
-	// Enabling MAM and setting number of clocks used for Flash memory fetch (4 cclks in this case)
-	MAMCR=0x2;
-	MAMTIM=0x4;
-  
-	//clear external SRAM
-	//uint32_t *esram = (uint32_t) 0x81000000;
-	//while(esram < 0x81040000){
-	//	*esram = 0;
-	//	esram++;
-	//}
-
-
-	// Setting peripheral Clock (pclk) to System Clock (cclk)
-	VPBDIV = VPBDIV_VAL;
-
-
-/*
-
-
-
-*/
-}
-
-
-void feed(void)
-{
-  PLLFEED = PLL_FEED1;
-  PLLFEED = PLL_FEED2;
-}
-
 
