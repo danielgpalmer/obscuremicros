@@ -1,7 +1,7 @@
 include ./common.mk
 
 LWIPSRC = ./lwip/src/
-LWIPINC = -I./lwip/src/include/ -I./lwip/src/include/ipv4 -I./lwip/src/include/netif/
+LWIPINC = -I./lwip/src/include/ -I./lwip/src/include/ipv4 -I./lwip/src/include/ipv6 -I./lwip/src/include/netif/
 
 
 SOURCES = \
@@ -22,11 +22,10 @@ core/tcp.c \
 core/tcp_in.c \
 core/tcp_out.c \
 core/timers.c \
-core/ipv4/inet_chksum.c \
+core/inet_chksum.c \
 core/ipv4/icmp.c \
-core/ipv4/inet.c \
-core/ipv4/ip.c \
-core/ipv4/ip_addr.c \
+core/ipv4/ip4.c \
+core/ipv4/ip4_addr.c \
 core/ipv4/ip_frag.c \
 netif/etharp.c \
 netif/slipif.c
