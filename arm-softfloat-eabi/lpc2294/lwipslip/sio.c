@@ -14,14 +14,13 @@
 #include "uart.h"
 
 #define RXRINGSIZE 1024
-u8_t rxring[RXRINGSIZE];
-u32_t rxring_size = 0;
-u32_t rxring_head = 0;
-u32_t rxring_tail = 0;
 
+static u8_t rxring[RXRINGSIZE];
+static u32_t rxring_size = 0;
+static u32_t rxring_head = 0;
+static u32_t rxring_tail = 0;
 
-
-void sio_setuprxint(){
+void sio_setuprxint() {
 
 	printf("sio_setiprxint()\n");
 
@@ -39,12 +38,12 @@ void sio_setuprxint(){
 
 }
 
-u32_t sio_bytesinring(){
+u32_t sio_bytesinring() {
 	//printf("Ring has %d bytes waiting\n", rxring_size);
 	return rxring_size;
 }
 
-void sio_rxinthandler(){
+void sio_rxinthandler() {
 
 	u8_t icode = U1IIR;
 
@@ -52,51 +51,48 @@ void sio_rxinthandler(){
 
 	u32_t ch;
 
-	while((ch = uart1Getch()) != -1){
+	while ((ch = uart1Getch()) != -1) {
 
-			rxring[rxring_head] = (u8_t) ch; // Stash the byte
+		rxring[rxring_head] = (u8_t) ch; // Stash the byte
 
-			rxring_head++;
-			if(rxring_head == RXRINGSIZE){ // Wrap the head around
-				rxring_head = 0;
-			}
+		rxring_head++;
+		if (rxring_head == RXRINGSIZE) { // Wrap the head around
+			rxring_head = 0;
+		}
 
-			rxring_size++;
+		rxring_size++;
 	}
-
 
 	//printf("Interrupt ID reg %x, RX Ring -- head %d, tail %d\n", icode, rxring_head, rxring_tail);
 
 }
 
-
-
-sio_fd_t sio_open(u8_t devnum){
+sio_fd_t sio_open(u8_t devnum) {
 	sio_fd_t fd;
 	return fd;
 }
 
-void sio_send(u8_t c, sio_fd_t fd){
+void sio_send(u8_t c, sio_fd_t fd) {
 	uart1Putch(c);
 }
 
-u32_t sio_read(sio_fd_t fd, u8_t *data, u32_t len){
+u32_t sio_read(sio_fd_t fd, u8_t *data, u32_t len) {
 	printf("sr\n");
 
 	return 0;
 }
 
-u32_t sio_tryread(sio_fd_t fd, u8_t *data, u32_t len){
+u32_t sio_tryread(sio_fd_t fd, u8_t *data, u32_t len) {
 
 	u32_t bytesread = 0;
 	u32_t ch;
 
-	while(rxring_tail != rxring_head && bytesread < len){
+	while (rxring_tail != rxring_head && bytesread < len) {
 		ch = rxring[rxring_tail];
 		rxring_tail++;
 		rxring_size--;
 
-		if(rxring_tail == RXRINGSIZE){
+		if (rxring_tail == RXRINGSIZE) {
 			rxring_tail = 0;
 		}
 

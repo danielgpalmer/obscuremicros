@@ -53,7 +53,6 @@
 
 #include "ping.h"
 
-
 /**
  * PING_DEBUG: Enable debugging for PING.
  */
@@ -99,126 +98,108 @@ static struct raw_pcb *ping_pcb;
 #endif /* PING_USE_SOCKETS */
 
 /** Prepare a echo ICMP request */
-static void
-ping_prepare_echo( struct icmp_echo_hdr *iecho, u16_t len)
-{
-  size_t i;
-  size_t data_len = len - sizeof(struct icmp_echo_hdr);
+static void ping_prepare_echo(struct icmp_echo_hdr *iecho, u16_t len) {
+	size_t i;
+	size_t data_len = len - sizeof(struct icmp_echo_hdr);
 
-  ICMPH_TYPE_SET(iecho, ICMP_ECHO);
-  ICMPH_CODE_SET(iecho, 0);
-  iecho->chksum = 0;
-  iecho->id     = PING_ID;
-  iecho->seqno  = htons(++ping_seq_num);
+	ICMPH_TYPE_SET(iecho, ICMP_ECHO);
+	ICMPH_CODE_SET(iecho, 0);
+	iecho->chksum = 0;
+	iecho->id = PING_ID;
+	iecho->seqno = htons(++ping_seq_num);
 
-  /* fill the additional data buffer with some data */
-  for(i = 0; i < data_len; i++) {
-    ((char*)iecho)[sizeof(struct icmp_echo_hdr) + i] = (char)i;
-  }
+	/* fill the additional data buffer with some data */
+	for (i = 0; i < data_len; i++) {
+		((char*) iecho)[sizeof(struct icmp_echo_hdr) + i] = (char) i;
+	}
 
-  iecho->chksum = inet_chksum(iecho, len);
+	iecho->chksum = inet_chksum(iecho, len);
 }
-
 
 /* Ping using the raw ip */
-static u8_t
-ping_recv(void *arg, struct raw_pcb *pcb, struct pbuf *p, ip_addr_t *addr)
-{
-  struct icmp_echo_hdr *iecho;
-  LWIP_UNUSED_ARG(arg);
-  LWIP_UNUSED_ARG(pcb);
-  LWIP_UNUSED_ARG(addr);
-  LWIP_ASSERT("p != NULL", p != NULL);
+static u8_t ping_recv(void *arg, struct raw_pcb *pcb, struct pbuf *p, ip_addr_t *addr) {
+	struct icmp_echo_hdr *iecho;
+	LWIP_UNUSED_ARG(arg);
+	LWIP_UNUSED_ARG(pcb);
+	LWIP_UNUSED_ARG(addr);
+	LWIP_ASSERT("p != NULL", p != NULL);
 
-  if (pbuf_header( p, -PBUF_IP_HLEN)==0) {
-    iecho = (struct icmp_echo_hdr *)p->payload;
+	if (pbuf_header(p, -PBUF_IP_HLEN) == 0) {
+		iecho = (struct icmp_echo_hdr *) p->payload;
 
-    if ((iecho->id == PING_ID) && (iecho->seqno == htons(ping_seq_num))) {
-      LWIP_DEBUGF( PING_DEBUG, ("ping: recv "));
-      ip_addr_debug_print(PING_DEBUG, addr);
-      LWIP_DEBUGF( PING_DEBUG, (" %"U32_F" ms\n", (sys_now()-ping_time)));
+		if ((iecho->id == PING_ID) && (iecho->seqno == htons(ping_seq_num))) {
+			LWIP_DEBUGF( PING_DEBUG, ("ping: recv "));
+			ip_addr_debug_print(PING_DEBUG, addr);
+			LWIP_DEBUGF( PING_DEBUG, (" %"U32_F" ms\n", (sys_now()-ping_time)));
 
-      /* do some ping result processing */
-      PING_RESULT(1);
-      pbuf_free(p);
-      return 1; /* eat the packet */
-    }
-  }
+			/* do some ping result processing */
+			PING_RESULT(1);
+			pbuf_free(p);
+			return 1; /* eat the packet */
+		}
+	}
 
-  return 0; /* don't eat the packet */
+	return 0; /* don't eat the packet */
 }
 
-static void
-ping_send(struct raw_pcb *raw, ip_addr_t *addr)
-{
-  struct pbuf *p;
-  struct icmp_echo_hdr *iecho;
-  size_t ping_size = sizeof(struct icmp_echo_hdr) + PING_DATA_SIZE;
+static void ping_send(struct raw_pcb *raw, ip_addr_t *addr) {
+	struct pbuf *p;
+	struct icmp_echo_hdr *iecho;
+	size_t ping_size = sizeof(struct icmp_echo_hdr) + PING_DATA_SIZE;
 
-  LWIP_DEBUGF( PING_DEBUG, ("ping: send "));
-  ip_addr_debug_print(PING_DEBUG, addr);
-  LWIP_DEBUGF( PING_DEBUG, ("\n"));
-  LWIP_ASSERT("ping_size <= 0xffff", ping_size <= 0xffff);
+	LWIP_DEBUGF( PING_DEBUG, ("ping: send "));
+	ip_addr_debug_print(PING_DEBUG, addr);
+	LWIP_DEBUGF( PING_DEBUG, ("\n"));
+	LWIP_ASSERT("ping_size <= 0xffff", ping_size <= 0xffff);
 
-  p = pbuf_alloc(PBUF_IP, (u16_t)ping_size, PBUF_RAM);
-  if (!p) {
-    return;
-  }
-  if ((p->len == p->tot_len) && (p->next == NULL)) {
-    iecho = (struct icmp_echo_hdr *)p->payload;
+	p = pbuf_alloc(PBUF_IP, (u16_t) ping_size, PBUF_RAM);
+	if (!p) {
+		return;
+	}
+	if ((p->len == p->tot_len) && (p->next == NULL)) {
+		iecho = (struct icmp_echo_hdr *) p->payload;
 
-    ping_prepare_echo(iecho, (u16_t)ping_size);
+		ping_prepare_echo(iecho, (u16_t) ping_size);
 
-    raw_sendto(raw, p, addr);
-    ping_time = sys_now();
-  }
-  pbuf_free(p);
+		raw_sendto(raw, p, addr);
+		ping_time = sys_now();
+	}
+	pbuf_free(p);
 }
 
-static void
-ping_timeout(void *arg)
-{
-  struct raw_pcb *pcb = (struct raw_pcb*)arg;
-  ip_addr_t ping_target = PING_TARGET;
-  
-  LWIP_ASSERT("ping_timeout: no pcb given!", pcb != NULL);
+static void ping_timeout(void *arg) {
+	struct raw_pcb *pcb = (struct raw_pcb*) arg;
+	ip_addr_t ping_target = PING_TARGET;
 
-  ping_send(pcb, &ping_target);
+	LWIP_ASSERT("ping_timeout: no pcb given!", pcb != NULL);
 
-  sys_timeout(PING_DELAY, ping_timeout, pcb);
+	ping_send(pcb, &ping_target);
+
+	sys_timeout(PING_DELAY, ping_timeout, pcb);
 }
 
-static void
-ping_raw_init(void)
-{
-  ping_pcb = raw_new(IP_PROTO_ICMP);
-  LWIP_ASSERT("ping_pcb != NULL", ping_pcb != NULL);
+static void ping_raw_init(void) {
+	ping_pcb = raw_new(IP_PROTO_ICMP);
+	LWIP_ASSERT("ping_pcb != NULL", ping_pcb != NULL);
 
-  raw_recv(ping_pcb, ping_recv, NULL);
-  raw_bind(ping_pcb, IP_ADDR_ANY);
-  sys_timeout(PING_DELAY, ping_timeout, ping_pcb);
+	raw_recv(ping_pcb, ping_recv, NULL);
+	raw_bind(ping_pcb, IP_ADDR_ANY);
+	sys_timeout(PING_DELAY, ping_timeout, ping_pcb);
 }
 
-void
-ping_send_now()
-{
-  ip_addr_t ping_target = PING_TARGET;
-  LWIP_ASSERT("ping_pcb != NULL", ping_pcb != NULL);
-  ping_send(ping_pcb, &ping_target);
+void ping_send_now() {
+	ip_addr_t ping_target = PING_TARGET;
+	LWIP_ASSERT("ping_pcb != NULL", ping_pcb != NULL);
+	ping_send(ping_pcb, &ping_target);
 }
 
-void
-ping_send_to(ip_addr_t *addr)
-{
-  ip_addr_t ping_target = PING_TARGET;
-  LWIP_ASSERT("ping_pcb != NULL", ping_pcb != NULL);
-  ping_send(ping_pcb, addr);
+void ping_send_to(ip_addr_t *addr) {
+	ip_addr_t ping_target = PING_TARGET;
+	LWIP_ASSERT("ping_pcb != NULL", ping_pcb != NULL);
+	ping_send(ping_pcb, addr);
 }
 
-
-void
-ping_init(void)
-{
-  ping_raw_init();
+void ping_init(void) {
+	ping_raw_init();
 }
 
