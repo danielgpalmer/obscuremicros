@@ -8,7 +8,6 @@
 #include "uart.h"
 #include "net.h"
 
-
 // LWIP
 #include "lwip/inet.h"
 #include "lwip/tcp.h"
@@ -25,17 +24,20 @@
 #include "sio.h"
 #include "echo.h"
 
+#define IPADDRESS "192.168.93.2"
+#define GWADDRESS "192.168.93.1"
+
 // Our network interface structure
 static struct netif slip_netif;
 
-void net_init(){
+void net_init() {
 
 	struct ip_addr myip, gw_addr, netmask;
 
 	lwip_init();
 
-	inet_aton("192.168.69.2", &myip);
-	inet_aton("192.168.69.1", &gw_addr);
+	inet_aton(IPADDRESS, &myip);
+	inet_aton(GWADDRESS, &gw_addr);
 	inet_aton("255.255.255.255", &netmask);
 
 	if (netif_add(&slip_netif, &myip, &netmask, &gw_addr, NULL, slipif_init, ip_input) == NULL) {
@@ -49,7 +51,7 @@ void net_init(){
 
 }
 
-void net_loop(){
+void net_loop() {
 
 	//printf("net_loop()\n");
 
@@ -57,7 +59,7 @@ void net_loop(){
 
 	slipif_poll(&slip_netif);
 
-	if(i == 10){
+	if (i == 10) {
 		tcp_tmr();
 		i = 0;
 	}

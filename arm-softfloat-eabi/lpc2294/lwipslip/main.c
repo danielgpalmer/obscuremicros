@@ -8,6 +8,7 @@
 #include "interrupts.h"
 #include "net.h"
 #include "sio.h"
+#include "rtc.h"
 
 #include <lwip/inet.h>
 #include "ping.h"
@@ -56,8 +57,11 @@ void main() {
 
 	printf("hello\n");
 
+	rtc_start();
 	net_init();
 	sio_setuprxint();
+
+	struct timeval tv;
 
 	while (1) {
 
@@ -65,9 +69,15 @@ void main() {
 
 		}
 
-		printf("loop\n");
+		gettimeofday(&tv, NULL);
+		printf("loop %d\n", tv.tv_sec);
 		net_loop();
 	}
 
 }
 
+void FIQ_Routine(void) {
+	IOCLR0 = 0x40000000;
+	sio_rxinthandler();
+	IOSET0 = 0x40000000;
+}
