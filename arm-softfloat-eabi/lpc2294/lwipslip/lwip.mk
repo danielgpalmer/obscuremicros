@@ -47,7 +47,6 @@ sys_now.o: sys_now.c
 	$(CC) $(CFLAGS) $(LWIPINC) sys_now.c
 
 %.o:
-	@ echo ".compiling"
 	$(CC) $(CFLAGS) $(LWIPINC) $(<:.o=.c)
 
 clean:

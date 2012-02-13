@@ -13,7 +13,7 @@
 #include "interrupts.h"
 #include "uart.h"
 
-#define RXRINGSIZE 1024
+#define RXRINGSIZE 2048
 
 static u8_t rxring[RXRINGSIZE];
 static u32_t rxring_size = 0;

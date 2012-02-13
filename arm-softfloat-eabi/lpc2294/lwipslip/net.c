@@ -52,19 +52,6 @@ void net_init() {
 }
 
 void net_loop() {
-
-	//printf("net_loop()\n");
-
-	static int i = 0;
-
 	slipif_poll(&slip_netif);
-
-	if (i == 10) {
-		tcp_tmr();
-		i = 0;
-	}
-	else {
-		i++;
-	}
-
+	tcp_tmr();
 }

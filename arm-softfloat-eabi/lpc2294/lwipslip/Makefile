@@ -15,8 +15,8 @@ rom: main.elf
 main-extram.bin: main-extram.elf
 	$(CP) $(CPFLAGS) main-extram.elf main-extram.bin
 
-main-extram.elf: ldscript-extram.x crt-ram.o uart.o main.o syscalls.o sio.o net.o echo.o exceptions.o interrupts.o ping.o core.o liblwip.a
-	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o syscalls.o uart.o  main.o sio.o net.o echo.o exceptions.o interrupts.o ping.o rtc.o core.o ./liblwip.a
+main-extram.elf: ldscript-extram.x crt-ram.o uart.o main.o syscalls.o sio.o net.o echo.o exceptions.o interrupts.o core.o liblwip.a
+	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o syscalls.o uart.o  main.o sio.o net.o echo.o exceptions.o interrupts.o rtc.o core.o ./liblwip.a
 
 main.elf: crt.o uart.o main.o syscalls.o printf.o
 	@ echo "..linking rom version"
@@ -40,9 +40,6 @@ net.o: net.c
 
 echo.o: echo.c
 	$(CC) $(CFLAGS) $(LWIPCFLAGS) echo.c
-
-ping.o: ping.c
-	$(CC) $(CFLAGS) $(LWIPCFLAGS) ping.c
 	
 main.o: main.c
 	$(CC) $(CFLAGS) $(LWIPCFLAGS) main.c
@@ -53,7 +50,8 @@ liblwip.a:
 	$(MAKE) -f lwip.mk
 
 clean:	
-	rm -f *.o
+	rm -f *.o *.elf *.bin
+
 debug: main-extram.bin main-extram.elf
 	$(GDB)
 

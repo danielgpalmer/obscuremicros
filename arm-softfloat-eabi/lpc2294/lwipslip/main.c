@@ -11,7 +11,6 @@
 #include "rtc.h"
 
 #include <lwip/inet.h>
-#include "ping.h"
 #include "core.h"
 
 void starttimer() {
@@ -51,17 +50,13 @@ void main() {
 	IODIR0 |= 0x60000000; // P0.29 & P0.30 output
 	IOSET0 = 0x00000000;
 
-	//bring UART0 up
+	//bring UART0 and UART1 up
 	uart0Init(UART_BAUD(115200), UART_8N1, UART_FIFO_8);
 	uart1Init(UART_BAUD(115200), UART_8N1, UART_FIFO_14);
-
-	printf("hello\n");
 
 	rtc_start();
 	net_init();
 	sio_setuprxint();
-
-	struct timeval tv;
 
 	while (1) {
 
@@ -69,8 +64,6 @@ void main() {
 
 		}
 
-		gettimeofday(&tv, NULL);
-		printf("loop %d\n", tv.tv_sec);
 		net_loop();
 	}
 
