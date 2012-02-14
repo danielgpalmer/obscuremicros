@@ -1,6 +1,7 @@
 include ./common.mk
 
 LWIPCFLAGS = -I ./lwip/src/include/ -I ./lwip/src/include/ipv4/ -I./lwip/src/include/ipv6/
+FATFSCFLAGS = -I ./fatfs/src/
 
 all: main-extram.bin
 
@@ -15,7 +16,7 @@ rom: main.elf
 main-extram.bin: main-extram.elf
 	$(CP) $(CPFLAGS) main-extram.elf main-extram.bin
 
-main-extram.elf: ldscript-extram.x crt-ram.o uart.o main.o syscalls.o sio.o net.o echo.o exceptions.o interrupts.o core.o liblwip.a
+main-extram.elf: ldscript-extram.x crt-ram.o uart.o main.o syscalls.o sio.o net.o echo.o exceptions.o interrupts.o core.o liblwip.a libfatfs.a
 	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o syscalls.o uart.o  main.o sio.o net.o echo.o exceptions.o interrupts.o rtc.o core.o ./liblwip.a
 
 main.elf: crt.o uart.o main.o syscalls.o printf.o
@@ -42,12 +43,15 @@ echo.o: echo.c
 	$(CC) $(CFLAGS) $(LWIPCFLAGS) echo.c
 	
 main.o: main.c
-	$(CC) $(CFLAGS) $(LWIPCFLAGS) main.c
+	$(CC) $(CFLAGS) $(LWIPCFLAGS) $(FATFSCFLAGS) main.c
 
-.PHONY: clean liblwip.a debug
+.PHONY: clean liblwip.a libfatfs.a debug
 
 liblwip.a:
 	$(MAKE) -f lwip.mk
+
+libfatfs.a:
+	$(MAKE) -f fatfs.mk
 
 clean:	
 	rm -f *.o *.elf *.bin

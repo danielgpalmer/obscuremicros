@@ -69,7 +69,7 @@ typedef u32_t mem_ptr_t;
 #include <stdio.h>
 
 /* Plaform specific diagnostic output */
-#define LWIP_PLATFORM_DIAG(...) printf(__VA_ARGS__)
+#define LWIP_PLATFORM_DIAG(args) printf args
 
 //#define LWIP_PLATFORM_ASSERT(msg, asertion) do { if(!(assertion)) uart_printf(msg); } while(0)
 #define LWIP_PLATFORM_ASSERT(msg) printf(msg)
