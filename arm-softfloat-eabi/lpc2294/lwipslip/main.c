@@ -60,7 +60,7 @@ void main() {
 
 	while (1) {
 
-		for (int i = 0; i < 50000; i++) {
+		for (int i = 0; i < 500; i++) {
 
 		}
 

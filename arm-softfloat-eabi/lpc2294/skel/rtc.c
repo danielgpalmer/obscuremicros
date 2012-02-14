@@ -52,6 +52,7 @@ void rtc_gettimeofday(struct timeval *tv) {
 	struct tm tm;
 	rtc_gettime(&tm);
 	tv->tv_sec = mktime(&tm);
+	tv->tv_usec = CTC * (1000000 / (2 ^ 15));
 }
 
 void rtc_dumpregisters() {

@@ -52,6 +52,14 @@ void net_init() {
 }
 
 void net_loop() {
+
+	static int loop = 0;
 	slipif_poll(&slip_netif);
-	tcp_tmr();
+
+	loop++;
+	if (loop == 10) {
+		tcp_tmr();
+		loop = 0;
+	}
+
 }

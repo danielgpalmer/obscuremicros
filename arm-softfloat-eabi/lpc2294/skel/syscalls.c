@@ -18,12 +18,14 @@ int _gettimeofday(struct timeval *tv, void* tz) {
 }
 
 int _write(int file, char * ptr, int len) {
+	unsigned charswritten = 0;
 	if (file == STDOUT_FILENO) {
 		//int pos = 0;
 		for (int pos = 0; pos < len; pos++) {
 			uart_putc(*ptr++);
+			charswritten++;
 		}
-		return 0;
+		return charswritten;
 	}
 
 	return 0;
