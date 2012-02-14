@@ -57,7 +57,7 @@ void net_loop() {
 	slipif_poll(&slip_netif);
 
 	loop++;
-	if (loop == 10) {
+	if (loop == 100) {
 		tcp_tmr();
 		loop = 0;
 	}

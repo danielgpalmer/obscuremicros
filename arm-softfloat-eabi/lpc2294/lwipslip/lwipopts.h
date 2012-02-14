@@ -36,7 +36,7 @@
 //#define TCP_KEEPINTVL_DEFAULT       2000UL  // Default Time between KEEPALIVE probes in milliseconds
 //#define TCP_KEEPCNT_DEFAULT         9U      // Default Counter for KEEPALIVE probes
 
-#define LWIP_DEBUG                  1
+#define LWIP_DEBUG                  LWIP_DBG_OFF
 
 #define ETHARP_DEBUG                LWIP_DBG_OFF
 #define NETIF_DEBUG                 LWIP_DBG_OFF
@@ -52,7 +52,7 @@
 #define MEM_DEBUG                   LWIP_DBG_OFF
 #define MEMP_DEBUG                  LWIP_DBG_OFF
 #define SYS_DEBUG                   LWIP_DBG_OFF
-#define TCP_DEBUG                   LWIP_DBG_ON
+#define TCP_DEBUG                   LWIP_DBG_OFF
 #define TCP_INPUT_DEBUG             LWIP_DBG_OFF
 #define TCP_OUTPUT_DEBUG            LWIP_DBG_OFF
 #define TCP_RTO_DEBUG               LWIP_DBG_OFF

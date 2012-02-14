@@ -1,0 +1,21 @@
+What is this?
+
+This is the skeleton project + lwip (with an TCP echo server).
+
+How do I use it?
+
+Uart 1 should be connected to your computer via a serial port or USB->UART device like the FT232 or CP210x.
+On linux you can then setup SLIP networking like this:
+
+slattach -L -p slip -s 115200 /dev/ttyUSB0
+ifconfig sl0 192.168.93.1 pointopoint 192.168.93.2 up
+
+This will create a SLIP interface with your chosen serial port (replace /dev/ttyUSB0 with the serial port you
+want to use) and then setup point to point IP networking on top of that. The options given to slattach are 
+important. -L tells slattach not to care about carrier detect etc, -p slip tells it to use plain old SLIP
+and not the default CSLIP that lwip doesn't understand and finally -s 115200 is the baud rate.
+
+What can I do with it?
+
+There is a TCP echo service running on port 7. If you connect with $telnet 192.168.93.2 7; it will echo every
+line you send it. You can also ping it.
