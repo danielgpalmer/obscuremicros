@@ -12,3 +12,5 @@ AFLAGS  = -mapcs-32
 LFLAGS  =  -nostartfiles  -Wl,-Map=output.map
 CPFLAGS = -O binary
 ODFLAGS = -x --syms
+
+FATFSCFLAGS = -I ./fatfs/src/

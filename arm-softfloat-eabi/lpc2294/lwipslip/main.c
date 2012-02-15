@@ -13,6 +13,8 @@
 #include <lwip/inet.h>
 #include "core.h"
 
+#include "ff.h"
+
 void starttimer() {
 
 	printf("Starting timer0..\n");
@@ -39,6 +41,21 @@ void starttimer() {
 	dumpInterruptRegisters();
 }
 
+static void initfs() {
+	FRESULT f_err_code;
+	static FATFS FATFS_Obj;
+	char buffer[256];
+	f_err_code = f_mount(0, &FATFS_Obj);
+	printf("Mount %d\n", f_err_code);
+	f_err_code = f_chdir("/");
+	printf("chdir %d\n", f_err_code);
+	f_err_code = f_getcwd(buffer, sizeof(buffer));
+	printf("%d cwd %s\n", f_err_code, buffer);
+	FIL file;
+	f_err_code = f_open(&file, "/text.txt", FA_READ | FA_OPEN_EXISTING);
+	printf("f_open %d\n", f_err_code);
+}
+
 void main() {
 
 	VICIntSelect = 0;
@@ -55,6 +72,7 @@ void main() {
 	uart1Init(UART_BAUD(115200), UART_8N1, UART_FIFO_14);
 
 	rtc_start();
+	initfs();
 	net_init();
 	sio_setuprxint();
 
