@@ -7,8 +7,8 @@
 #define LWIP_NETCONN	    0
 #define LWIP_RAW			1
 #define LWIP_HAVE_SLIPIF	1
-#define SLIP_BLOCK     		0
-#define SLIP_DONTBLOCK 		1
+
+#define SLIP_RX_FROM_ISR	1
 #define SLIP_DEBUG                  LWIP_DBG_OFF
 
 #define TCP_QUEUE_OOSEQ         0

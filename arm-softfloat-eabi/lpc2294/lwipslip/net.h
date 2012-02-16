@@ -10,5 +10,7 @@
 
 void net_init();
 void net_loop();
+void sio_setuprxint();
+void sio_rxinthandler();
 
 #endif /* NET_H_ */

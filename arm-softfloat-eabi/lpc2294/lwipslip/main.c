@@ -7,7 +7,6 @@
 #include "exceptions.h"
 #include "interrupts.h"
 #include "net.h"
-#include "sio.h"
 #include "rtc.h"
 
 #include <lwip/inet.h>
@@ -54,6 +53,9 @@ static void initfs() {
 	FIL file;
 	f_err_code = f_open(&file, "/text.txt", FA_READ | FA_OPEN_EXISTING);
 	printf("f_open %d\n", f_err_code);
+
+	f_gets(buffer, 256, &file);
+	printf("read %s\n", buffer);
 }
 
 void main() {

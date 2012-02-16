@@ -8,6 +8,9 @@
 #ifndef RTC_H_
 #define RTC_H_
 
+#include <time.h>
+#include <sys/time.h>
+
 #define RTC_ILR_RTCCIF 1
 #define RTC_ILR_RTCALF (1 << 1)
 
@@ -34,7 +37,7 @@
 #define RTC_AMT_AMRYEAR	(1 << 7)
 
 void rtc_start();
-void rtc_gettime(struct tm* tm);
+void rtc_gettime(struct tm *t);
 void rtc_gettimeofday(struct timeval *tv);
 void rtc_dumpregisters();
 
