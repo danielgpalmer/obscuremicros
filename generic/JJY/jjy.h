@@ -8,6 +8,8 @@
 #ifndef JJY_H_
 #define JJY_H_
 
+#include <time.h>
+
 #define SAMPLESPERSECOND 10
 
 #define ZERO_ACTIVE (SAMPLESPERSECOND * 0.8)
@@ -22,5 +24,6 @@
 #define NUMMARKS 7
 
 void jjy_addsample(unsigned sample);
+struct tm* jjy_gettime();
 
 #endif /* JJY_H_ */

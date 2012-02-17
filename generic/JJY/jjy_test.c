@@ -62,7 +62,8 @@ int main(int argc, char *argv[]) {
 
 	time_t now = time(NULL);
 	struct tm *ltime = localtime(&now);
-	printf("Telling the JJY code that its %s\n", asctime(ltime));
+	ltime->tm_sec = 0;
+	printf("Telling the JJY code that that the time is %s", asctime(ltime));
 
 	// minutes
 	int minutes = ltime->tm_min;
@@ -91,7 +92,6 @@ int main(int argc, char *argv[]) {
 
 	// day of year
 	int doy = ltime->tm_yday;
-	printf("-- day of year %d--\n", doy);
 	jjy_mark();
 	jjy_zero();
 	jjy_zero();
@@ -123,7 +123,6 @@ int main(int argc, char *argv[]) {
 
 	// year
 	int year = ltime->tm_year % 100;
-	printf("-- year %d --\n", year);
 	BITFORVALUE(year, 80);
 	BITFORVALUE(year, 40);
 	BITFORVALUE(year, 20);
@@ -135,7 +134,6 @@ int main(int argc, char *argv[]) {
 
 	// day of week
 	int dow = ltime->tm_wday;
-	printf("-- day of week %d --\n", dow);
 	jjy_mark();
 	BITFORVALUE(dow, 4);
 	BITFORVALUE(dow, 2);
@@ -153,6 +151,8 @@ int main(int argc, char *argv[]) {
 	jjy_mark();
 
 	printf("Done, %d bits sent\n", bitssent);
+
+	printf("According to JJY code the time is %s", asctime(jjy_gettime()));
 
 }
 
