@@ -112,6 +112,11 @@ void jjy_addsample(unsigned sample) {
 }
 
 struct tm* jjy_gettime() {
+
+	if (!timeready) {
+		return NULL;
+	}
+
 	int dom;
 	static struct tm now;
 	memset(&now, 0, sizeof(now));
