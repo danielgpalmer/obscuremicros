@@ -90,17 +90,20 @@ void sio_setuprxint() {
 }
 
 void sio_rxinthandler() {
-	u8_t icode = U1IIR;
+	u8_t icode = U1IIR; // This has to happen to clear the interrupt
 	u8_t pos = 0;
 	int ch;
 	while ((ch = uart1Getch()) != -1) {
 		rxbuffer[pos] = (u8_t) ch;
 		pos++;
+		if (pos == BUFFERSIZE) {
+			printf("RX buffer overflow!!\n");
+			break;
+		}
 	}
 	if (pos > 0) {
 		slipif_received_bytes(&slip_netif, rxbuffer, pos);
 	}
-
 }
 
 sio_fd_t sio_open(u8_t devnum) {

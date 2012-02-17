@@ -56,6 +56,20 @@ static void initfs() {
 
 	f_gets(buffer, 256, &file);
 	printf("read %s\n", buffer);
+
+	printf("listing \n");
+	DIR dir;
+	FILINFO fileinfo;
+	f_err_code = f_opendir(&dir, "/");
+	printf("%d\n", f_err_code);
+	while (1) {
+		f_err_code = f_readdir(&dir, &fileinfo);
+		if (fileinfo.fname[0] == NULL) {
+			break;
+		}
+		printf("%d - %s\n", f_err_code, fileinfo.fname);
+	}
+
 }
 
 void main() {

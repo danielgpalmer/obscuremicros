@@ -19,3 +19,10 @@ What can I do with it?
 
 There is a TCP echo service running on port 7. If you connect with $telnet 192.168.93.2 7; it will echo every
 line you send it. You can also ping it.
+
+
+How to write flash in openocd
+
+halt
+flash erase_address unlock 0x80000000 0x00400000
+flash write_bank 1 ./lwipslip/flashfs.bin 0x0
