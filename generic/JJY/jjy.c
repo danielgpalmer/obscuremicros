@@ -14,12 +14,16 @@
 
 #define SIZEOFARRAY(array) (sizeof(array)/sizeof(array[0]))
 
+// sanity state
 static bool synced = true;
-static int marks = 0;
+static int bitsuntilnextmark;
+//
+
+// Data
 static uint16_t bits = 0;
 static bool timeready = false;
-
 static int minutes, hours, doy, year, dow;
+//
 
 static bool jjy_isleapyear(int year) {
 	return (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
@@ -45,9 +49,20 @@ static int jjy_doytomonth(int day, bool leap, int* dayofmonth) {
 
 static void jjy_mark() {
 
+	if (bitsuntilnextmark != 0) {
+		printf("Still waiting on %d bits\n", bitsuntilnextmark);
+	}
+
+	static int marks = 0;
+	static bool alt = false;
+
 	switch (marks) {
 		case 1:
 			minutes = (bits & 0xF) + ((bits >> 5) * 10);
+			if (minutes == 15 || minutes == 45) {
+				printf("Alt\n");
+				alt = true;
+			}
 			break;
 		case 2:
 			hours = (bits & 0xF) + ((bits >> 5) * 10);
@@ -59,18 +74,63 @@ static void jjy_mark() {
 			doy += ((bits >> 5) & 0xF);
 			break;
 		case 5:
-			year = ((bits & 0xF) + (((bits >> 4) & 0xF) * 10)) + 100;
+			if (alt) {
+
+			}
+			else {
+				year = ((bits & 0xF) + (((bits >> 4) & 0xF) * 10)) + 100;
+			}
 			break;
 		case 6:
-			dow = (bits >> 6) % 0x7;
+			if (alt) {
+
+			}
+			else {
+				dow = (bits >> 6) & 0x7;
+			}
 			timeready = true;
 			break;
 		default:
 			break;
 	}
 
+//#ifdef DEBUG
+	printf("MARK - Collected bits 0x%03x\n", bits);
+
+	if (marks == 0) {
+		bitsuntilnextmark = 8; // The first block has 8 bits
+	}
+	else if (marks == 6) {
+		bitsuntilnextmark = 0; // A mark should come right after the last mark
+	}
+	else {
+		bitsuntilnextmark = 9; // All other blocks are 9 bits
+	}
+
+	marks++;
+	if (marks == 7) {
+		marks = 0;
+		alt = false;
+	}
+
 	bits = 0;
 
+}
+
+static void jjy_bit(bool high) {
+	if (bitsuntilnextmark == 0) {
+		printf("expecting mark got bit!\n");
+		return;
+	}
+
+	if (high) {
+		bits = (bits << 1) | 1;
+	}
+	else {
+		bits = (bits << 1);
+	}
+
+	bitsuntilnextmark--;
 }
 
 void jjy_addsample(unsigned sample) {
@@ -95,14 +155,13 @@ void jjy_addsample(unsigned sample) {
 	if (synced) {
 		if (samples == SAMPLESPERSECOND) {
 			if (highs == ZERO_ACTIVE && lows == ZERO_LOW) {
-				bits = (bits << 1);
+				jjy_bit(false);
 			}
 			else if (highs == ONE_ACTIVE && lows == ONE_LOW) {
-				bits = (bits << 1) | 1;
+				jjy_bit(true);
 			}
 			else if (highs == MARK_ACTIVE && lows == MARK_LOW) {
 				jjy_mark();
-				marks++;
 			}
 			highs = 0;
 			lows = 0;
@@ -129,4 +188,8 @@ struct tm* jjy_gettime() {
 	now.tm_yday = doy;
 	now.tm_year = year;
 	return &now;
+}
+
+char* jjy_getcallsign() {
+	return NULL;
 }

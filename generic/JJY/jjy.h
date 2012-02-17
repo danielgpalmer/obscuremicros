@@ -25,5 +25,6 @@
 
 void jjy_addsample(unsigned sample);
 struct tm* jjy_gettime();
+char* jjy_getcallsign();
 
 #endif /* JJY_H_ */
