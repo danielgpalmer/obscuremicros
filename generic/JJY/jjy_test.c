@@ -10,9 +10,11 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <stdint.h>
 
-static char* callsign = "JJY";
 static int bitssent = 0;
+static uint16_t bitchain = 0;
 
 static void jjy_zero() {
 
@@ -23,6 +25,7 @@ static void jjy_zero() {
 		jjy_addsample(0);
 	}
 
+	bitchain = (bitchain << 1);
 	bitssent++;
 
 }
@@ -36,6 +39,7 @@ static void jjy_one() {
 		jjy_addsample(0);
 	}
 
+	bitchain = (bitchain << 1) | 1;
 	bitssent++;
 }
 
@@ -48,6 +52,7 @@ static void jjy_mark() {
 		jjy_addsample(0);
 	}
 
+	bitchain = 0;
 	bitssent++;
 
 }
@@ -72,7 +77,18 @@ static void jjy_callsignone() {
 										jjy_zero(); \
 									}
 
+static bool evenparity(uint16_t data) {
+	int evenbits = 0;
+	for (int i = 0; i < (sizeof(data) * 8); i++) {
+		evenbits += (data >> i) & 1;
+	}
+	return (evenbits & 1);
+}
+
 static void sendtime(struct tm *ltime) {
+
+	bool hourpar, minutepar;
+
 	bitssent = 0;
 	ltime->tm_sec = 0;
 	printf("Telling the JJY code that that the time is %s", asctime(ltime));
@@ -88,6 +104,7 @@ static void sendtime(struct tm *ltime) {
 	BITFORVALUE(minutes, 4);
 	BITFORVALUE(minutes, 2);
 	BITFORVALUE(minutes, 1);
+	minutepar = evenparity(bitchain);
 
 	// hours
 	int hours = ltime->tm_hour;
@@ -101,7 +118,7 @@ static void sendtime(struct tm *ltime) {
 	BITFORVALUE(hours, 4);
 	BITFORVALUE(hours, 2);
 	BITFORVALUE(hours, 1);
-
+	hourpar = evenparity(bitchain);
 	// day of year
 	int doy = ltime->tm_yday;
 	jjy_mark();
@@ -123,8 +140,18 @@ static void sendtime(struct tm *ltime) {
 	jjy_zero();
 
 	// parity
-	jjy_zero();
-	jjy_zero();
+	if (hourpar) {
+		jjy_one();
+	}
+	else {
+		jjy_zero();
+	}
+	if (minutepar) {
+		jjy_one();
+	}
+	else {
+		jjy_zero();
+	}
 
 	// change to summer time
 	jjy_zero();
