@@ -31,7 +31,7 @@ static void jjy_mark() {
 			doy = ((bits & 0xF) * 10) + ((bits >> 5) * 100);
 			break;
 		case 4:
-			doy += ((bits >> 5) % 0xF);
+			doy += ((bits >> 5) & 0xF);
 			break;
 		case 5:
 			year = (bits & 0xF) + (((bits >> 4) & 0xF) * 10);
