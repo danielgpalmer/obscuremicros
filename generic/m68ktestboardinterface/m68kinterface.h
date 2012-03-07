@@ -11,11 +11,14 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-void m68kint_clock();
 
 typedef enum {
-	IDLE, READ, WRITE, ENDTRANSCTION
+	IDLE, READ, WRITE, ENDTRANSCTION, RESET
 } interfacestate_t;
+
+typedef enum {
+	WORD, LOWERBYTE, UPPERBYTE
+} transactionrange_t;
 
 typedef struct {
 	bool addressstrobe;
@@ -32,5 +35,11 @@ typedef struct {
 	bool busreq;
 	uint8_t ipl;
 } pinsout_t;
+
+void m68kint_clock();
+void m68kint_reset();
+void m68kint_interrupt();
+void m68kint_busreq();
+interfacestate_t m68kint_getstate();
 
 #endif /* M68KINTERFACE_H_ */
