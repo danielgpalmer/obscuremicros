@@ -14,15 +14,19 @@
 void m68kint_clock();
 
 typedef enum {
-	IDLE
+	IDLE, READ, WRITE, ENDTRANSCTION
 } interfacestate_t;
 
 typedef struct {
+	bool addressstrobe;
 	uint8_t function;
 	bool readnotwrite;
+	bool upperdatastrobe;
+	bool lowerdatastrobe;
 } pinsin_t;
 
 typedef struct {
+	bool dtack;
 	bool reset;
 	bool halt;
 	bool busreq;

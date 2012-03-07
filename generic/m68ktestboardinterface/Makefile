@@ -7,3 +7,8 @@ m68kinterface.o: m68kinterface.c m68kinterface.h stubs.h
 
 testharness: testharness.c m68kinterface.o
 	$(CC) $(CLAGS) testharness.c -o testharness m68kinterface.o
+
+.PHONY: clean
+
+clean:
+	rm -f testharness *.o
