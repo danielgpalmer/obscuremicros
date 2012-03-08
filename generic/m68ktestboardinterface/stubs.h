@@ -19,5 +19,6 @@ void setdata(uint16_t data);
 void getpins(pinsin_t* pinsin);
 void setpins(pinsout_t* pinsout);
 void setclock(bool clock);
+void busgranted();
 
 #endif /* STUBS_H_ */

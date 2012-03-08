@@ -15,6 +15,7 @@ static transactionrange_t range = WORD;
 static pinsin_t pinsin;
 static pinsout_t pinsout;
 static uint32_t address;
+static
 
 static int cyclecounter = 0;
 
@@ -36,7 +37,8 @@ void m68kint_interrupt() {
 }
 
 void m68kint_busreq() {
-
+	pinsout.busreq = false;
+	pushpins();
 }
 
 void m68kint_clock() {
