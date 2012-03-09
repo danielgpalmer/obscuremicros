@@ -1,0 +1,1 @@
+vhdtdtfi -prj m68kintglue -o /home/daniel/coding/obscuremicros/hardware/m68kintglue/shiftreg.vhi -module shiftreg -template /home/daniel/xilinx/ise134/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work shiftreg.vhd 

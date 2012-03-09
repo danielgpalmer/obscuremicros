@@ -1,0 +1,3 @@
+vhdl work "shiftreg.vhd"
+vhdl work "toplevel.vhd"
+vhdl work "testbench.vhd"

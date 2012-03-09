@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/daniel/coding/obscuremicros/hardware/m68kintglue/testbench_isim_beh.exe" -prj "/home/daniel/coding/obscuremicros/hardware/m68kintglue/testbench_beh.prj" "work.testbench" 

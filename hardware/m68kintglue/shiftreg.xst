@@ -1,0 +1,5 @@
+set -tmpdir "/home/daniel/coding/obscuremicros/hardware/m68kintglue/xst/projnav.tmp"
+set -xsthdpdir "/home/daniel/coding/obscuremicros/hardware/m68kintglue/xst"
+elaborate
+-ifn shiftreg.prj
+-ifmt mixed

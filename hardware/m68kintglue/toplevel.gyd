@@ -1,0 +1,48 @@
+Pin Freeze File:  version O.87xd
+
+2C64A44VQ XC2C64A-7-VQ44
+address<0> S:PIN19
+address<1> S:PIN20
+address<2> S:PIN21
+address<3> S:PIN22
+address<4> S:PIN23
+address<5> S:PIN27
+address<6> S:PIN28
+address<7> S:PIN29
+address<8> S:PIN30
+address<9> S:PIN31
+address<10> S:PIN32
+address<11> S:PIN33
+address<12> S:PIN34
+address<13> S:PIN36
+address<14> S:PIN37
+address<15> S:PIN38
+address<16> S:PIN16
+address<17> S:PIN14
+address<18> S:PIN13
+address<19> S:PIN12
+address<20> S:PIN8
+address<21> S:PIN6
+address<22> S:PIN5
+address<23> S:PIN3
+addressstrobe S:PIN2
+clock S:PIN42
+serialout<0> S:PIN41
+serialout<1> S:PIN40
+serialout<2> S:PIN39
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_4 Inst_shiftregh/index<2> Inst_shiftregh/index<1> Inst_shiftregh/index<0> Inst_shiftreg/index<2>
+		 Inst_shiftreg/index<1>
+PARTITION FB1_11 Inst_shiftregm/index<2> Inst_shiftregm/index<1> Inst_shiftregm/index<0> Inst_shiftreg/index<0>
+		 Inst_shiftregm/Mtrien_output Inst_shiftregh/Mtrien_output
+PARTITION FB2_1 serialout<2> serialout<1>
+PARTITION FB2_5 serialout<0>
+PARTITION FB2_12 Inst_shiftreg/Mtrien_output
+
+
+
+

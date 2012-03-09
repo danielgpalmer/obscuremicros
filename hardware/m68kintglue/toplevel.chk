@@ -1,0 +1,87 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+----------------- B l o c k 0 ------------------
+PLApt(18/56), Fanin(11/38), Clk(0/3), Bct(1/4), Pin(8/8), Mcell(11/16)
+PLApts[18/56] 8 12 2 5 0 20 24 3 17 32 36 4 29 () () () () () () () () () () () () 23 () () () () () () () () 
+              () () () () () () () () () () () () 35 () () 11 () () 1 () () 1
+Fanins[11] Inst_shiftreg/index<0>.n Inst_shiftreg/index<1>.n Inst_shiftreg/index<2>.n 
+           Inst_shiftregh/index<0>.n Inst_shiftregh/index<1>.n Inst_shiftregh/index<2>.n 
+           Inst_shiftregm/index<0>.n Inst_shiftregm/index<1>.n Inst_shiftregm/index<2>.n addressstrobe.p 
+           clock.p
+clk[0] 
+CTC: (pt=0) clock ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[19] [address<10>(32)] [address<11>(33)] [address<12>(34)] [address<13>(36)] [address<14>(37)]  
+           [address<15>(38)] [address<8>(30)] [address<9>(31)] [Inst_shiftregh/Mtrien_output(60)]  
+           [Inst_shiftregm/Mtrien_output(59)] [Inst_shiftreg/index<0>(58)] [Inst_shiftreg/index<1>(52)]  
+           [Inst_shiftreg/index<2>(51)] [Inst_shiftregh/index<0>(50)] [Inst_shiftregh/index<1>(49)]  
+           [Inst_shiftregh/index<2>(48)] [Inst_shiftregm/index<0>(57)] [Inst_shiftregm/index<1>(56)]  
+           [Inst_shiftregm/index<2>(55)] 
+Signal[19] [ 0: address<15>(38)  ][ 1: address<14>(37)  ][ 2: address<13>(36)  ][ 3:  
+           Inst_shiftregh/index<2>(48)  ][ 4: Inst_shiftregh/index<1>(49)  ][ 5: Inst_shiftregh/index<0>(50)  
+            ][ 6: Inst_shiftreg/index<2>(51)  ][ 7: Inst_shiftreg/index<1>(52)  ][ 8: address<12>(34)  ][ 9:  
+           address<11>(33)  ][ 10: Inst_shiftregm/index<2>(55) address<10>(32)  ][ 11:  
+           Inst_shiftregm/index<1>(56) address<9>(31)  ][ 12: Inst_shiftregm/index<0>(57) address<8>(30)  ] 
+           [ 13: Inst_shiftreg/index<0>(58)  ][ 14: Inst_shiftregm/Mtrien_output(59)  ][ 15:  
+           Inst_shiftregh/Mtrien_output(60)  ]
+----------------- B l o c k 1 ------------------
+PLApt(28/56), Fanin(37/38), Clk(0/3), Bct(2/4), Pin(6/9), Mcell(4/16)
+PLApts[28/28] 6 7 9 10 0 13 14 42 15 16 30 31 43 33 34 37 38 39 40 18 19 41 21 22 25 26 27 28
+Fanins[37] Inst_shiftreg/Mtrien_output.n Inst_shiftreg/index<0>.n Inst_shiftreg/index<1>.n 
+           Inst_shiftreg/index<2>.n Inst_shiftregh/Mtrien_output.n Inst_shiftregh/index<0>.n 
+           Inst_shiftregh/index<1>.n Inst_shiftregh/index<2>.n Inst_shiftregm/Mtrien_output.n 
+           Inst_shiftregm/index<0>.n Inst_shiftregm/index<1>.n Inst_shiftregm/index<2>.n address<0>.p 
+           address<10>.p address<11>.p address<12>.p address<13>.p address<14>.p address<15>.p address<16>.p 
+           address<17>.p address<18>.p address<19>.p address<1>.p address<20>.p address<21>.p address<22>.p 
+           address<23>.p address<2>.p address<3>.p address<4>.p address<5>.p address<6>.p address<7>.p 
+           address<8>.p address<9>.p clock.p
+clk[0] 
+CTC: (pt=0) clock ;
+CTR: 
+CTS: 
+CTE: (pt=42) Inst_shiftregh/Mtrien_output' ;
+vref: [0]
+Signal[ 7] [serialout<0>(65),serialout<0>(41)] [serialout<1>(62),serialout<1>(40)]  
+           [serialout<2>(61),serialout<2>(39)] [address<23>(3)] [clock(42)]  
+           [Inst_shiftreg/Mtrien_output,addressstrobe(2)] 
+Signal[ 7] [ 0: serialout<2>(61) serialout<2>(39)  ][ 1: serialout<1>(62) serialout<1>(40)  ][ 2:  ][ 3:  ] 
+           [ 4: serialout<0>(65) serialout<0>(41)  ][ 5: clock(42)  ][ 6: (43)  ][ 7: (44)  ][ 8:  ][ 9: (1)  
+            ][ 10:  ][ 11: Inst_shiftreg/Mtrien_output(72) addressstrobe(2)  ][ 12: address<23>(3)  ][ 13:  ] 
+           [ 14:  ][ 15:  ]
+----------------- B l o c k 2 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(8/9), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 8] [address<0>(19)] [address<1>(20)] [address<2>(21)] [address<3>(22)] [address<4>(23)]  
+           [address<5>(27)] [address<6>(28)] [address<7>(29)] 
+Signal[ 8] [ 0: address<7>(29)  ][ 1: address<6>(28)  ][ 2: address<5>(27)  ][ 3:  ][ 4:  ][ 5:  
+           address<4>(23)  ][ 6:  ][ 7:  ][ 8:  ][ 9: address<3>(22)  ][ 10: address<2>(21)  ][ 11:  
+           address<1>(20)  ][ 12:  ][ 13: address<0>(19)  ][ 14: (18)  ][ 15:  ]
+----------------- B l o c k 3 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(7/7), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 7] [address<16>(16)] [address<17>(14)] [address<18>(13)] [address<19>(12)] [address<20>(8)]  
+           [address<21>(6)] [address<22>(5)] 
+Signal[ 7] [ 0: address<22>(5)  ][ 1: address<21>(6)  ][ 2:  ][ 3:  ][ 4:  ][ 5:  ][ 6: address<20>(8)  ] 
+           [ 7:  ][ 8:  ][ 9:  ][ 10: address<19>(12)  ][ 11:  ][ 12: address<18>(13)  ][ 13:  
+           address<17>(14)  ][ 14: address<16>(16)  ][ 15:  ]

@@ -1,0 +1,253 @@
+MDF Database:  version 1.0
+MDF_INFO | toplevel | XC2C64A-7-VQ44
+MACROCELL | 1 | 4 | serialout<0>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 12 | address<7>  | Inst_shiftreg/index<2>  | Inst_shiftreg/index<1>  | Inst_shiftreg/index<0>  | address<6>  | address<5>  | address<4>  | address<3>  | address<2>  | address<1>  | address<0>  | Inst_shiftreg/Mtrien_output
+INPUTMC | 4 | 0 | 6 | 0 | 7 | 0 | 13 | 1 | 11
+INPUTP | 8 | 73 | 72 | 71 | 65 | 61 | 60 | 59 | 56
+LCT | 1 | 2 | Internal_Name
+EQ | 18 | 
+   !serialout<0> := !address<7> & Inst_shiftreg/index<2> & 
+	Inst_shiftreg/index<1> & Inst_shiftreg/index<0>
+	# Inst_shiftreg/index<2> & Inst_shiftreg/index<1> & 
+	!Inst_shiftreg/index<0> & !address<6>
+	# Inst_shiftreg/index<2> & !Inst_shiftreg/index<1> & 
+	Inst_shiftreg/index<0> & !address<5>
+	# Inst_shiftreg/index<2> & !Inst_shiftreg/index<1> & 
+	!Inst_shiftreg/index<0> & !address<4>
+	# !Inst_shiftreg/index<2> & Inst_shiftreg/index<1> & 
+	Inst_shiftreg/index<0> & !address<3>
+	# !Inst_shiftreg/index<2> & Inst_shiftreg/index<1> & 
+	!Inst_shiftreg/index<0> & !address<2>
+	# !Inst_shiftreg/index<2> & !Inst_shiftreg/index<1> & 
+	Inst_shiftreg/index<0> & !address<1>
+	# !Inst_shiftreg/index<2> & !Inst_shiftreg/index<1> & 
+	!Inst_shiftreg/index<0> & !address<0>;	// (8 pt, 11 inp)
+    serialout<0>.OE = !Inst_shiftreg/Mtrien_output;	// PTB	(1 pt, 1 inp)
+    serialout<0>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 6 | Inst_shiftreg/index<2>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 2 | 0 | 6 | 1 | 4
+INPUTS | 4 | Inst_shiftreg/index<2>  | addressstrobe  | Inst_shiftreg/index<1>  | Inst_shiftreg/index<0>
+INPUTMC | 3 | 0 | 6 | 0 | 7 | 0 | 13
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   Inst_shiftreg/index<2>.T := Inst_shiftreg/index<2> & addressstrobe
+	# !addressstrobe & Inst_shiftreg/index<1> & 
+	Inst_shiftreg/index<0>;	// (2 pt, 4 inp)
+    Inst_shiftreg/index<2>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 7 | Inst_shiftreg/index<1>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 3 | 0 | 7 | 0 | 6 | 1 | 4
+INPUTS | 3 | addressstrobe  | Inst_shiftreg/index<1>  | Inst_shiftreg/index<0>
+INPUTMC | 2 | 0 | 7 | 0 | 13
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   Inst_shiftreg/index<1> := !addressstrobe & Inst_shiftreg/index<1> & 
+	!Inst_shiftreg/index<0>
+	# !addressstrobe & !Inst_shiftreg/index<1> & 
+	Inst_shiftreg/index<0>;	// (2 pt, 3 inp)
+    Inst_shiftreg/index<1>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 13 | Inst_shiftreg/index<0>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 4 | 0 | 13 | 0 | 7 | 0 | 6 | 1 | 4
+INPUTS | 2 | addressstrobe  | Inst_shiftreg/index<0>
+INPUTMC | 1 | 0 | 13
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Inst_shiftreg/index<0> := !addressstrobe & !Inst_shiftreg/index<0>;	// (1 pt, 2 inp)
+    Inst_shiftreg/index<0>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 11 | Inst_shiftreg/Mtrien_output_MC
+ATTRIBUTES | 2290089984 | 4
+OUTPUTMC | 1 | 1 | 4
+INPUTS | 0 
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   
+// Direct Input Register
+Inst_shiftreg/Mtrien_output := addressstrobe;	// (0 pt, 0 inp)
+    Inst_shiftreg/Mtrien_output.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 1 | serialout<1>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 12 | address<15>  | Inst_shiftregm/index<2>  | Inst_shiftregm/index<1>  | Inst_shiftregm/index<0>  | address<14>  | address<13>  | address<12>  | address<11>  | address<10>  | address<9>  | address<8>  | Inst_shiftregm/Mtrien_output
+INPUTMC | 4 | 0 | 10 | 0 | 11 | 0 | 12 | 0 | 14
+INPUTP | 8 | 11 | 10 | 9 | 2 | 1 | 81 | 80 | 78
+LCT | 1 | 2 | Internal_Name
+EQ | 18 | 
+   !serialout<1> := !address<15> & Inst_shiftregm/index<2> & 
+	Inst_shiftregm/index<1> & Inst_shiftregm/index<0>
+	# Inst_shiftregm/index<2> & Inst_shiftregm/index<1> & 
+	!Inst_shiftregm/index<0> & !address<14>
+	# Inst_shiftregm/index<2> & !Inst_shiftregm/index<1> & 
+	Inst_shiftregm/index<0> & !address<13>
+	# Inst_shiftregm/index<2> & !Inst_shiftregm/index<1> & 
+	!Inst_shiftregm/index<0> & !address<12>
+	# !Inst_shiftregm/index<2> & Inst_shiftregm/index<1> & 
+	Inst_shiftregm/index<0> & !address<11>
+	# !Inst_shiftregm/index<2> & Inst_shiftregm/index<1> & 
+	!Inst_shiftregm/index<0> & !address<10>
+	# !Inst_shiftregm/index<2> & !Inst_shiftregm/index<1> & 
+	Inst_shiftregm/index<0> & !address<9>
+	# !Inst_shiftregm/index<2> & !Inst_shiftregm/index<1> & 
+	!Inst_shiftregm/index<0> & !address<8>;	// (8 pt, 11 inp)
+    serialout<1>.OE = !Inst_shiftregm/Mtrien_output;	// PTB	(1 pt, 1 inp)
+    serialout<1>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 10 | Inst_shiftregm/index<2>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 2 | 0 | 10 | 1 | 1
+INPUTS | 4 | addressstrobe  | Inst_shiftregm/index<2>  | Inst_shiftregm/index<1>  | Inst_shiftregm/index<0>
+INPUTMC | 3 | 0 | 10 | 0 | 11 | 0 | 12
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   Inst_shiftregm/index<2>.T := addressstrobe & Inst_shiftregm/index<2>
+	# !addressstrobe & Inst_shiftregm/index<1> & 
+	Inst_shiftregm/index<0>;	// (2 pt, 4 inp)
+    Inst_shiftregm/index<2>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 11 | Inst_shiftregm/index<1>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 3 | 0 | 11 | 0 | 10 | 1 | 1
+INPUTS | 3 | addressstrobe  | Inst_shiftregm/index<1>  | Inst_shiftregm/index<0>
+INPUTMC | 2 | 0 | 11 | 0 | 12
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   Inst_shiftregm/index<1> := !addressstrobe & Inst_shiftregm/index<1> & 
+	!Inst_shiftregm/index<0>
+	# !addressstrobe & !Inst_shiftregm/index<1> & 
+	Inst_shiftregm/index<0>;	// (2 pt, 3 inp)
+    Inst_shiftregm/index<1>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 12 | Inst_shiftregm/index<0>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 4 | 0 | 12 | 0 | 11 | 0 | 10 | 1 | 1
+INPUTS | 2 | addressstrobe  | Inst_shiftregm/index<0>
+INPUTMC | 1 | 0 | 12
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Inst_shiftregm/index<0> := !addressstrobe & !Inst_shiftregm/index<0>;	// (1 pt, 2 inp)
+    Inst_shiftregm/index<0>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 14 | Inst_shiftregm/Mtrien_output_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 1 | 1 | 1
+INPUTS | 1 | addressstrobe
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Inst_shiftregm/Mtrien_output := addressstrobe;	// (1 pt, 1 inp)
+    Inst_shiftregm/Mtrien_output.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 0 | serialout<2>_MC
+ATTRIBUTES | 209978114 | 0
+INPUTS | 11 | address<23>  | Inst_shiftregh/index<2>  | Inst_shiftregh/index<1>  | Inst_shiftregh/index<0>  | address<22>  | address<21>  | address<20>  | address<19>  | address<18>  | address<17>  | address<16>
+INPUTMC | 3 | 0 | 3 | 0 | 4 | 0 | 5
+INPUTP | 8 | 26 | 31 | 32 | 38 | 46 | 48 | 49 | 51
+LCT | 2 | 2 | Internal_Name | 5 | Internal_Name
+EQ | 18 | 
+   !serialout<2> := !address<23> & Inst_shiftregh/index<2> & 
+	Inst_shiftregh/index<1> & Inst_shiftregh/index<0>
+	# Inst_shiftregh/index<2> & Inst_shiftregh/index<1> & 
+	!Inst_shiftregh/index<0> & !address<22>
+	# Inst_shiftregh/index<2> & !Inst_shiftregh/index<1> & 
+	Inst_shiftregh/index<0> & !address<21>
+	# Inst_shiftregh/index<2> & !Inst_shiftregh/index<1> & 
+	!Inst_shiftregh/index<0> & !address<20>
+	# !Inst_shiftregh/index<2> & Inst_shiftregh/index<1> & 
+	Inst_shiftregh/index<0> & !address<19>
+	# !Inst_shiftregh/index<2> & Inst_shiftregh/index<1> & 
+	!Inst_shiftregh/index<0> & !address<18>
+	# !Inst_shiftregh/index<2> & !Inst_shiftregh/index<1> & 
+	Inst_shiftregh/index<0> & !address<17>
+	# !Inst_shiftregh/index<2> & !Inst_shiftregh/index<1> & 
+	!Inst_shiftregh/index<0> & !address<16>;	// (8 pt, 11 inp)
+    serialout<2>.OE = !Inst_shiftregh/Mtrien_output;	// CTE	(1 pt, 1 inp)
+    serialout<2>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 3 | Inst_shiftregh/index<2>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 2 | 0 | 3 | 1 | 0
+INPUTS | 4 | addressstrobe  | Inst_shiftregh/index<2>  | Inst_shiftregh/index<1>  | Inst_shiftregh/index<0>
+INPUTMC | 3 | 0 | 3 | 0 | 4 | 0 | 5
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   Inst_shiftregh/index<2>.T := addressstrobe & Inst_shiftregh/index<2>
+	# !addressstrobe & Inst_shiftregh/index<1> & 
+	Inst_shiftregh/index<0>;	// (2 pt, 4 inp)
+    Inst_shiftregh/index<2>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 4 | Inst_shiftregh/index<1>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 3 | 0 | 4 | 0 | 3 | 1 | 0
+INPUTS | 3 | addressstrobe  | Inst_shiftregh/index<1>  | Inst_shiftregh/index<0>
+INPUTMC | 2 | 0 | 4 | 0 | 5
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   Inst_shiftregh/index<1> := !addressstrobe & Inst_shiftregh/index<1> & 
+	!Inst_shiftregh/index<0>
+	# !addressstrobe & !Inst_shiftregh/index<1> & 
+	Inst_shiftregh/index<0>;	// (2 pt, 3 inp)
+    Inst_shiftregh/index<1>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 5 | Inst_shiftregh/index<0>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 4 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 0
+INPUTS | 2 | addressstrobe  | Inst_shiftregh/index<0>
+INPUTMC | 1 | 0 | 5
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Inst_shiftregh/index<0> := !addressstrobe & !Inst_shiftregh/index<0>;	// (1 pt, 2 inp)
+    Inst_shiftregh/index<0>.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 15 | Inst_shiftregh/Mtrien_output_MC
+ATTRIBUTES | 2290090752 | 0
+INPUTS | 1 | addressstrobe
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Inst_shiftregh/Mtrien_output := addressstrobe;	// (1 pt, 1 inp)
+    Inst_shiftregh/Mtrien_output.CLK = clock;	// CTC	(1 pt, 1 inp)
+
+PIN | address<0> | 64 | 16 | LVCMOS18 | 56 | 1 | 1 | 4
+PIN | address<10> | 64 | 16 | LVCMOS18 | 81 | 1 | 1 | 1
+PIN | address<11> | 64 | 16 | LVCMOS18 | 1 | 1 | 1 | 1
+PIN | address<12> | 64 | 16 | LVCMOS18 | 2 | 1 | 1 | 1
+PIN | address<13> | 64 | 16 | LVCMOS18 | 9 | 1 | 1 | 1
+PIN | address<14> | 64 | 16 | LVCMOS18 | 10 | 1 | 1 | 1
+PIN | address<15> | 64 | 16 | LVCMOS18 | 11 | 1 | 1 | 1
+PIN | address<16> | 64 | 16 | LVCMOS18 | 51 | 1 | 1 | 0
+PIN | address<17> | 64 | 16 | LVCMOS18 | 49 | 1 | 1 | 0
+PIN | address<18> | 64 | 16 | LVCMOS18 | 48 | 1 | 1 | 0
+PIN | address<19> | 64 | 16 | LVCMOS18 | 46 | 1 | 1 | 0
+PIN | address<1> | 64 | 16 | LVCMOS18 | 59 | 1 | 1 | 4
+PIN | address<20> | 64 | 16 | LVCMOS18 | 38 | 1 | 1 | 0
+PIN | address<21> | 64 | 16 | LVCMOS18 | 32 | 1 | 1 | 0
+PIN | address<22> | 64 | 16 | LVCMOS18 | 31 | 1 | 1 | 0
+PIN | address<23> | 64 | 16 | LVCMOS18 | 26 | 1 | 1 | 0
+PIN | address<2> | 64 | 16 | LVCMOS18 | 60 | 1 | 1 | 4
+PIN | address<3> | 64 | 16 | LVCMOS18 | 61 | 1 | 1 | 4
+PIN | address<4> | 64 | 16 | LVCMOS18 | 65 | 1 | 1 | 4
+PIN | address<5> | 64 | 16 | LVCMOS18 | 71 | 1 | 1 | 4
+PIN | address<6> | 64 | 16 | LVCMOS18 | 72 | 1 | 1 | 4
+PIN | address<7> | 64 | 16 | LVCMOS18 | 73 | 1 | 1 | 4
+PIN | address<8> | 64 | 16 | LVCMOS18 | 78 | 1 | 1 | 1
+PIN | address<9> | 64 | 16 | LVCMOS18 | 80 | 1 | 1 | 1
+PIN | clock | 64 | 16 | LVCMOS18 | 17 | 0
+PIN | addressstrobe | 64 | 16 | LVCMOS18 | 25 | 12 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 14 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 15 | 1 | 11
+PIN | serialout<0> | 536871040 | 16 | LVCMOS18 | 16
+PIN | serialout<1> | 536871040 | 16 | LVCMOS18 | 13
+PIN | serialout<2> | 536871040 | 16 | LVCMOS18 | 12

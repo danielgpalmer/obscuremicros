@@ -1,0 +1,73 @@
+Release 8.1i - Fit O.87xd
+Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
+
+ 3- 9-2012 11:16PM
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
+character is used as the data field separator.
+This file is also designed to support parsing.
+
+Input file:  toplevel.ngd
+output file: toplevel.pad
+Part type:   xc2c64a
+Speed grade: -7
+Package:     vq44
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
+P1|KPR||I/O/GCK2|||1|||||||
+P2|addressstrobe|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P3|address<23>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P4|GND||GND||||||||||
+P5|address<22>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P6|address<21>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P7||VCCIO-1.8|VCCIO|||1|||||||
+P8|address<20>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P9|TDI||TDI||||||||||
+P10|TMS||TMS||||||||||
+P11|TCK||TCK||||||||||
+P12|address<19>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P13|address<18>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P14|address<17>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P15||VCC|VCC||||||||||
+P16|address<16>|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P17|GND||GND||||||||||
+P18|KPR||I/O|||2|||||||
+P19|address<0>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P20|address<1>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P21|address<2>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P22|address<3>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P23|address<4>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P24|TDO||TDO||||||||||
+P25|GND||GND||||||||||
+P26||VCCIO-1.8|VCCIO|||2|||||||
+P27|address<5>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P28|address<6>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P29|address<7>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P30|address<8>|I|I/O/GSR|INPUT|LVCMOS18|2||FAST||||
+P31|address<9>|I|I/O/GTS2|INPUT|LVCMOS18|2||FAST||||
+P32|address<10>|I|I/O/GTS3|INPUT|LVCMOS18|2||FAST||||
+P33|address<11>|I|I/O/GTS0|INPUT|LVCMOS18|2||FAST||||
+P34|address<12>|I|I/O/GTS1|INPUT|LVCMOS18|2||FAST||||
+P35||VCCAUX|VAUX||||||||||
+P36|address<13>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P37|address<14>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P38|address<15>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P39|serialout<2>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P40|serialout<1>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P41|serialout<0>|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P42|clock|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P43|KPR||I/O/GCK0|||1|||||||
+P44|KPR||I/O/GCK1|||1|||||||
+
+To preserve the pinout above for future design iterations in
+Project Navigator simply execute the (Lock Pins) process
+located under the (Implement Design) process in a toolbox named
+(Optional Implementation Tools) or invoke PIN2UCF from the
+command line. The location constraints will be written into your
+specified UCF file
+
+

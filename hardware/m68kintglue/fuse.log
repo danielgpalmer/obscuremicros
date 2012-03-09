@@ -1,0 +1,24 @@
+Running: /home/daniel/xilinx/ise134/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/daniel/coding/obscuremicros/hardware/m68kintglue/testbench_isim_beh.exe -prj /home/daniel/coding/obscuremicros/hardware/m68kintglue/testbench_beh.prj work.testbench 
+ISim O.87xd (signature 0x8ddf5b5d)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/daniel/coding/obscuremicros/hardware/m68kintglue/shiftreg.vhd" into library work
+Parsing VHDL file "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.vhd" into library work
+Parsing VHDL file "/home/daniel/coding/obscuremicros/hardware/m68kintglue/testbench.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 93756 KB
+Fuse CPU Usage: 1380 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture behavioral of entity shiftreg [shiftreg_default]
+Compiling architecture behavioral of entity toplevel [toplevel_default]
+Compiling architecture behavior of entity testbench
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 7 VHDL Units
+Built simulation executable /home/daniel/coding/obscuremicros/hardware/m68kintglue/testbench_isim_beh.exe
+Fuse Memory Usage: 200752 KB
+Fuse CPU Usage: 1420 ms
+GCC CPU Usage: 330 ms

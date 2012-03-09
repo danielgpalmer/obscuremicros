@@ -1,0 +1,239 @@
+Release 13.4 - xst O.87xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Reading design: toplevel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "toplevel.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "toplevel"
+Output Format                      : NGC
+Target Device                      : CoolRunner2 CPLDs
+
+---- Source Options
+Top Module Name                    : toplevel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/daniel/coding/obscuremicros/hardware/m68kintglue/shiftreg.vhd" in Library work.
+Entity <shiftreg> compiled.
+Entity <shiftreg> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.vhd" in Library work.
+Architecture behavioral of Entity toplevel is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <toplevel> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <shiftreg> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <toplevel> in library <work> (Architecture <behavioral>).
+Entity <toplevel> analyzed. Unit <toplevel> generated.
+
+Analyzing Entity <shiftreg> in library <work> (Architecture <behavioral>).
+Entity <shiftreg> analyzed. Unit <shiftreg> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <shiftreg>.
+    Related source file is "/home/daniel/coding/obscuremicros/hardware/m68kintglue/shiftreg.vhd".
+    Found 1-bit tristate buffer for signal <output>.
+    Found 3-bit up counter for signal <index>.
+    Found 1-bit register for signal <Mtridata_output> created at line 49.
+    Found 1-bit 8-to-1 multiplexer for signal <Mtridata_output$mux0000> created at line 52.
+    Found 1-bit register for signal <Mtrien_output> created at line 49.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Tristate(s).
+Unit <shiftreg> synthesized.
+
+
+Synthesizing Unit <toplevel>.
+    Related source file is "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.vhd".
+Unit <toplevel> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 3-bit up counter                                      : 3
+# Registers                                            : 6
+ 1-bit register                                        : 6
+# Multiplexers                                         : 3
+ 1-bit 8-to-1 multiplexer                              : 3
+# Tristates                                            : 3
+ 1-bit tristate buffer                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 3-bit up counter                                      : 3
+# Registers                                            : 6
+ Flip-Flops                                            : 6
+# Multiplexers                                         : 3
+ 1-bit 8-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1348 - Unit shiftreg is merged (output interface has tristates)
+
+Optimizing unit <toplevel> ...
+  implementation constraint: IOB=auto	 : Inst_shiftreg/Mtridata_output
+  implementation constraint: IOB=auto	 : Inst_shiftreg/Mtrien_output
+  implementation constraint: IOB=auto	 : Inst_shiftregm/Mtridata_output
+  implementation constraint: IOB=auto	 : Inst_shiftregm/Mtrien_output
+  implementation constraint: IOB=auto	 : Inst_shiftregh/Mtridata_output
+  implementation constraint: IOB=auto	 : Inst_shiftregh/Mtrien_output
+  implementation constraint: INIT=r	 : Inst_shiftreg/index_2
+  implementation constraint: INIT=r	 : Inst_shiftreg/index_1
+  implementation constraint: INIT=r	 : Inst_shiftreg/index_0
+  implementation constraint: INIT=r	 : Inst_shiftregm/index_2
+  implementation constraint: INIT=r	 : Inst_shiftregm/index_1
+  implementation constraint: INIT=r	 : Inst_shiftregm/index_0
+  implementation constraint: INIT=r	 : Inst_shiftregh/index_2
+  implementation constraint: INIT=r	 : Inst_shiftregh/index_1
+  implementation constraint: INIT=r	 : Inst_shiftregh/index_0
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : toplevel.ngr
+Top Level Output File Name         : toplevel
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : CoolRunner2 CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 29
+
+Cell Usage :
+# BELS                             : 117
+#      AND2                        : 54
+#      INV                         : 36
+#      OR2                         : 21
+#      XOR2                        : 6
+# FlipFlops/Latches                : 15
+#      FD                          : 15
+# IO Buffers                       : 29
+#      IBUF                        : 26
+#      OBUFE                       : 3
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.77 secs
+ 
+--> 
+
+
+Total memory usage is 511912 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
