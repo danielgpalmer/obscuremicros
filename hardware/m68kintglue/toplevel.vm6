@@ -8,217 +8,216 @@ NETWORK | toplevel | 0 | 0 | 1073758214 | 0
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<0>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<0> | 2911 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<0> | 2868 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<0>_II/UIM | 2965 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<0>_II | 0 | 5 | II_IMUX
+NODE | address<0>_II/UIM | 2921 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<0>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<10>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<10> | 2912 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<10> | 2869 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<10>_II/UIM | 2998 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<10>_II | 0 | 5 | II_IMUX
+NODE | address<10>_II/UIM | 2953 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<10>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<11>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<11> | 2913 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<11> | 2870 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<11>_II/UIM | 2994 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<11>_II | 0 | 5 | II_IMUX
+NODE | address<11>_II/UIM | 2949 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<11>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<12>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<12> | 2914 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<12> | 2871 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<12>_II/UIM | 2999 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<12>_II | 0 | 5 | II_IMUX
+NODE | address<12>_II/UIM | 2954 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<12>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<13>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<13> | 2915 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<13> | 2872 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<13>_II/UIM | 2995 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<13>_II | 0 | 5 | II_IMUX
+NODE | address<13>_II/UIM | 2950 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<13>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<14>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<14> | 2916 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<14> | 2873 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<14>_II/UIM | 2997 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<14>_II | 0 | 5 | II_IMUX
+NODE | address<14>_II/UIM | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<14>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<15>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<15> | 2917 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<15> | 2874 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<15>_II/UIM | 2978 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<15>_II | 0 | 5 | II_IMUX
+NODE | address<15>_II/UIM | 2933 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<15>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<16>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<16> | 2918 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<16> | 2875 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<16>_II/UIM | 3037 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<16>_II | 0 | 5 | II_IMUX
+NODE | address<16>_II/UIM | 2992 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<16>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<17>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<17> | 2919 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<17> | 2876 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<17>_II/UIM | 3033 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<17>_II | 0 | 5 | II_IMUX
+NODE | address<17>_II/UIM | 2988 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<17>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<18>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<18> | 2920 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<18> | 2877 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<18>_II/UIM | 3035 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<18>_II | 0 | 5 | II_IMUX
+NODE | address<18>_II/UIM | 2990 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<18>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<19>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<19> | 2921 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<19> | 2878 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<19>_II/UIM | 3031 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<19>_II | 0 | 5 | II_IMUX
+NODE | address<19>_II/UIM | 2986 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<19>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<1>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<1> | 2922 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<1> | 2879 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<1>_II/UIM | 2961 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<1>_II | 0 | 5 | II_IMUX
+NODE | address<1>_II/UIM | 2917 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<1>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<20>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<20> | 2923 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<20> | 2880 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<20>_II/UIM | 3036 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<20>_II | 0 | 5 | II_IMUX
+NODE | address<20>_II/UIM | 2991 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<20>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<21>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<21> | 2924 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<21> | 2881 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<21>_II/UIM | 3032 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<21>_II | 0 | 5 | II_IMUX
+NODE | address<21>_II/UIM | 2987 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<21>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<22>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<22> | 2925 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<22> | 2882 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<22>_II/UIM | 3034 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<22>_II | 0 | 5 | II_IMUX
+NODE | address<22>_II/UIM | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<22>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<23>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<23> | 2926 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<23> | 2883 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<23>_II/UIM | 3015 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<23>_II | 0 | 5 | II_IMUX
+NODE | address<23>_II/UIM | 2970 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<23>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<2>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<2> | 2927 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<2> | 2884 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<2>_II/UIM | 2963 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<2>_II | 0 | 5 | II_IMUX
+NODE | address<2>_II/UIM | 2919 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<2>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<3>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<3> | 2928 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<3> | 2885 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<3>_II/UIM | 2959 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<3>_II | 0 | 5 | II_IMUX
+NODE | address<3>_II/UIM | 2915 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<3>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<4>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<4> | 2929 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<4> | 2886 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<4>_II/UIM | 2964 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<4>_II | 0 | 5 | II_IMUX
+NODE | address<4>_II/UIM | 2920 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<4>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<5>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<5> | 2930 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<5> | 2887 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<5>_II/UIM | 2960 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<5>_II | 0 | 5 | II_IMUX
+NODE | address<5>_II/UIM | 2916 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<5>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<6>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<6> | 2931 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<6> | 2888 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<6>_II/UIM | 2962 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<6>_II | 0 | 5 | II_IMUX
+NODE | address<6>_II/UIM | 2918 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<6>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<7>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<7> | 2932 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<7> | 2889 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<7>_II/UIM | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<7>_II | 0 | 5 | II_IMUX
+NODE | address<7>_II/UIM | 2896 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<7>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<8>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<8> | 2933 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<8> | 2890 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<8>_II/UIM | 3000 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<8>_II | 0 | 5 | II_IMUX
+NODE | address<8>_II/UIM | 2955 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<8>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | address<9>_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | address<9> | 2934 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | address<9> | 2891 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | address<9>_II/UIM | 2996 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<9>_II | 0 | 5 | II_IMUX
+NODE | address<9>_II/UIM | 2951 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<9>_II | 0 | 5 | II_IMUX
 
 INPUT_INSTANCE | 0 | 0 | NULL | clock_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 1
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | clock | 2935 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
-OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | clock_II/UIM | 2958 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 0 | 5 | II_IMUX
+NODE | clock | 2892 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 3 | 5 | II_FCLK
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 
 MACROCELL_INSTANCE | Inv+PrldLow | serialout<0>_MC | toplevel_COPY_0_COPY_0 | 1280 | 13 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<7>_II/UIM | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<7>_II | 0 | 5 | II_IMUX
+NODE | address<7>_II/UIM | 2896 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<7>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<2> | 2940 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<2> | 2897 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<1> | 2947 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<1> | 2904 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<6>_II/UIM | 2962 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<6>_II | 0 | 5 | II_IMUX
+NODE | address<6>_II/UIM | 2918 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<6>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<5>_II/UIM | 2960 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<5>_II | 0 | 5 | II_IMUX
+NODE | address<5>_II/UIM | 2916 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<5>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<4>_II/UIM | 2964 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<4>_II | 0 | 5 | II_IMUX
+NODE | address<4>_II/UIM | 2920 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<4>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<3>_II/UIM | 2959 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<3>_II | 0 | 5 | II_IMUX
+NODE | address<3>_II/UIM | 2915 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<3>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<2>_II/UIM | 2963 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<2>_II | 0 | 5 | II_IMUX
+NODE | address<2>_II/UIM | 2919 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<2>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<1>_II/UIM | 2961 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<1>_II | 0 | 5 | II_IMUX
+NODE | address<1>_II/UIM | 2917 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<1>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<0>_II/UIM | 2965 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<0>_II | 0 | 5 | II_IMUX
+NODE | address<0>_II/UIM | 2921 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<0>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/Mtrien_output | 2968 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/Mtrien_output_MC.Q | Inst_shiftreg/Mtrien_output_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/Mtrien_output | 2923 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/Mtrien_output_MC.Q | Inst_shiftreg/Mtrien_output_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
-NODE | serialout<0>_MC.Q | 2971 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.Q | serialout<0>_MC | 0 | 0 | MC_Q
+NODE | serialout<0>_MC.Q | 2926 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.Q | serialout<0>_MC | 0 | 0 | MC_Q
 OUTPUT_NODE_TYPE | 2 | 0 | MC_OE
-NODE | serialout<0>_MC.OE | 2973 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.BUFOE.OUT | serialout<0>_MC | 2 | 0 | MC_OE
+NODE | serialout<0>_MC.OE | 2928 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.BUFOE.OUT | serialout<0>_MC | 2 | 0 | MC_OE
 
 SIGNAL_INSTANCE | serialout<0>_MC.SI | serialout<0>_MC | 0 | 12 | 3
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<7>_II/UIM | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<7>_II | 0 | 5 | II_IMUX
+NODE | address<7>_II/UIM | 2896 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<7>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<2> | 2940 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<2> | 2897 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<1> | 2947 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<1> | 2904 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<6>_II/UIM | 2962 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<6>_II | 0 | 5 | II_IMUX
+NODE | address<6>_II/UIM | 2918 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<6>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<5>_II/UIM | 2960 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<5>_II | 0 | 5 | II_IMUX
+NODE | address<5>_II/UIM | 2916 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<5>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<4>_II/UIM | 2964 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<4>_II | 0 | 5 | II_IMUX
+NODE | address<4>_II/UIM | 2920 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<4>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<3>_II/UIM | 2959 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<3>_II | 0 | 5 | II_IMUX
+NODE | address<3>_II/UIM | 2915 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<3>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<2>_II/UIM | 2963 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<2>_II | 0 | 5 | II_IMUX
+NODE | address<2>_II/UIM | 2919 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<2>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<1>_II/UIM | 2961 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<1>_II | 0 | 5 | II_IMUX
+NODE | address<1>_II/UIM | 2917 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<1>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<0>_II/UIM | 2965 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<0>_II | 0 | 5 | II_IMUX
+NODE | address<0>_II/UIM | 2921 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<0>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/Mtrien_output | 2968 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/Mtrien_output_MC.Q | Inst_shiftreg/Mtrien_output_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/Mtrien_output | 2923 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/Mtrien_output_MC.Q | Inst_shiftreg/Mtrien_output_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | serialout<0>_MC.D1 | 2938 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | serialout<0>_MC.D1 | 2895 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | serialout<0>_MC.D2 | 2937 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | serialout<0>_MC.D2 | 2894 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 4 | IV_FALSE | address<7>_II/UIM | IV_TRUE | Inst_shiftreg/index<2> | IV_TRUE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0>
 SPPTERM | 4 | IV_TRUE | Inst_shiftreg/index<2> | IV_TRUE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0> | IV_FALSE | address<6>_II/UIM
 SPPTERM | 4 | IV_TRUE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0> | IV_FALSE | address<5>_II/UIM
@@ -228,232 +227,222 @@ SPPTERM | 4 | IV_FALSE | Inst_shiftreg/index<2> | IV_TRUE | Inst_shiftreg/index<
 SPPTERM | 4 | IV_FALSE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0> | IV_FALSE | address<1>_II/UIM
 SPPTERM | 4 | IV_FALSE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0> | IV_FALSE | address<0>_II/UIM
 OUTPUT_NODE_TYPE | 4 | 9 | MC_SI_TRST
-SIGNAL | NODE | serialout<0>_MC.TRST | 2967 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 4 | 9 | MC_SI_TRST
+SIGNAL | NODE | serialout<0>_MC.TRST | 2922 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 4 | 9 | MC_SI_TRST
 SPPTERM | 1 | IV_FALSE | Inst_shiftreg/Mtrien_output
 
 SRFF_INSTANCE | serialout<0>_MC.REG | serialout<0>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | serialout<0>_MC.D | 2936 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.XOR | 0 | 7 | ALU_F
+NODE | serialout<0>_MC.D | 2893 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | serialout<0>_MC.Q | 2970 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.REG | 0 | 8 | SRFF_Q
+NODE | serialout<0>_MC.Q | 2925 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.REG | 0 | 8 | SRFF_Q
 
 BUF_INSTANCE | serialout<0>_MC.BUFOE | serialout<0>_MC | 0 | 1 | 1
 INPUT_NODE_TYPE | 0 | 10 | CTOR_UNKNOWN
-SIGNAL | NODE | serialout<0>_MC.TRST | 2967 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 4 | 9 | MC_SI_TRST
+SIGNAL | NODE | serialout<0>_MC.TRST | 2922 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.SI | 4 | 9 | MC_SI_TRST
 SPPTERM | 1 | IV_FALSE | Inst_shiftreg/Mtrien_output
 OUTPUT_NODE_TYPE | 0 | 10 | BUF_OUT
-NODE | serialout<0>_MC.BUFOE.OUT | 2972 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.BUFOE | 0 | 10 | BUF_OUT
+NODE | serialout<0>_MC.BUFOE.OUT | 2927 | ? | 0 | 0 | serialout<0>_MC | NULL | NULL | serialout<0>_MC.BUFOE | 0 | 10 | BUF_OUT
 
 MACROCELL_INSTANCE | PrldLow+Tff | Inst_shiftreg/index<2>_MC | toplevel_COPY_0_COPY_0 | 5120 | 5 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<2> | 2940 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<2> | 2897 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<1> | 2947 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<1> | 2904 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftreg/index<2> | 2940 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<2> | 2897 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftreg/index<2>_MC.SI | Inst_shiftreg/index<2>_MC | 0 | 4 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<2> | 2940 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<2> | 2897 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<2>_MC.Q | Inst_shiftreg/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<1> | 2947 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<1> | 2904 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftreg/index<2>_MC.D1 | 2944 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftreg/index<2>_MC.D1 | 2901 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftreg/index<2>_MC.D2 | 2943 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftreg/index<2>_MC.D2 | 2900 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 2 | IV_TRUE | Inst_shiftreg/index<2> | IV_TRUE | addressstrobe_II/UIM
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0>
 
 SRFF_INSTANCE | Inst_shiftreg/index<2>_MC.REG | Inst_shiftreg/index<2>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftreg/index<2>_MC.D | 2942 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftreg/index<2>_MC.D | 2899 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftreg/index<2>_MC.Q | 2941 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftreg/index<2>_MC.Q | 2898 | ? | 0 | 0 | Inst_shiftreg/index<2>_MC | NULL | NULL | Inst_shiftreg/index<2>_MC.REG | 0 | 8 | SRFF_Q
 
 INPUT_INSTANCE | 0 | 0 | NULL | addressstrobe_II | toplevel_COPY_0_COPY_0 | 16 | 1 | 2
 INPUT_NODE_TYPE | 0 | 5 | II_IN
-NODE | addressstrobe | 2945 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+NODE | addressstrobe | 2902 | PI | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
 OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 OUTPUT_NODE_TYPE | 10 | 5 | II_REG
-NODE | addressstrobe_II/IREG | 3049 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 10 | 5 | II_REG
+NODE | addressstrobe_II/IREG | 3004 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 10 | 5 | II_REG
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftreg/index<1>_MC | toplevel_COPY_0_COPY_0 | 1024 | 4 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<1> | 2947 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<1> | 2904 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftreg/index<1> | 2947 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<1> | 2904 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftreg/index<1>_MC.SI | Inst_shiftreg/index<1>_MC | 0 | 3 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<1> | 2947 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<1> | 2904 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<1>_MC.Q | Inst_shiftreg/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftreg/index<1>_MC.D1 | 2951 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftreg/index<1>_MC.D1 | 2908 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftreg/index<1>_MC.D2 | 2950 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftreg/index<1>_MC.D2 | 2907 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0>
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0>
 
 SRFF_INSTANCE | Inst_shiftreg/index<1>_MC.REG | Inst_shiftreg/index<1>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftreg/index<1>_MC.D | 2949 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftreg/index<1>_MC.D | 2906 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftreg/index<1>_MC.Q | 2948 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftreg/index<1>_MC.Q | 2905 | ? | 0 | 0 | Inst_shiftreg/index<1>_MC | NULL | NULL | Inst_shiftreg/index<1>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftreg/index<0>_MC | toplevel_COPY_0_COPY_0 | 1024 | 3 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftreg/index<0>_MC.SI | Inst_shiftreg/index<0>_MC | 0 | 2 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftreg/index<0> | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/index<0> | 2909 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/index<0>_MC.Q | Inst_shiftreg/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftreg/index<0>_MC.D1 | 2955 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftreg/index<0>_MC.D1 | 2912 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 2 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftreg/index<0>
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftreg/index<0>_MC.D2 | 2956 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftreg/index<0>_MC.D2 | 2913 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 0 | IV_ZERO
 
 SRFF_INSTANCE | Inst_shiftreg/index<0>_MC.REG | Inst_shiftreg/index<0>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftreg/index<0>_MC.D | 2954 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftreg/index<0>_MC.D | 2911 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftreg/index<0>_MC.Q | 2953 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftreg/index<0>_MC.Q | 2910 | ? | 0 | 0 | Inst_shiftreg/index<0>_MC | NULL | NULL | Inst_shiftreg/index<0>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftreg/Mtrien_output_MC | toplevel_COPY_0_COPY_0 | 1024 | 2 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/IREG | 3049 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 10 | 5 | II_REG
+NODE | addressstrobe_II/IREG | 3004 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 10 | 5 | II_REG
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftreg/Mtrien_output | 2968 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/Mtrien_output_MC.Q | Inst_shiftreg/Mtrien_output_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftreg/Mtrien_output | 2923 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftreg/Mtrien_output_MC.Q | Inst_shiftreg/Mtrien_output_MC | 1 | 0 | MC_UIM
 
 SRFF_INSTANCE | Inst_shiftreg/Mtrien_output_MC.REG | Inst_shiftreg/Mtrien_output_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | addressstrobe_II/IREG | 3049 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 10 | 5 | II_REG
+NODE | addressstrobe_II/IREG | 3004 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 10 | 5 | II_REG
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftreg/Mtrien_output_MC.Q | 2969 | ? | 0 | 0 | Inst_shiftreg/Mtrien_output_MC | NULL | NULL | Inst_shiftreg/Mtrien_output_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftreg/Mtrien_output_MC.Q | 2924 | ? | 0 | 0 | Inst_shiftreg/Mtrien_output_MC | NULL | NULL | Inst_shiftreg/Mtrien_output_MC.REG | 0 | 8 | SRFF_Q
 
 OUTPUT_INSTANCE | 0 | serialout<0> | toplevel_COPY_0_COPY_0 | 7 | 2 | 1
 INPUT_NODE_TYPE | 0 | 6 | OI_IN
-NODE | serialout<0>_MC.Q | 2971 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.Q | serialout<0>_MC | 0 | 0 | MC_Q
+NODE | serialout<0>_MC.Q | 2926 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.Q | serialout<0>_MC | 0 | 0 | MC_Q
 INPUT_NODE_TYPE | 2 | 6 | OI_OE
-NODE | serialout<0>_MC.OE | 2973 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.BUFOE.OUT | serialout<0>_MC | 2 | 0 | MC_OE
+NODE | serialout<0>_MC.OE | 2928 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<0>_MC.BUFOE.OUT | serialout<0>_MC | 2 | 0 | MC_OE
 OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
-NODE | serialout<0> | 2974 | PO | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | serialout<0> | 0 | 6 | OI_OUT
+NODE | serialout<0> | 2929 | PO | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | serialout<0> | 0 | 6 | OI_OUT
 
 MACROCELL_INSTANCE | Inv+PrldLow | serialout<1>_MC | toplevel_COPY_0_COPY_0 | 1280 | 13 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<15>_II/UIM | 2978 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<15>_II | 0 | 5 | II_IMUX
+NODE | address<15>_II/UIM | 2933 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<15>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<2> | 2979 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<2> | 2934 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<1> | 2984 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<1> | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<14>_II/UIM | 2997 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<14>_II | 0 | 5 | II_IMUX
+NODE | address<14>_II/UIM | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<14>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<13>_II/UIM | 2995 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<13>_II | 0 | 5 | II_IMUX
+NODE | address<13>_II/UIM | 2950 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<13>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<12>_II/UIM | 2999 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<12>_II | 0 | 5 | II_IMUX
+NODE | address<12>_II/UIM | 2954 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<12>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<11>_II/UIM | 2994 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<11>_II | 0 | 5 | II_IMUX
+NODE | address<11>_II/UIM | 2949 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<11>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<10>_II/UIM | 2998 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<10>_II | 0 | 5 | II_IMUX
+NODE | address<10>_II/UIM | 2953 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<10>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<9>_II/UIM | 2996 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<9>_II | 0 | 5 | II_IMUX
+NODE | address<9>_II/UIM | 2951 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<9>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<8>_II/UIM | 3000 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<8>_II | 0 | 5 | II_IMUX
+NODE | address<8>_II/UIM | 2955 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<8>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/Mtrien_output | 3002 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/Mtrien_output_MC.Q | Inst_shiftregm/Mtrien_output_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/Mtrien_output | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/Mtrien_output_MC.Q | Inst_shiftregm/Mtrien_output_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
-NODE | serialout<1>_MC.Q | 3008 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.Q | serialout<1>_MC | 0 | 0 | MC_Q
+NODE | serialout<1>_MC.Q | 2963 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.Q | serialout<1>_MC | 0 | 0 | MC_Q
 OUTPUT_NODE_TYPE | 2 | 0 | MC_OE
-NODE | serialout<1>_MC.OE | 3010 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.BUFOE.OUT | serialout<1>_MC | 2 | 0 | MC_OE
+NODE | serialout<1>_MC.OE | 2965 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.BUFOE.OUT | serialout<1>_MC | 2 | 0 | MC_OE
 
 SIGNAL_INSTANCE | serialout<1>_MC.SI | serialout<1>_MC | 0 | 12 | 3
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<15>_II/UIM | 2978 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<15>_II | 0 | 5 | II_IMUX
+NODE | address<15>_II/UIM | 2933 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<15>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<2> | 2979 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<2> | 2934 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<1> | 2984 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<1> | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<14>_II/UIM | 2997 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<14>_II | 0 | 5 | II_IMUX
+NODE | address<14>_II/UIM | 2952 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<14>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<13>_II/UIM | 2995 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<13>_II | 0 | 5 | II_IMUX
+NODE | address<13>_II/UIM | 2950 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<13>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<12>_II/UIM | 2999 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<12>_II | 0 | 5 | II_IMUX
+NODE | address<12>_II/UIM | 2954 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<12>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<11>_II/UIM | 2994 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<11>_II | 0 | 5 | II_IMUX
+NODE | address<11>_II/UIM | 2949 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<11>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<10>_II/UIM | 2998 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<10>_II | 0 | 5 | II_IMUX
+NODE | address<10>_II/UIM | 2953 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<10>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<9>_II/UIM | 2996 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<9>_II | 0 | 5 | II_IMUX
+NODE | address<9>_II/UIM | 2951 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<9>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<8>_II/UIM | 3000 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<8>_II | 0 | 5 | II_IMUX
+NODE | address<8>_II/UIM | 2955 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<8>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/Mtrien_output | 3002 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/Mtrien_output_MC.Q | Inst_shiftregm/Mtrien_output_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/Mtrien_output | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/Mtrien_output_MC.Q | Inst_shiftregm/Mtrien_output_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | serialout<1>_MC.D1 | 2977 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | serialout<1>_MC.D1 | 2932 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | serialout<1>_MC.D2 | 2976 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | serialout<1>_MC.D2 | 2931 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 4 | IV_FALSE | address<15>_II/UIM | IV_TRUE | Inst_shiftregm/index<2> | IV_TRUE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0>
 SPPTERM | 4 | IV_TRUE | Inst_shiftregm/index<2> | IV_TRUE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0> | IV_FALSE | address<14>_II/UIM
 SPPTERM | 4 | IV_TRUE | Inst_shiftregm/index<2> | IV_FALSE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0> | IV_FALSE | address<13>_II/UIM
@@ -463,233 +452,223 @@ SPPTERM | 4 | IV_FALSE | Inst_shiftregm/index<2> | IV_TRUE | Inst_shiftregm/inde
 SPPTERM | 4 | IV_FALSE | Inst_shiftregm/index<2> | IV_FALSE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0> | IV_FALSE | address<9>_II/UIM
 SPPTERM | 4 | IV_FALSE | Inst_shiftregm/index<2> | IV_FALSE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0> | IV_FALSE | address<8>_II/UIM
 OUTPUT_NODE_TYPE | 4 | 9 | MC_SI_TRST
-SIGNAL | NODE | serialout<1>_MC.TRST | 3001 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 4 | 9 | MC_SI_TRST
+SIGNAL | NODE | serialout<1>_MC.TRST | 2956 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 4 | 9 | MC_SI_TRST
 SPPTERM | 1 | IV_FALSE | Inst_shiftregm/Mtrien_output
 
 SRFF_INSTANCE | serialout<1>_MC.REG | serialout<1>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | serialout<1>_MC.D | 2975 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.XOR | 0 | 7 | ALU_F
+NODE | serialout<1>_MC.D | 2930 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | serialout<1>_MC.Q | 3007 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.REG | 0 | 8 | SRFF_Q
+NODE | serialout<1>_MC.Q | 2962 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.REG | 0 | 8 | SRFF_Q
 
 BUF_INSTANCE | serialout<1>_MC.BUFOE | serialout<1>_MC | 0 | 1 | 1
 INPUT_NODE_TYPE | 0 | 10 | CTOR_UNKNOWN
-SIGNAL | NODE | serialout<1>_MC.TRST | 3001 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 4 | 9 | MC_SI_TRST
+SIGNAL | NODE | serialout<1>_MC.TRST | 2956 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.SI | 4 | 9 | MC_SI_TRST
 SPPTERM | 1 | IV_FALSE | Inst_shiftregm/Mtrien_output
 OUTPUT_NODE_TYPE | 0 | 10 | BUF_OUT
-NODE | serialout<1>_MC.BUFOE.OUT | 3009 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.BUFOE | 0 | 10 | BUF_OUT
+NODE | serialout<1>_MC.BUFOE.OUT | 2964 | ? | 0 | 0 | serialout<1>_MC | NULL | NULL | serialout<1>_MC.BUFOE | 0 | 10 | BUF_OUT
 
 MACROCELL_INSTANCE | PrldLow+Tff | Inst_shiftregm/index<2>_MC | toplevel_COPY_0_COPY_0 | 5120 | 5 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<2> | 2979 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<2> | 2934 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<1> | 2984 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<1> | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregm/index<2> | 2979 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<2> | 2934 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregm/index<2>_MC.SI | Inst_shiftregm/index<2>_MC | 0 | 4 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<2> | 2979 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<2> | 2934 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<2>_MC.Q | Inst_shiftregm/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<1> | 2984 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<1> | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregm/index<2>_MC.D1 | 2983 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregm/index<2>_MC.D1 | 2938 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregm/index<2>_MC.D2 | 2982 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregm/index<2>_MC.D2 | 2937 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 2 | IV_TRUE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregm/index<2>
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0>
 
 SRFF_INSTANCE | Inst_shiftregm/index<2>_MC.REG | Inst_shiftregm/index<2>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregm/index<2>_MC.D | 2981 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregm/index<2>_MC.D | 2936 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregm/index<2>_MC.Q | 2980 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregm/index<2>_MC.Q | 2935 | ? | 0 | 0 | Inst_shiftregm/index<2>_MC | NULL | NULL | Inst_shiftregm/index<2>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftregm/index<1>_MC | toplevel_COPY_0_COPY_0 | 1024 | 4 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<1> | 2984 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<1> | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregm/index<1> | 2984 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<1> | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregm/index<1>_MC.SI | Inst_shiftregm/index<1>_MC | 0 | 3 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<1> | 2984 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<1> | 2939 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<1>_MC.Q | Inst_shiftregm/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregm/index<1>_MC.D1 | 2988 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregm/index<1>_MC.D1 | 2943 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregm/index<1>_MC.D2 | 2987 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregm/index<1>_MC.D2 | 2942 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0>
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0>
 
 SRFF_INSTANCE | Inst_shiftregm/index<1>_MC.REG | Inst_shiftregm/index<1>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregm/index<1>_MC.D | 2986 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregm/index<1>_MC.D | 2941 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregm/index<1>_MC.Q | 2985 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregm/index<1>_MC.Q | 2940 | ? | 0 | 0 | Inst_shiftregm/index<1>_MC | NULL | NULL | Inst_shiftregm/index<1>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftregm/index<0>_MC | toplevel_COPY_0_COPY_0 | 1024 | 3 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregm/index<0>_MC.SI | Inst_shiftregm/index<0>_MC | 0 | 2 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregm/index<0> | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/index<0> | 2944 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/index<0>_MC.Q | Inst_shiftregm/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregm/index<0>_MC.D1 | 2992 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregm/index<0>_MC.D1 | 2947 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 2 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftregm/index<0>
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregm/index<0>_MC.D2 | 2993 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregm/index<0>_MC.D2 | 2948 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 0 | IV_ZERO
 
 SRFF_INSTANCE | Inst_shiftregm/index<0>_MC.REG | Inst_shiftregm/index<0>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregm/index<0>_MC.D | 2991 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregm/index<0>_MC.D | 2946 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregm/index<0>_MC.Q | 2990 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregm/index<0>_MC.Q | 2945 | ? | 0 | 0 | Inst_shiftregm/index<0>_MC | NULL | NULL | Inst_shiftregm/index<0>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftregm/Mtrien_output_MC | toplevel_COPY_0_COPY_0 | 1024 | 2 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregm/Mtrien_output | 3002 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/Mtrien_output_MC.Q | Inst_shiftregm/Mtrien_output_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregm/Mtrien_output | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregm/Mtrien_output_MC.Q | Inst_shiftregm/Mtrien_output_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregm/Mtrien_output_MC.SI | Inst_shiftregm/Mtrien_output_MC | 0 | 1 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregm/Mtrien_output_MC.D1 | 3005 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregm/Mtrien_output_MC.D1 | 2960 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 1 | IV_TRUE | addressstrobe_II/UIM
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregm/Mtrien_output_MC.D2 | 3006 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregm/Mtrien_output_MC.D2 | 2961 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 0 | IV_ZERO
 
 SRFF_INSTANCE | Inst_shiftregm/Mtrien_output_MC.REG | Inst_shiftregm/Mtrien_output_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregm/Mtrien_output_MC.D | 3004 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregm/Mtrien_output_MC.D | 2959 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregm/Mtrien_output_MC.Q | 3003 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregm/Mtrien_output_MC.Q | 2958 | ? | 0 | 0 | Inst_shiftregm/Mtrien_output_MC | NULL | NULL | Inst_shiftregm/Mtrien_output_MC.REG | 0 | 8 | SRFF_Q
 
 OUTPUT_INSTANCE | 0 | serialout<1> | toplevel_COPY_0_COPY_0 | 7 | 2 | 1
 INPUT_NODE_TYPE | 0 | 6 | OI_IN
-NODE | serialout<1>_MC.Q | 3008 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.Q | serialout<1>_MC | 0 | 0 | MC_Q
+NODE | serialout<1>_MC.Q | 2963 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.Q | serialout<1>_MC | 0 | 0 | MC_Q
 INPUT_NODE_TYPE | 2 | 6 | OI_OE
-NODE | serialout<1>_MC.OE | 3010 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.BUFOE.OUT | serialout<1>_MC | 2 | 0 | MC_OE
+NODE | serialout<1>_MC.OE | 2965 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<1>_MC.BUFOE.OUT | serialout<1>_MC | 2 | 0 | MC_OE
 OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
-NODE | serialout<1> | 3011 | PO | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | serialout<1> | 0 | 6 | OI_OUT
+NODE | serialout<1> | 2966 | PO | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | serialout<1> | 0 | 6 | OI_OUT
 
 MACROCELL_INSTANCE | Inv+PrldLow+PinTrst | serialout<2>_MC | toplevel_COPY_0_COPY_0 | 17664 | 13 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<23>_II/UIM | 3015 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<23>_II | 0 | 5 | II_IMUX
+NODE | address<23>_II/UIM | 2970 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<23>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<2> | 3016 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<2> | 2971 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<1> | 3021 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<1> | 2976 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<22>_II/UIM | 3034 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<22>_II | 0 | 5 | II_IMUX
+NODE | address<22>_II/UIM | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<22>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<21>_II/UIM | 3032 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<21>_II | 0 | 5 | II_IMUX
+NODE | address<21>_II/UIM | 2987 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<21>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<20>_II/UIM | 3036 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<20>_II | 0 | 5 | II_IMUX
+NODE | address<20>_II/UIM | 2991 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<20>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<19>_II/UIM | 3031 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<19>_II | 0 | 5 | II_IMUX
+NODE | address<19>_II/UIM | 2986 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<19>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<18>_II/UIM | 3035 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<18>_II | 0 | 5 | II_IMUX
+NODE | address<18>_II/UIM | 2990 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<18>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<17>_II/UIM | 3033 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<17>_II | 0 | 5 | II_IMUX
+NODE | address<17>_II/UIM | 2988 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<17>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<16>_II/UIM | 3037 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<16>_II | 0 | 5 | II_IMUX
+NODE | address<16>_II/UIM | 2992 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<16>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR2__ctinst/7 | 3038 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 7 | 12 | CT_SI7
+SIGNAL | NODE | FOOBAR2__ctinst/7 | 2993 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 7 | 12 | CT_SI7
 SPPTERM | 1 | IV_FALSE | Inst_shiftregh/Mtrien_output
 OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
-NODE | serialout<2>_MC.Q | 3045 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.Q | serialout<2>_MC | 0 | 0 | MC_Q
+NODE | serialout<2>_MC.Q | 3000 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.Q | serialout<2>_MC | 0 | 0 | MC_Q
 OUTPUT_NODE_TYPE | 2 | 0 | MC_OE
-NODE | serialout<2>_MC.OE | 3047 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.BUFOE.OUT | serialout<2>_MC | 2 | 0 | MC_OE
+NODE | serialout<2>_MC.OE | 3002 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.BUFOE.OUT | serialout<2>_MC | 2 | 0 | MC_OE
 
 SIGNAL_INSTANCE | serialout<2>_MC.SI | serialout<2>_MC | 0 | 11 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<23>_II/UIM | 3015 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<23>_II | 0 | 5 | II_IMUX
+NODE | address<23>_II/UIM | 2970 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<23>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<2> | 3016 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<2> | 2971 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<1> | 3021 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<1> | 2976 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<22>_II/UIM | 3034 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<22>_II | 0 | 5 | II_IMUX
+NODE | address<22>_II/UIM | 2989 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<22>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<21>_II/UIM | 3032 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<21>_II | 0 | 5 | II_IMUX
+NODE | address<21>_II/UIM | 2987 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<21>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<20>_II/UIM | 3036 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<20>_II | 0 | 5 | II_IMUX
+NODE | address<20>_II/UIM | 2991 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<20>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<19>_II/UIM | 3031 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<19>_II | 0 | 5 | II_IMUX
+NODE | address<19>_II/UIM | 2986 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<19>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<18>_II/UIM | 3035 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<18>_II | 0 | 5 | II_IMUX
+NODE | address<18>_II/UIM | 2990 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<18>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<17>_II/UIM | 3033 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<17>_II | 0 | 5 | II_IMUX
+NODE | address<17>_II/UIM | 2988 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<17>_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | address<16>_II/UIM | 3037 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<16>_II | 0 | 5 | II_IMUX
+NODE | address<16>_II/UIM | 2992 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | address<16>_II | 0 | 5 | II_IMUX
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | serialout<2>_MC.D1 | 3014 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | serialout<2>_MC.D1 | 2969 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | serialout<2>_MC.D2 | 3013 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | serialout<2>_MC.D2 | 2968 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 4 | IV_FALSE | address<23>_II/UIM | IV_TRUE | Inst_shiftregh/index<2> | IV_TRUE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0>
 SPPTERM | 4 | IV_TRUE | Inst_shiftregh/index<2> | IV_TRUE | Inst_shiftregh/index<1> | IV_FALSE | Inst_shiftregh/index<0> | IV_FALSE | address<22>_II/UIM
 SPPTERM | 4 | IV_TRUE | Inst_shiftregh/index<2> | IV_FALSE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0> | IV_FALSE | address<21>_II/UIM
@@ -701,168 +680,158 @@ SPPTERM | 4 | IV_FALSE | Inst_shiftregh/index<2> | IV_FALSE | Inst_shiftregh/ind
 
 SRFF_INSTANCE | serialout<2>_MC.REG | serialout<2>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | serialout<2>_MC.D | 3012 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.XOR | 0 | 7 | ALU_F
+NODE | serialout<2>_MC.D | 2967 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | serialout<2>_MC.Q | 3044 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.REG | 0 | 8 | SRFF_Q
+NODE | serialout<2>_MC.Q | 2999 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.REG | 0 | 8 | SRFF_Q
 
 BUF_INSTANCE | serialout<2>_MC.BUFOE | serialout<2>_MC | 0 | 1 | 1
 INPUT_NODE_TYPE | 0 | 10 | CTOR_UNKNOWN
-SIGNAL | NODE | FOOBAR2__ctinst/7 | 3038 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 7 | 12 | CT_SI7
+SIGNAL | NODE | FOOBAR2__ctinst/7 | 2993 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 7 | 12 | CT_SI7
 SPPTERM | 1 | IV_FALSE | Inst_shiftregh/Mtrien_output
 OUTPUT_NODE_TYPE | 0 | 10 | BUF_OUT
-NODE | serialout<2>_MC.BUFOE.OUT | 3046 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.BUFOE | 0 | 10 | BUF_OUT
+NODE | serialout<2>_MC.BUFOE.OUT | 3001 | ? | 0 | 0 | serialout<2>_MC | NULL | NULL | serialout<2>_MC.BUFOE | 0 | 10 | BUF_OUT
 
 MACROCELL_INSTANCE | PrldLow+Tff | Inst_shiftregh/index<2>_MC | toplevel_COPY_0_COPY_0 | 5120 | 5 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<2> | 3016 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<2> | 2971 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<1> | 3021 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<1> | 2976 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregh/index<2> | 3016 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<2> | 2971 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregh/index<2>_MC.SI | Inst_shiftregh/index<2>_MC | 0 | 4 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<2> | 3016 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<2> | 2971 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<2>_MC.Q | Inst_shiftregh/index<2>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<1> | 3021 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<1> | 2976 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregh/index<2>_MC.D1 | 3020 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregh/index<2>_MC.D1 | 2975 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregh/index<2>_MC.D2 | 3019 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregh/index<2>_MC.D2 | 2974 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 2 | IV_TRUE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregh/index<2>
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0>
 
 SRFF_INSTANCE | Inst_shiftregh/index<2>_MC.REG | Inst_shiftregh/index<2>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregh/index<2>_MC.D | 3018 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregh/index<2>_MC.D | 2973 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregh/index<2>_MC.Q | 3017 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregh/index<2>_MC.Q | 2972 | ? | 0 | 0 | Inst_shiftregh/index<2>_MC | NULL | NULL | Inst_shiftregh/index<2>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftregh/index<1>_MC | toplevel_COPY_0_COPY_0 | 1024 | 4 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<1> | 3021 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<1> | 2976 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregh/index<1> | 3021 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<1> | 2976 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregh/index<1>_MC.SI | Inst_shiftregh/index<1>_MC | 0 | 3 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<1> | 3021 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<1> | 2976 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<1>_MC.Q | Inst_shiftregh/index<1>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregh/index<1>_MC.D1 | 3025 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregh/index<1>_MC.D1 | 2980 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 0 | IV_ZERO
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregh/index<1>_MC.D2 | 3024 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregh/index<1>_MC.D2 | 2979 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregh/index<1> | IV_FALSE | Inst_shiftregh/index<0>
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0>
 
 SRFF_INSTANCE | Inst_shiftregh/index<1>_MC.REG | Inst_shiftregh/index<1>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregh/index<1>_MC.D | 3023 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregh/index<1>_MC.D | 2978 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregh/index<1>_MC.Q | 3022 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregh/index<1>_MC.Q | 2977 | ? | 0 | 0 | Inst_shiftregh/index<1>_MC | NULL | NULL | Inst_shiftregh/index<1>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftregh/index<0>_MC | toplevel_COPY_0_COPY_0 | 1024 | 3 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregh/index<0>_MC.SI | Inst_shiftregh/index<0>_MC | 0 | 2 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/index<0> | 3026 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/index<0> | 2981 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/index<0>_MC.Q | Inst_shiftregh/index<0>_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregh/index<0>_MC.D1 | 3029 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregh/index<0>_MC.D1 | 2984 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 2 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftregh/index<0>
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregh/index<0>_MC.D2 | 3030 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregh/index<0>_MC.D2 | 2985 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 0 | IV_ZERO
 
 SRFF_INSTANCE | Inst_shiftregh/index<0>_MC.REG | Inst_shiftregh/index<0>_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregh/index<0>_MC.D | 3028 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregh/index<0>_MC.D | 2983 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregh/index<0>_MC.Q | 3027 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregh/index<0>_MC.Q | 2982 | ? | 0 | 0 | Inst_shiftregh/index<0>_MC | NULL | NULL | Inst_shiftregh/index<0>_MC.REG | 0 | 8 | SRFF_Q
 
 MACROCELL_INSTANCE | PrldLow | Inst_shiftregh/Mtrien_output_MC | toplevel_COPY_0_COPY_0 | 1024 | 2 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
-NODE | Inst_shiftregh/Mtrien_output | 3039 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/Mtrien_output_MC.Q | Inst_shiftregh/Mtrien_output_MC | 1 | 0 | MC_UIM
+NODE | Inst_shiftregh/Mtrien_output | 2994 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/Mtrien_output_MC.Q | Inst_shiftregh/Mtrien_output_MC | 1 | 0 | MC_UIM
 
 SIGNAL_INSTANCE | Inst_shiftregh/Mtrien_output_MC.SI | Inst_shiftregh/Mtrien_output_MC | 0 | 1 | 2
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | addressstrobe_II/UIM | 2946 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
+NODE | addressstrobe_II/UIM | 2903 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | addressstrobe_II | 0 | 5 | II_IMUX
 OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
-SIGNAL | NODE | Inst_shiftregh/Mtrien_output_MC.D1 | 3042 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.SI | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | Inst_shiftregh/Mtrien_output_MC.D1 | 2997 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.SI | 1 | 9 | MC_SI_D1
 SPPTERM | 1 | IV_TRUE | addressstrobe_II/UIM
 OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
-SIGNAL | NODE | Inst_shiftregh/Mtrien_output_MC.D2 | 3043 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.SI | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | Inst_shiftregh/Mtrien_output_MC.D2 | 2998 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.SI | 2 | 9 | MC_SI_D2
 SPPTERM | 0 | IV_ZERO
 
 SRFF_INSTANCE | Inst_shiftregh/Mtrien_output_MC.REG | Inst_shiftregh/Mtrien_output_MC | 0 | 2 | 1
 INPUT_NODE_TYPE | 0 | 8 | SRFF_D
-NODE | Inst_shiftregh/Mtrien_output_MC.D | 3041 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.XOR | 0 | 7 | ALU_F
+NODE | Inst_shiftregh/Mtrien_output_MC.D | 2996 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.XOR | 0 | 7 | ALU_F
 INPUT_NODE_TYPE | 1 | 8 | SRFF_C
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | clock_II/FCLK | 2914 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
 OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
-NODE | Inst_shiftregh/Mtrien_output_MC.Q | 3040 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.REG | 0 | 8 | SRFF_Q
+NODE | Inst_shiftregh/Mtrien_output_MC.Q | 2995 | ? | 0 | 0 | Inst_shiftregh/Mtrien_output_MC | NULL | NULL | Inst_shiftregh/Mtrien_output_MC.REG | 0 | 8 | SRFF_Q
 
 OUTPUT_INSTANCE | 0 | serialout<2> | toplevel_COPY_0_COPY_0 | 7 | 2 | 1
 INPUT_NODE_TYPE | 0 | 6 | OI_IN
-NODE | serialout<2>_MC.Q | 3045 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.Q | serialout<2>_MC | 0 | 0 | MC_Q
+NODE | serialout<2>_MC.Q | 3000 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.Q | serialout<2>_MC | 0 | 0 | MC_Q
 INPUT_NODE_TYPE | 2 | 6 | OI_OE
-NODE | serialout<2>_MC.OE | 3047 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.BUFOE.OUT | serialout<2>_MC | 2 | 0 | MC_OE
+NODE | serialout<2>_MC.OE | 3002 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | serialout<2>_MC.BUFOE.OUT | serialout<2>_MC | 2 | 0 | MC_OE
 OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
-NODE | serialout<2> | 3048 | PO | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | serialout<2> | 0 | 6 | OI_OUT
+NODE | serialout<2> | 3003 | PO | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | serialout<2> | 0 | 6 | OI_OUT
 
 FB_INSTANCE | FOOBAR1_ | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
-FBPIN | 1 | NULL | 0 | address<15>_II | 1 | NULL | 0 | 38 | 49152
 FBPIN | 2 | NULL | 0 | address<14>_II | 1 | NULL | 0 | 37 | 49152
 FBPIN | 3 | NULL | 0 | address<13>_II | 1 | NULL | 0 | 36 | 49152
 FBPIN | 4 | Inst_shiftregh/index<2>_MC | 1 | NULL | 0 | NULL | 0
@@ -880,12 +849,13 @@ FBPIN | 15 | Inst_shiftregm/Mtrien_output_MC | 1 | NULL | 0 | NULL | 0
 FBPIN | 16 | Inst_shiftregh/Mtrien_output_MC | 1 | NULL | 0 | NULL | 0
 
 FB_INSTANCE | FOOBAR2_ | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
-FBPIN | 1 | serialout<2>_MC | 1 | NULL | 0 | serialout<2> | 1 | 39 | 49152
-FBPIN | 2 | serialout<1>_MC | 1 | NULL | 0 | serialout<1> | 1 | 40 | 49152
-FBPIN | 5 | serialout<0>_MC | 1 | NULL | 0 | serialout<0> | 1 | 41 | 49152
-FBPIN | 6 | NULL | 0 | clock_II | 1 | NULL | 0 | 42 | 49152
-FBPIN | 12 | Inst_shiftreg/Mtrien_output_MC | 1 | addressstrobe_II | 1 | NULL | 0 | 2 | 49152
-FBPIN | 13 | NULL | 0 | address<23>_II | 1 | NULL | 0 | 3 | 49152
+FBPIN | 2 | serialout<2>_MC | 1 | NULL | 0 | serialout<2> | 1 | 40 | 49152
+FBPIN | 5 | serialout<1>_MC | 1 | NULL | 0 | serialout<1> | 1 | 41 | 49152
+FBPIN | 6 | serialout<0>_MC | 1 | NULL | 0 | serialout<0> | 1 | 42 | 49152
+FBPIN | 7 | NULL | 0 | clock_II | 1 | NULL | 0 | 43 | 57344
+FBPIN | 8 | Inst_shiftreg/Mtrien_output_MC | 1 | addressstrobe_II | 1 | NULL | 0 | 44 | 57344
+FBPIN | 12 | NULL | 0 | address<23>_II | 1 | NULL | 0 | 2 | 49152
+FBPIN | 13 | NULL | 0 | address<22>_II | 1 | NULL | 0 | 3 | 49152
 
 FB_INSTANCE | FOOBAR3_ | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
 FBPIN | 1 | NULL | 0 | address<7>_II | 1 | NULL | 0 | 29 | 49152
@@ -898,40 +868,30 @@ FBPIN | 12 | NULL | 0 | address<1>_II | 1 | NULL | 0 | 20 | 49152
 FBPIN | 14 | NULL | 0 | address<0>_II | 1 | NULL | 0 | 19 | 49152
 
 FB_INSTANCE | FOOBAR4_ | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
-FBPIN | 1 | NULL | 0 | address<22>_II | 1 | NULL | 0 | 5 | 49152
-FBPIN | 2 | NULL | 0 | address<21>_II | 1 | NULL | 0 | 6 | 49152
-FBPIN | 7 | NULL | 0 | address<20>_II | 1 | NULL | 0 | 8 | 49152
-FBPIN | 11 | NULL | 0 | address<19>_II | 1 | NULL | 0 | 12 | 49152
-FBPIN | 13 | NULL | 0 | address<18>_II | 1 | NULL | 0 | 13 | 49152
-FBPIN | 14 | NULL | 0 | address<17>_II | 1 | NULL | 0 | 14 | 49152
-FBPIN | 15 | NULL | 0 | address<16>_II | 1 | NULL | 0 | 16 | 49152
+FBPIN | 1 | NULL | 0 | address<21>_II | 1 | NULL | 0 | 5 | 49152
+FBPIN | 2 | NULL | 0 | address<20>_II | 1 | NULL | 0 | 6 | 49152
+FBPIN | 7 | NULL | 0 | address<19>_II | 1 | NULL | 0 | 8 | 49152
+FBPIN | 11 | NULL | 0 | address<18>_II | 1 | NULL | 0 | 12 | 49152
+FBPIN | 13 | NULL | 0 | address<17>_II | 1 | NULL | 0 | 13 | 49152
+FBPIN | 14 | NULL | 0 | address<16>_II | 1 | NULL | 0 | 14 | 49152
+FBPIN | 15 | NULL | 0 | address<15>_II | 1 | NULL | 0 | 16 | 49152
 
 FB_INSTANCE | INPUTPINS_FOOBAR5_ | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
 
-CT_INSTANCE | FOOBAR1_ | FOOBAR1__ctinst | toplevel_COPY_0_COPY_0 | 0 | 1 | 1
-INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | clock_II/UIM | 2958 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 0 | 5 | II_IMUX
-OUTPUT_NODE_TYPE | 4 | 12 | CT_SI4
-SIGNAL | NODE | FOOBAR1__ctinst/4 | 2957 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+CT_INSTANCE | FOOBAR1_ | FOOBAR1__ctinst | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
 
-CT_INSTANCE | FOOBAR2_ | FOOBAR2__ctinst | toplevel_COPY_0_COPY_0 | 0 | 2 | 2
+CT_INSTANCE | FOOBAR2_ | FOOBAR2__ctinst | toplevel_COPY_0_COPY_0 | 0 | 1 | 1
 INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | clock_II/UIM | 2958 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | clock_II | 0 | 5 | II_IMUX
-INPUT_NODE_TYPE | 1 | 100 | NOTYPE
-NODE | Inst_shiftregh/Mtrien_output | 3039 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/Mtrien_output_MC.Q | Inst_shiftregh/Mtrien_output_MC | 1 | 0 | MC_UIM
-OUTPUT_NODE_TYPE | 4 | 12 | CT_SI4
-SIGNAL | NODE | FOOBAR2__ctinst/4 | 2966 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 4 | 12 | CT_SI4
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
+NODE | Inst_shiftregh/Mtrien_output | 2994 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | Inst_shiftregh/Mtrien_output_MC.Q | Inst_shiftregh/Mtrien_output_MC | 1 | 0 | MC_UIM
 OUTPUT_NODE_TYPE | 7 | 12 | CT_SI7
-SIGNAL | NODE | FOOBAR2__ctinst/7 | 3038 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 7 | 12 | CT_SI7
+SIGNAL | NODE | FOOBAR2__ctinst/7 | 2993 | ? | 0 | 0 | toplevel_COPY_0_COPY_0 | NULL | NULL | FOOBAR2__ctinst | 7 | 12 | CT_SI7
 SPPTERM | 1 | IV_FALSE | Inst_shiftregh/Mtrien_output
 
 CT_INSTANCE | FOOBAR3_ | FOOBAR3__ctinst | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
 
 CT_INSTANCE | FOOBAR4_ | FOOBAR4__ctinst | toplevel_COPY_0_COPY_0 | 0 | 0 | 0
 
-PLA | FOOBAR1_ | 18
+PLA | FOOBAR1_ | 17
 PLA_TERM | 0 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0>
 PLA_TERM | 1 | 
@@ -941,22 +901,20 @@ SPPTERM | 2 | IV_TRUE | Inst_shiftreg/index<2> | IV_TRUE | addressstrobe_II/UIM
 PLA_TERM | 3 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0>
 PLA_TERM | 4 | 
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
-PLA_TERM | 5 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0>
-PLA_TERM | 6 | 
+PLA_TERM | 5 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregh/index<1> | IV_FALSE | Inst_shiftregh/index<0>
-PLA_TERM | 7 | 
+PLA_TERM | 6 | 
 SPPTERM | 2 | IV_TRUE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregh/index<2>
-PLA_TERM | 8 | 
+PLA_TERM | 7 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0>
-PLA_TERM | 9 | 
+PLA_TERM | 8 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0>
-PLA_TERM | 10 | 
+PLA_TERM | 9 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0>
-PLA_TERM | 11 | 
+PLA_TERM | 10 | 
 SPPTERM | 2 | IV_TRUE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregm/index<2>
-PLA_TERM | 12 | 
+PLA_TERM | 11 | 
 SPPTERM | 3 | IV_FALSE | addressstrobe_II/UIM | IV_TRUE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0>
 PLA_TERM | 25 | 
 SPPTERM | 2 | IV_FALSE | addressstrobe_II/UIM | IV_FALSE | Inst_shiftregh/index<0>
@@ -969,7 +927,7 @@ SPPTERM | 1 | IV_TRUE | addressstrobe_II/UIM
 PLA_TERM | 55 | 
 SPPTERM | 1 | IV_TRUE | addressstrobe_II/UIM
 
-PLA | FOOBAR2_ | 28
+PLA | FOOBAR2_ | 27
 PLA_TERM | 0 | 
 SPPTERM | 4 | IV_FALSE | address<7>_II/UIM | IV_TRUE | Inst_shiftreg/index<2> | IV_TRUE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0>
 PLA_TERM | 1 | 
@@ -979,52 +937,50 @@ SPPTERM | 4 | IV_TRUE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<
 PLA_TERM | 3 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<1> | IV_TRUE | Inst_shiftreg/index<0> | IV_FALSE | address<1>_II/UIM
 PLA_TERM | 4 | 
-SPPTERM | 1 | IV_TRUE | clock_II/UIM
-PLA_TERM | 5 | 
 SPPTERM | 4 | IV_TRUE | Inst_shiftreg/index<2> | IV_TRUE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0> | IV_FALSE | address<6>_II/UIM
-PLA_TERM | 6 | 
+PLA_TERM | 5 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftreg/index<2> | IV_TRUE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0> | IV_FALSE | address<2>_II/UIM
+PLA_TERM | 6 | 
+SPPTERM | 4 | IV_TRUE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0> | IV_FALSE | address<4>_II/UIM
 PLA_TERM | 7 | 
 SPPTERM | 1 | IV_FALSE | Inst_shiftregh/Mtrien_output
 PLA_TERM | 8 | 
-SPPTERM | 4 | IV_TRUE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0> | IV_FALSE | address<4>_II/UIM
-PLA_TERM | 9 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftreg/index<2> | IV_FALSE | Inst_shiftreg/index<1> | IV_FALSE | Inst_shiftreg/index<0> | IV_FALSE | address<0>_II/UIM
-PLA_TERM | 10 | 
+PLA_TERM | 9 | 
 SPPTERM | 4 | IV_FALSE | address<15>_II/UIM | IV_TRUE | Inst_shiftregm/index<2> | IV_TRUE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0>
-PLA_TERM | 11 | 
+PLA_TERM | 10 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregm/index<2> | IV_TRUE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0> | IV_FALSE | address<11>_II/UIM
-PLA_TERM | 12 | 
-SPPTERM | 1 | IV_FALSE | Inst_shiftregm/Mtrien_output
-PLA_TERM | 13 | 
+PLA_TERM | 11 | 
 SPPTERM | 4 | IV_TRUE | Inst_shiftregm/index<2> | IV_FALSE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0> | IV_FALSE | address<13>_II/UIM
-PLA_TERM | 14 | 
+PLA_TERM | 12 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregm/index<2> | IV_FALSE | Inst_shiftregm/index<1> | IV_TRUE | Inst_shiftregm/index<0> | IV_FALSE | address<9>_II/UIM
-PLA_TERM | 15 | 
+PLA_TERM | 13 | 
 SPPTERM | 4 | IV_TRUE | Inst_shiftregm/index<2> | IV_TRUE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0> | IV_FALSE | address<14>_II/UIM
-PLA_TERM | 16 | 
+PLA_TERM | 14 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregm/index<2> | IV_TRUE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0> | IV_FALSE | address<10>_II/UIM
-PLA_TERM | 17 | 
+PLA_TERM | 15 | 
 SPPTERM | 4 | IV_TRUE | Inst_shiftregm/index<2> | IV_FALSE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0> | IV_FALSE | address<12>_II/UIM
-PLA_TERM | 18 | 
+PLA_TERM | 16 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregm/index<2> | IV_FALSE | Inst_shiftregm/index<1> | IV_FALSE | Inst_shiftregm/index<0> | IV_FALSE | address<8>_II/UIM
-PLA_TERM | 19 | 
+PLA_TERM | 17 | 
 SPPTERM | 4 | IV_FALSE | address<23>_II/UIM | IV_TRUE | Inst_shiftregh/index<2> | IV_TRUE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0>
-PLA_TERM | 20 | 
+PLA_TERM | 18 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregh/index<2> | IV_TRUE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0> | IV_FALSE | address<19>_II/UIM
-PLA_TERM | 21 | 
-SPPTERM | 1 | IV_FALSE | Inst_shiftreg/Mtrien_output
-PLA_TERM | 22 | 
+PLA_TERM | 19 | 
 SPPTERM | 4 | IV_TRUE | Inst_shiftregh/index<2> | IV_FALSE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0> | IV_FALSE | address<21>_II/UIM
-PLA_TERM | 23 | 
+PLA_TERM | 20 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregh/index<2> | IV_FALSE | Inst_shiftregh/index<1> | IV_TRUE | Inst_shiftregh/index<0> | IV_FALSE | address<17>_II/UIM
-PLA_TERM | 24 | 
+PLA_TERM | 21 | 
+SPPTERM | 1 | IV_FALSE | Inst_shiftregm/Mtrien_output
+PLA_TERM | 22 | 
 SPPTERM | 4 | IV_TRUE | Inst_shiftregh/index<2> | IV_TRUE | Inst_shiftregh/index<1> | IV_FALSE | Inst_shiftregh/index<0> | IV_FALSE | address<22>_II/UIM
-PLA_TERM | 25 | 
+PLA_TERM | 23 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregh/index<2> | IV_TRUE | Inst_shiftregh/index<1> | IV_FALSE | Inst_shiftregh/index<0> | IV_FALSE | address<18>_II/UIM
-PLA_TERM | 26 | 
+PLA_TERM | 24 | 
+SPPTERM | 1 | IV_FALSE | Inst_shiftreg/Mtrien_output
+PLA_TERM | 25 | 
 SPPTERM | 4 | IV_TRUE | Inst_shiftregh/index<2> | IV_FALSE | Inst_shiftregh/index<1> | IV_FALSE | Inst_shiftregh/index<0> | IV_FALSE | address<20>_II/UIM
-PLA_TERM | 27 | 
+PLA_TERM | 26 | 
 SPPTERM | 4 | IV_FALSE | Inst_shiftregh/index<2> | IV_FALSE | Inst_shiftregh/index<1> | IV_FALSE | Inst_shiftregh/index<0> | IV_FALSE | address<16>_II/UIM
 
 BUSINFO | ADDRESS<23:0> | 24 | 0 | 0 | address<0> | 23 | address<10> | 13 | address<11> | 12 | address<12> | 11 | address<13> | 10 | address<14> | 9 | address<15> | 8 | address<16> | 7 | address<17> | 6 | address<18> | 5 | address<19> | 4 | address<1> | 22 | address<20> | 3 | address<21> | 2 | address<22> | 1 | address<23> | 0 | address<2> | 21 | address<3> | 20 | address<4> | 19 | address<5> | 18 | address<6> | 17 | address<7> | 16 | address<8> | 15 | address<9> | 14
@@ -1062,22 +1018,22 @@ serialout<1> | LVCMOS18
 serialout<2> | LVCMOS18
 
 
-FB_ORDER_OF_INPUTS | FOOBAR1_ | 0 | Inst_shiftregh/index<1> | NULL | 3 | Inst_shiftregm/index<1> | NULL | 4 | Inst_shiftreg/index<2> | NULL | 6 | Inst_shiftreg/index<0> | NULL | 8 | addressstrobe | 2
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 0 | Inst_shiftregh/index<1> | NULL | 2 | addressstrobe | 44 | 3 | Inst_shiftregm/index<1> | NULL | 4 | Inst_shiftreg/index<2> | NULL | 6 | Inst_shiftreg/index<0> | NULL
 FB_ORDER_OF_INPUTS | FOOBAR1_ | 9 | Inst_shiftregm/index<2> | NULL | 10 | Inst_shiftregm/index<0> | NULL | 13 | Inst_shiftreg/index<1> | NULL | 14 | Inst_shiftregh/index<2> | NULL | 15 | Inst_shiftregh/index<0> | NULL
-FB_ORDER_OF_INPUTS | FOOBAR1_ | 16 | clock | 42
 
-FB_IMUX_INDEX | FOOBAR1_ | 68 | -1 | -1 | 75 | 70 | -1 | 77 | -1 | 27 | 74 | 76 | -1 | -1 | 71 | 67 | 69 | 21 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
-
-
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 0 | address<6> | 28 | 1 | address<8> | 30 | 2 | address<13> | 36 | 3 | Inst_shiftregm/index<1> | NULL | 4 | Inst_shiftreg/index<2> | NULL
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 5 | address<2> | 21 | 6 | Inst_shiftreg/index<0> | NULL | 7 | address<18> | 13 | 8 | Inst_shiftregm/Mtrien_output | NULL | 9 | Inst_shiftregm/index<2> | NULL
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 10 | address<14> | 37 | 11 | address<23> | 3 | 12 | address<22> | 5 | 13 | Inst_shiftreg/index<1> | NULL | 14 | Inst_shiftregh/index<2> | NULL
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 15 | Inst_shiftregh/index<0> | NULL | 16 | address<5> | 27 | 17 | address<16> | 16 | 18 | address<19> | 12 | 20 | address<7> | 29
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 21 | address<17> | 14 | 22 | address<0> | 19 | 23 | address<4> | 23 | 24 | address<11> | 33 | 26 | clock | 42
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 27 | address<20> | 8 | 28 | address<1> | 20 | 29 | address<21> | 6 | 30 | address<3> | 22 | 31 | Inst_shiftregh/Mtrien_output | NULL
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 32 | address<12> | 34 | 33 | Inst_shiftregm/index<0> | NULL | 34 | Inst_shiftreg/Mtrien_output | NULL | 35 | address<15> | 38 | 36 | address<10> | 32
-FB_ORDER_OF_INPUTS | FOOBAR2_ | 37 | Inst_shiftregh/index<1> | NULL | 38 | address<9> | 31
-
-FB_IMUX_INDEX | FOOBAR2_ | 33 | 12 | 2 | 75 | 70 | 42 | 77 | 60 | 78 | 74 | 1 | 28 | 48 | 71 | 67 | 69 | 34 | 62 | 58 | -1 | 32 | 61 | 45 | 37 | 9 | -1 | 21 | 54 | 43 | 49 | 41 | 79 | 8 | 76 | 91 | 0 | 10 | 68 | 11 | -1
+FB_IMUX_INDEX | FOOBAR1_ | 68 | -1 | 23 | 75 | 70 | -1 | 77 | -1 | -1 | 74 | 76 | -1 | -1 | 71 | 67 | 69 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
 
 
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 0 | address<6> | 28 | 1 | address<8> | 30 | 2 | address<13> | 36 | 3 | Inst_shiftregm/index<1> | NULL | 4 | Inst_shiftreg/Mtrien_output | NULL
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 5 | address<2> | 21 | 6 | Inst_shiftreg/index<0> | NULL | 7 | address<17> | 13 | 8 | Inst_shiftregm/Mtrien_output | NULL | 9 | address<11> | 33
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 10 | address<14> | 37 | 11 | address<22> | 3 | 12 | address<21> | 5 | 13 | Inst_shiftreg/index<1> | NULL | 14 | Inst_shiftregh/index<2> | NULL
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 15 | Inst_shiftregh/index<0> | NULL | 16 | address<5> | 27 | 17 | address<15> | 16 | 18 | address<18> | 12 | 20 | address<7> | 29
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 21 | Inst_shiftreg/index<2> | NULL | 22 | address<0> | 19 | 23 | Inst_shiftregh/index<1> | NULL | 24 | address<23> | 2 | 26 | Inst_shiftregm/index<0> | NULL
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 27 | address<19> | 8 | 28 | address<1> | 20 | 29 | address<20> | 6 | 30 | address<16> | 14 | 31 | Inst_shiftregh/Mtrien_output | NULL
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 32 | address<12> | 34 | 33 | address<4> | 23 | 34 | address<3> | 22 | 36 | address<10> | 32 | 37 | Inst_shiftregm/index<2> | NULL
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 38 | address<9> | 31
+
+FB_IMUX_INDEX | FOOBAR2_ | 33 | 12 | 2 | 75 | 87 | 42 | 77 | 60 | 78 | 9 | 1 | 28 | 48 | 71 | 67 | 69 | 34 | 62 | 58 | -1 | 32 | 70 | 45 | 68 | 27 | -1 | 76 | 54 | 43 | 49 | 61 | 79 | 8 | 37 | 41 | -1 | 10 | 74 | 11 | -1
+
+
+GLOBAL_FCLK | clock | 0 | 0

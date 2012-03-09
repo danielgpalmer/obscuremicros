@@ -16,20 +16,20 @@ address<11> S:PIN33
 address<12> S:PIN34
 address<13> S:PIN36
 address<14> S:PIN37
-address<15> S:PIN38
-address<16> S:PIN16
-address<17> S:PIN14
-address<18> S:PIN13
-address<19> S:PIN12
-address<20> S:PIN8
-address<21> S:PIN6
-address<22> S:PIN5
-address<23> S:PIN3
-addressstrobe S:PIN2
-clock S:PIN42
-serialout<0> S:PIN41
-serialout<1> S:PIN40
-serialout<2> S:PIN39
+address<15> S:PIN16
+address<16> S:PIN14
+address<17> S:PIN13
+address<18> S:PIN12
+address<19> S:PIN8
+address<20> S:PIN6
+address<21> S:PIN5
+address<22> S:PIN3
+address<23> S:PIN2
+addressstrobe S:PIN44
+clock S:PIN43
+serialout<0> S:PIN42
+serialout<1> S:PIN41
+serialout<2> S:PIN40
 
 
 ;The remaining section of the .gyd file is for documentation purposes only.
@@ -39,9 +39,9 @@ PARTITION FB1_4 Inst_shiftregh/index<2> Inst_shiftregh/index<1> Inst_shiftregh/i
 		 Inst_shiftreg/index<1>
 PARTITION FB1_11 Inst_shiftregm/index<2> Inst_shiftregm/index<1> Inst_shiftregm/index<0> Inst_shiftreg/index<0>
 		 Inst_shiftregm/Mtrien_output Inst_shiftregh/Mtrien_output
-PARTITION FB2_1 serialout<2> serialout<1>
-PARTITION FB2_5 serialout<0>
-PARTITION FB2_12 Inst_shiftreg/Mtrien_output
+PARTITION FB2_2 serialout<2>
+PARTITION FB2_5 serialout<1> serialout<0>
+PARTITION FB2_8 Inst_shiftreg/Mtrien_output
 
 
 

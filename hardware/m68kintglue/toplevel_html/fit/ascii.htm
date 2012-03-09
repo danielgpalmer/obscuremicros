@@ -3,7 +3,7 @@
  
 cpldfit:  version O.87xd                            Xilinx Inc.
                                   Fitter Report
-Design Name: toplevel                            Date:  3- 9-2012, 11:16PM
+Design Name: toplevel                            Date:  3- 9-2012, 11:20PM
 Device Used: XC2C64A-7-VQ44
 Fitting Status: Successful
 
@@ -11,18 +11,18 @@ Fitting Status: Successful
 
 Macrocells     Product Terms    Function Block   Registers      Pins           
 Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
-15 /64  ( 23%) 46  /224  ( 21%) 48  /160  ( 30%) 15 /64  ( 23%) 29 /33  ( 88%)
+15 /64  ( 23%) 44  /224  ( 20%) 46  /160  ( 29%) 15 /64  ( 23%) 29 /33  ( 88%)
 
 ** Function Block Resources **
 
 Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
 Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
-FB1      11/16     11/40    18/56     0/ 8    1/1*     0/1      0/1      0/1
-FB2       4/16     37/40    28/56     3/ 9    1/1*     0/1      0/1      1/1*
+FB1      11/16     10/40    17/56     0/ 8    0/1      0/1      0/1      0/1
+FB2       4/16     36/40    27/56     3/ 9    0/1      0/1      0/1      1/1*
 FB3       0/16      0/40     0/56     0/ 9    0/1      0/1      0/1      0/1
 FB4       0/16      0/40     0/56     0/ 7    0/1      0/1      0/1      0/1
          -----    -------  -------   -----    ---      ---      ---      ---
-Total    15/64     48/160   46/224    3/33    2/4      0/4      0/4      1/4 
+Total    15/64     46/160   44/224    3/33    0/4      0/4      0/4      1/4 
 
 CTC - Control Term Clock
 CTR - Control Term Reset
@@ -35,17 +35,18 @@ CTE - Control Term Output Enable
 
 GCK         GSR         GTS         DGE         
 Used/Tot    Used/Tot    Used/Tot    Used/Tot    
-0/3         0/1         0/4         0/0
+1/3         0/1         0/4         0/0
 
+Signal 'clock' mapped onto global clock net GCK0.
 
 ** Pin Resources **
 
 Signal Type    Required     Mapped  |  Pin Type            Used    Total 
 ------------------------------------|------------------------------------
-Input         :   26          26    |  I/O              :    24     25
-Output        :    3           3    |  GCK/IO           :     0      3
+Input         :   25          25    |  I/O              :    22     25
+Output        :    3           3    |  GCK/IO           :     2      3
 Bidirectional :    0           0    |  GTS/IO           :     4      4
-GCK           :    0           0    |  GSR/IO           :     1      1
+GCK           :    1           1    |  GSR/IO           :     1      1
 GTS           :    0           0    |  
 GSR           :    0           0    |  
                  ----        ----
@@ -56,38 +57,50 @@ End of Mapped Resource Summary
 
 WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
    use the default filename of 'toplevel.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'addressstrobe' based upon the
+   LOC constraint 'P44'. It is recommended that you declare this BUFG
+   explicitedly in your design. Note that for certain device families the output
+   of a BUFG constraint can not drive a gated clock, and the BUFG constraint
+   will be ignored.
+INFO:Cpld - Inferring BUFG constraint for signal 'clock' based upon the LOC
+   constraint 'P43'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+WARNING:Cpld:1239 - The global clock designation (BUFG) on signal
+   'addressstrobe_IBUF' is ignored. Most likely the signal is gated and
+   therefore cannot be used as a global control signal.
 *************************  Summary of Mapped Logic  ************************
 
 ** 3 Outputs **
 
 Signal                        Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
 Name                          Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
-serialout<2>                  10    13    1    FB2_1   39    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
-serialout<1>                  10    13    1    FB2_2   40    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
-serialout<0>                  10    13    1    FB2_5   41    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+serialout<2>                  9     12    1    FB2_2   40    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+serialout<1>                  9     12    1    FB2_5   41    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+serialout<0>                  9     12    1    FB2_6   42    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
 
 ** 12 Buried Nodes **
 
 Signal                        Total Total Loc     Reg     Reg Init
 Name                          Pts   Inps          Use     State
-Inst_shiftregh/index<2>       3     5     FB1_4   TFF     RESET
-Inst_shiftregh/index<1>       3     4     FB1_5   DFF     RESET
-Inst_shiftregh/index<0>       2     3     FB1_6   DFF     RESET
-Inst_shiftreg/index<2>        3     5     FB1_7   TFF     RESET
-Inst_shiftreg/index<1>        3     4     FB1_8   DFF     RESET
-Inst_shiftregm/index<2>       3     5     FB1_11  TFF     RESET
-Inst_shiftregm/index<1>       3     4     FB1_12  DFF     RESET
-Inst_shiftregm/index<0>       2     3     FB1_13  DFF     RESET
-Inst_shiftreg/index<0>        2     3     FB1_14  DFF     RESET
-Inst_shiftregm/Mtrien_output  2     2     FB1_15  DFF     RESET
-Inst_shiftregh/Mtrien_output  2     2     FB1_16  DFF     RESET
-Inst_shiftreg/Mtrien_output   1     1     FB2_12  DFF     RESET
+Inst_shiftregh/index<2>       2     4     FB1_4   TFF     RESET
+Inst_shiftregh/index<1>       2     3     FB1_5   DFF     RESET
+Inst_shiftregh/index<0>       1     2     FB1_6   DFF     RESET
+Inst_shiftreg/index<2>        2     4     FB1_7   TFF     RESET
+Inst_shiftreg/index<1>        2     3     FB1_8   DFF     RESET
+Inst_shiftregm/index<2>       2     4     FB1_11  TFF     RESET
+Inst_shiftregm/index<1>       2     3     FB1_12  DFF     RESET
+Inst_shiftregm/index<0>       1     2     FB1_13  DFF     RESET
+Inst_shiftreg/index<0>        1     2     FB1_14  DFF     RESET
+Inst_shiftregm/Mtrien_output  1     1     FB1_15  DFF     RESET
+Inst_shiftregh/Mtrien_output  1     1     FB1_16  DFF     RESET
+Inst_shiftreg/Mtrien_output   0     0     FB2_8   DFF     RESET
 
 ** 26 Inputs **
 
 Signal                        Bank Loc     Pin   Pin       Pin     I/O      I/O
 Name                                       No.   Type      Use     STD      Style
-address<15>                   2    FB1_1   38    I/O       I       LVCMOS18 KPR
 address<14>                   2    FB1_2   37    I/O       I       LVCMOS18 KPR
 address<13>                   2    FB1_3   36    I/O       I       LVCMOS18 KPR
 address<12>                   2    FB1_9   34    GTS/I/O   I       LVCMOS18 KPR
@@ -95,9 +108,10 @@ address<11>                   2    FB1_10  33    GTS/I/O   I       LVCMOS18 KPR
 address<10>                   2    FB1_11  32    GTS/I/O   I       LVCMOS18 KPR
 address<9>                    2    FB1_12  31    GTS/I/O   I       LVCMOS18 KPR
 address<8>                    2    FB1_13  30    GSR/I/O   I       LVCMOS18 KPR
-clock                         1    FB2_6   42    I/O       I       LVCMOS18 KPR
-addressstrobe                 1    FB2_12  2     I/O       I       LVCMOS18 KPR
-address<23>                   1    FB2_13  3     I/O       I       LVCMOS18 KPR
+clock                         1    FB2_7   43    GCK/I/O   GCK     LVCMOS18 KPR
+addressstrobe                 1    FB2_8   44    GCK/I/O   I       LVCMOS18 KPR
+address<23>                   1    FB2_12  2     I/O       I       LVCMOS18 KPR
+address<22>                   1    FB2_13  3     I/O       I       LVCMOS18 KPR
 address<7>                    2    FB3_1   29    I/O       I       LVCMOS18 KPR
 address<6>                    2    FB3_2   28    I/O       I       LVCMOS18 KPR
 address<5>                    2    FB3_3   27    I/O       I       LVCMOS18 KPR
@@ -106,13 +120,13 @@ address<3>                    2    FB3_10  22    I/O       I       LVCMOS18 KPR
 address<2>                    2    FB3_11  21    I/O       I       LVCMOS18 KPR
 address<1>                    2    FB3_12  20    I/O       I       LVCMOS18 KPR
 address<0>                    2    FB3_14  19    I/O       I       LVCMOS18 KPR
-address<22>                   1    FB4_1   5     I/O       I       LVCMOS18 KPR
-address<21>                   1    FB4_2   6     I/O       I       LVCMOS18 KPR
-address<20>                   1    FB4_7   8     I/O       I       LVCMOS18 KPR
-address<19>                   1    FB4_11  12    I/O       I       LVCMOS18 KPR
-address<18>                   1    FB4_13  13    I/O       I       LVCMOS18 KPR
-address<17>                   1    FB4_14  14    I/O       I       LVCMOS18 KPR
-address<16>                   1    FB4_15  16    I/O       I       LVCMOS18 KPR
+address<21>                   1    FB4_1   5     I/O       I       LVCMOS18 KPR
+address<20>                   1    FB4_2   6     I/O       I       LVCMOS18 KPR
+address<19>                   1    FB4_7   8     I/O       I       LVCMOS18 KPR
+address<18>                   1    FB4_11  12    I/O       I       LVCMOS18 KPR
+address<17>                   1    FB4_13  13    I/O       I       LVCMOS18 KPR
+address<16>                   1    FB4_14  14    I/O       I       LVCMOS18 KPR
+address<15>                   1    FB4_15  16    I/O       I       LVCMOS18 KPR
 
 Legend:
 Pin No.   - ~     - User Assigned
@@ -140,104 +154,103 @@ Pin Type/Use - I  - Input             GCK - Global clock
 Pin No.      - ~  - User Assigned
 *********************************** FB1  ***********************************
 This function block is part of I/O Bank number:               2
-Number of function block inputs used/remaining:               11/29
-Number of function block control terms used/remaining:        1/3
-Number of PLA product terms used/remaining:                   18/38
+Number of function block inputs used/remaining:               10/30
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   17/39
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-(unused)                      0     FB1_1   38   I/O     I     
+(unused)                      0     FB1_1   38   I/O           
 (unused)                      0     FB1_2   37   I/O     I     
 (unused)                      0     FB1_3   36   I/O     I     
-Inst_shiftregh/index<2>       3     FB1_4        (b)     (b)    +          
-Inst_shiftregh/index<1>       3     FB1_5        (b)     (b)    +          
-Inst_shiftregh/index<0>       2     FB1_6        (b)     (b)    +          
-Inst_shiftreg/index<2>        3     FB1_7        (b)     (b)    +          
-Inst_shiftreg/index<1>        3     FB1_8        (b)     (b)    +          
+Inst_shiftregh/index<2>       2     FB1_4        (b)     (b)               
+Inst_shiftregh/index<1>       2     FB1_5        (b)     (b)               
+Inst_shiftregh/index<0>       1     FB1_6        (b)     (b)               
+Inst_shiftreg/index<2>        2     FB1_7        (b)     (b)               
+Inst_shiftreg/index<1>        2     FB1_8        (b)     (b)               
 (unused)                      0     FB1_9   34   GTS/I/O I     
 (unused)                      0     FB1_10  33   GTS/I/O I     
-Inst_shiftregm/index<2>       3     FB1_11  32   GTS/I/O I      +          
-Inst_shiftregm/index<1>       3     FB1_12  31   GTS/I/O I      +          
-Inst_shiftregm/index<0>       2     FB1_13  30   GSR/I/O I      +          
-Inst_shiftreg/index<0>        2     FB1_14       (b)     (b)    +          
-Inst_shiftregm/Mtrien_output  2     FB1_15       (b)     (b)    +          
-Inst_shiftregh/Mtrien_output  2     FB1_16       (b)     (b)    +          
+Inst_shiftregm/index<2>       2     FB1_11  32   GTS/I/O I                 
+Inst_shiftregm/index<1>       2     FB1_12  31   GTS/I/O I                 
+Inst_shiftregm/index<0>       1     FB1_13  30   GSR/I/O I                 
+Inst_shiftreg/index<0>        1     FB1_14       (b)     (b)               
+Inst_shiftregm/Mtrien_output  1     FB1_15       (b)     (b)               
+Inst_shiftregh/Mtrien_output  1     FB1_16       (b)     (b)               
 
 Signals Used by Logic in Function Block
-  1: Inst_shiftreg/index<0>    5: Inst_shiftregh/index<1>   9: Inst_shiftregm/index<2> 
-  2: Inst_shiftreg/index<1>    6: Inst_shiftregh/index<2>  10: addressstrobe 
-  3: Inst_shiftreg/index<2>    7: Inst_shiftregm/index<0>  11: clock 
-  4: Inst_shiftregh/index<0>   8: Inst_shiftregm/index<1> 
+  1: Inst_shiftreg/index<0>    5: Inst_shiftregh/index<1>   8: Inst_shiftregm/index<1> 
+  2: Inst_shiftreg/index<1>    6: Inst_shiftregh/index<2>   9: Inst_shiftregm/index<2> 
+  3: Inst_shiftreg/index<2>    7: Inst_shiftregm/index<0>  10: addressstrobe 
+  4: Inst_shiftregh/index<0> 
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
 Inst_shiftregh/index<2> 
-                  ...XXX...XX............................. 5       
+                  ...XXX...X.............................. 4       
 Inst_shiftregh/index<1> 
-                  ...XX....XX............................. 4       
+                  ...XX....X.............................. 3       
 Inst_shiftregh/index<0> 
-                  ...X.....XX............................. 3       
+                  ...X.....X.............................. 2       
 Inst_shiftreg/index<2> 
-                  XXX......XX............................. 5       
+                  XXX......X.............................. 4       
 Inst_shiftreg/index<1> 
-                  XX.......XX............................. 4       
+                  XX.......X.............................. 3       
 Inst_shiftregm/index<2> 
-                  ......XXXXX............................. 5       
+                  ......XXXX.............................. 4       
 Inst_shiftregm/index<1> 
-                  ......XX.XX............................. 4       
+                  ......XX.X.............................. 3       
 Inst_shiftregm/index<0> 
-                  ......X..XX............................. 3       
+                  ......X..X.............................. 2       
 Inst_shiftreg/index<0> 
-                  X........XX............................. 3       
+                  X........X.............................. 2       
 Inst_shiftregm/Mtrien_output 
-                  .........XX............................. 2       
+                  .........X.............................. 1       
 Inst_shiftregh/Mtrien_output 
-                  .........XX............................. 2       
+                  .........X.............................. 1       
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB2  ***********************************
 This function block is part of I/O Bank number:               1
-Number of function block inputs used/remaining:               37/3
-Number of function block control terms used/remaining:        2/2
-Number of PLA product terms used/remaining:                   28/28
+Number of function block inputs used/remaining:               36/4
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   27/29
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-serialout<2>                  10    FB2_1   39   I/O     O      +           +  
-serialout<1>                  10    FB2_2   40   I/O     O      +          
+(unused)                      0     FB2_1   39   I/O           
+serialout<2>                  9     FB2_2   40   I/O     O                  +  
 (unused)                      0     FB2_3        (b)           
 (unused)                      0     FB2_4        (b)           
-serialout<0>                  10    FB2_5   41   I/O     O      +          
-(unused)                      0     FB2_6   42   I/O     I     
-(unused)                      0     FB2_7   43   GCK/I/O       
-(unused)                      0     FB2_8   44   GCK/I/O       
+serialout<1>                  9     FB2_5   41   I/O     O                 
+serialout<0>                  9     FB2_6   42   I/O     O                 
+(unused)                      0     FB2_7   43   GCK/I/O GCK   
+Inst_shiftreg/Mtrien_output   0     FB2_8   44   GCK/I/O I                 
 (unused)                      0     FB2_9        (b)           
 (unused)                      0     FB2_10  1    GCK/I/O       
 (unused)                      0     FB2_11       (b)           
-Inst_shiftreg/Mtrien_output   1     FB2_12  2    I/O     I      +          
+(unused)                      0     FB2_12  2    I/O     I     
 (unused)                      0     FB2_13  3    I/O     I     
 (unused)                      0     FB2_14       (b)           
 (unused)                      0     FB2_15       (b)           
 (unused)                      0     FB2_16       (b)           
 
 Signals Used by Logic in Function Block
-  1: Inst_shiftreg/Mtrien_output   14: address<10>       26: address<21> 
-  2: Inst_shiftreg/index<0>        15: address<11>       27: address<22> 
-  3: Inst_shiftreg/index<1>        16: address<12>       28: address<23> 
-  4: Inst_shiftreg/index<2>        17: address<13>       29: address<2> 
-  5: Inst_shiftregh/Mtrien_output  18: address<14>       30: address<3> 
-  6: Inst_shiftregh/index<0>       19: address<15>       31: address<4> 
-  7: Inst_shiftregh/index<1>       20: address<16>       32: address<5> 
-  8: Inst_shiftregh/index<2>       21: address<17>       33: address<6> 
-  9: Inst_shiftregm/Mtrien_output  22: address<18>       34: address<7> 
- 10: Inst_shiftregm/index<0>       23: address<19>       35: address<8> 
- 11: Inst_shiftregm/index<1>       24: address<1>        36: address<9> 
- 12: Inst_shiftregm/index<2>       25: address<20>       37: clock 
- 13: address<0>                   
+  1: Inst_shiftreg/Mtrien_output   13: address<0>        25: address<20> 
+  2: Inst_shiftreg/index<0>        14: address<10>       26: address<21> 
+  3: Inst_shiftreg/index<1>        15: address<11>       27: address<22> 
+  4: Inst_shiftreg/index<2>        16: address<12>       28: address<23> 
+  5: Inst_shiftregh/Mtrien_output  17: address<13>       29: address<2> 
+  6: Inst_shiftregh/index<0>       18: address<14>       30: address<3> 
+  7: Inst_shiftregh/index<1>       19: address<15>       31: address<4> 
+  8: Inst_shiftregh/index<2>       20: address<16>       32: address<5> 
+  9: Inst_shiftregm/Mtrien_output  21: address<17>       33: address<6> 
+ 10: Inst_shiftregm/index<0>       22: address<18>       34: address<7> 
+ 11: Inst_shiftregm/index<1>       23: address<19>       35: address<8> 
+ 12: Inst_shiftregm/index<2>       24: address<1>        36: address<9> 
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
-serialout<2>      ....XXXX...........XXXX.XXXX........X... 13      
-serialout<1>      ........XXXX.XXXXXX...............XXX... 13      
-serialout<0>      XXXX........X..........X....XXXXXX..X... 13      
+serialout<2>      ....XXXX...........XXXX.XXXX............ 12      
+serialout<1>      ........XXXX.XXXXXX...............XX.... 12      
+serialout<0>      XXXX........X..........X....XXXXXX...... 12      
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB3  ***********************************
@@ -431,27 +444,27 @@ Device : XC2C64A-7-VQ44
 Pin Signal                         Pin Signal                        
 No. Name                           No. Name                          
   1 KPR                              23 address<4>                    
-  2 addressstrobe                    24 TDO                           
-  3 address<23>                      25 GND                           
+  2 address<23>                      24 TDO                           
+  3 address<22>                      25 GND                           
   4 GND                              26 VCCIO-1.8                     
-  5 address<22>                      27 address<5>                    
-  6 address<21>                      28 address<6>                    
+  5 address<21>                      27 address<5>                    
+  6 address<20>                      28 address<6>                    
   7 VCCIO-1.8                        29 address<7>                    
-  8 address<20>                      30 address<8>                    
+  8 address<19>                      30 address<8>                    
   9 TDI                              31 address<9>                    
  10 TMS                              32 address<10>                   
  11 TCK                              33 address<11>                   
- 12 address<19>                      34 address<12>                   
- 13 address<18>                      35 VCCAUX                        
- 14 address<17>                      36 address<13>                   
+ 12 address<18>                      34 address<12>                   
+ 13 address<17>                      35 VCCAUX                        
+ 14 address<16>                      36 address<13>                   
  15 VCC                              37 address<14>                   
- 16 address<16>                      38 address<15>                   
- 17 GND                              39 serialout<2>                  
- 18 KPR                              40 serialout<1>                  
- 19 address<0>                       41 serialout<0>                  
- 20 address<1>                       42 clock                         
- 21 address<2>                       43 KPR                           
- 22 address<3>                       44 KPR                           
+ 16 address<15>                      38 KPR                           
+ 17 GND                              39 KPR                           
+ 18 KPR                              40 serialout<2>                  
+ 19 address<0>                       41 serialout<1>                  
+ 20 address<1>                       42 serialout<0>                  
+ 21 address<2>                       43 clock                         
+ 22 address<3>                       44 addressstrobe                 
 
 
 Legend :  NC  = Not Connected, unbonded pin

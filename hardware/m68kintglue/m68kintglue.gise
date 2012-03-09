@@ -30,6 +30,10 @@
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
+    <file xil_pn:branch="PostRouteSimulation" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/fit/toplevel_timesim.nlf"/>
+    <file xil_pn:branch="PostRouteSimulation" xil_pn:fileType="FILE_SDF" xil_pn:name="netgen/fit/toplevel_timesim.sdf"/>
+    <file xil_pn:branch="PostRouteSimulation" xil_pn:fileType="FILE_VHDL" xil_pn:name="netgen/fit/toplevel_timesim.vhd"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="shiftreg.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="shiftreg.stx"/>
     <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="shiftreg.vhi"/>
@@ -113,6 +117,8 @@
     <transform xil_pn:end_ts="1331302449" xil_pn:in_ck="7130759491340027311" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7155554180712518346" xil_pn:start_ts="1331302448">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="testbench_isim_beh.wdb"/>
@@ -125,12 +131,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1331301869" xil_pn:in_ck="3100237870977741639" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="86324516479015691" xil_pn:start_ts="1331301856">
+    <transform xil_pn:end_ts="1331302554" xil_pn:in_ck="3100237870977741639" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="86324516479015691" xil_pn:start_ts="1331302543">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="toplevel.lso"/>
@@ -144,26 +148,25 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1331300596" xil_pn:in_ck="142688545961844" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5047652341673475229" xil_pn:start_ts="1331300596">
+    <transform xil_pn:end_ts="1331302802" xil_pn:in_ck="142688545961844" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5047652341673475229" xil_pn:start_ts="1331302802">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1331301877" xil_pn:in_ck="7203137746558438949" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2260988109850707743" xil_pn:start_ts="1331301869">
+    <transform xil_pn:end_ts="1331302809" xil_pn:in_ck="7203137746558438949" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2260988109850707743" xil_pn:start_ts="1331302802">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="toplevel.bld"/>
       <outfile xil_pn:name="toplevel.ngd"/>
       <outfile xil_pn:name="toplevel_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1331301883" xil_pn:in_ck="6038244062278944946" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-6546032364224440541" xil_pn:start_ts="1331301877">
+    <transform xil_pn:end_ts="1331302816" xil_pn:in_ck="6038244062278944946" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-6546032364224440541" xil_pn:start_ts="1331302809">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="toplevel.chk"/>
       <outfile xil_pn:name="toplevel.cxt"/>
       <outfile xil_pn:name="toplevel.gyd"/>
@@ -181,19 +184,22 @@
       <outfile xil_pn:name="toplevel_html"/>
       <outfile xil_pn:name="toplevel_pad.csv"/>
     </transform>
-    <transform xil_pn:end_ts="1331301885" xil_pn:in_ck="6038244062278953810" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1331301883">
+    <transform xil_pn:end_ts="1331302818" xil_pn:in_ck="6038244062278953810" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1331302816">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="toplevel.jed"/>
     </transform>
-    <transform xil_pn:end_ts="1331300673" xil_pn:in_ck="6038244062278953810" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1331300671">
-      <status xil_pn:value="AbortedRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
+    <transform xil_pn:end_ts="1331302972" xil_pn:in_ck="6038244062278953810" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1331302971">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="InputChanged"/>
+    </transform>
+    <transform xil_pn:end_ts="1331302967" xil_pn:in_ck="6038244062278944943" xil_pn:name="TRAN_postFitSimModel" xil_pn:prop_ck="5751736290641506705" xil_pn:start_ts="1331302964">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="netgen"/>
+      <outfile xil_pn:name="netgen/fit/toplevel_timesim.nlf"/>
+      <outfile xil_pn:name="netgen/fit/toplevel_timesim.sdf"/>
+      <outfile xil_pn:name="netgen/fit/toplevel_timesim.vhd"/>
     </transform>
   </transforms>
 
