@@ -62,3 +62,21 @@ hprep6 -s IEEE1149 -i toplevel
 taengine -intstyle ise -f toplevel -w --format html1 -l toplevel_html/tim/timing_report.htm 
 netgen -intstyle ise -rpw 100 -ar Structure -tm toplevel -w -dir netgen/fit -ofmt vhdl -sim toplevel.nga toplevel_timesim.vhd 
 taengine -intstyle ise -f toplevel -w --format html1 -l toplevel_html/tim/timing_report.htm 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc board.ucf -p xc2c64a-VQ44-7 toplevel.ngc toplevel.ngd  
+cpldfit -intstyle ise -p xc2c64a-7-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 toplevel.ngd 
+XSLTProcess toplevel_build.xml 
+tsim -intstyle ise toplevel toplevel.nga 
+hprep6 -s IEEE1149 -i toplevel 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 
+xst -intstyle ise -ifn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.xst" -ofn "/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.syr" 

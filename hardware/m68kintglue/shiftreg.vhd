@@ -38,23 +38,31 @@ end shiftreg;
 
 architecture Behavioral of shiftreg is
 
+	signal serialout : STD_LOGIC;
+	signal clear: STD_LOGIC;
+
 begin
 
-	process(clock)
+	output <= serialout when (reset = '0') else 'Z';
+
+	process(reset)
+	begin
+		if(falling_edge(reset)) then
+			clear <= '1';
+		end if;
+	end process;
+
+	process(clock)	
 		variable index : integer range 0 to 7 := 0;
 	begin
-		if (rising_edge(clock)) then
-		
-			if (reset = '1') then
-				output <= 'Z';
+		if (rising_edge(clock) and reset = '0') then
+			if (clear = '1') then
 				index := 0;
-			else
-				output <= data(index);
-				index := index + 1;
+				clear <= '0';
 			end if;
-			
+			serialout <= data(index);
+			index := index + 1;
 		end if;
-
 	end process;
 
 end Behavioral;

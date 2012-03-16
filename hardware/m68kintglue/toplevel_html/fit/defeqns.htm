@@ -5,113 +5,95 @@
 </td></tr><tr><td>
 ********** Mapped Logic **********
 </td></tr><tr><td>
-FDCPE_Inst_shiftreg/Mtrien_output: FDCPE port map (Inst_shiftreg/Mtrien_output,addressstrobe,clock,'0','0','1');
+FTCPE_Inst_shiftreg/index0: FTCPE port map (Inst_shiftreg/index(0),NOT addressstrobe,clock,'0','0','1');
 </td></tr><tr><td>
-FDCPE_Inst_shiftreg/index0: FDCPE port map (Inst_shiftreg/index(0),Inst_shiftreg/index_D(0),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftreg/index_D(0) <= (NOT addressstrobe AND NOT Inst_shiftreg/index(0));
-</td></tr><tr><td>
-FDCPE_Inst_shiftreg/index1: FDCPE port map (Inst_shiftreg/index(1),Inst_shiftreg/index_D(1),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftreg/index_D(1) <= ((NOT addressstrobe AND Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(0)));
+FTCPE_Inst_shiftreg/index1: FTCPE port map (Inst_shiftreg/index(1),Inst_shiftreg/index_T(1),clock,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftreg/index_T(1) <= (NOT addressstrobe AND Inst_shiftreg/index(0));
 </td></tr><tr><td>
 FTCPE_Inst_shiftreg/index2: FTCPE port map (Inst_shiftreg/index(2),Inst_shiftreg/index_T(2),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftreg/index_T(2) <= ((Inst_shiftreg/index(2) AND addressstrobe)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(0)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftreg/index_T(2) <= (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(1));
 </td></tr><tr><td>
-FDCPE_Inst_shiftregh/Mtrien_output: FDCPE port map (Inst_shiftregh/Mtrien_output,addressstrobe,clock,'0','0','1');
+FTCPE_Inst_shiftregh/index0: FTCPE port map (Inst_shiftregh/index(0),NOT addressstrobe,clock,'0','0','1');
 </td></tr><tr><td>
-FDCPE_Inst_shiftregh/index0: FDCPE port map (Inst_shiftregh/index(0),Inst_shiftregh/index_D(0),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregh/index_D(0) <= (NOT addressstrobe AND NOT Inst_shiftregh/index(0));
-</td></tr><tr><td>
-FDCPE_Inst_shiftregh/index1: FDCPE port map (Inst_shiftregh/index(1),Inst_shiftregh/index_D(1),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregh/index_D(1) <= ((NOT addressstrobe AND Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(0)));
+FTCPE_Inst_shiftregh/index1: FTCPE port map (Inst_shiftregh/index(1),Inst_shiftregh/index_T(1),clock,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregh/index_T(1) <= (NOT addressstrobe AND Inst_shiftregh/index(0));
 </td></tr><tr><td>
 FTCPE_Inst_shiftregh/index2: FTCPE port map (Inst_shiftregh/index(2),Inst_shiftregh/index_T(2),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregh/index_T(2) <= ((addressstrobe AND Inst_shiftregh/index(2))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(0)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregh/index_T(2) <= (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(1));
 </td></tr><tr><td>
-FDCPE_Inst_shiftregm/Mtrien_output: FDCPE port map (Inst_shiftregm/Mtrien_output,addressstrobe,clock,'0','0','1');
+FTCPE_Inst_shiftregm/index0: FTCPE port map (Inst_shiftregm/index(0),NOT addressstrobe,clock,'0','0','1');
 </td></tr><tr><td>
-FDCPE_Inst_shiftregm/index0: FDCPE port map (Inst_shiftregm/index(0),Inst_shiftregm/index_D(0),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregm/index_D(0) <= (NOT addressstrobe AND NOT Inst_shiftregm/index(0));
-</td></tr><tr><td>
-FDCPE_Inst_shiftregm/index1: FDCPE port map (Inst_shiftregm/index(1),Inst_shiftregm/index_D(1),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregm/index_D(1) <= ((NOT addressstrobe AND Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(0)));
+FTCPE_Inst_shiftregm/index1: FTCPE port map (Inst_shiftregm/index(1),Inst_shiftregm/index_T(1),clock,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregm/index_T(1) <= (NOT addressstrobe AND Inst_shiftregm/index(0));
 </td></tr><tr><td>
 FTCPE_Inst_shiftregm/index2: FTCPE port map (Inst_shiftregm/index(2),Inst_shiftregm/index_T(2),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregm/index_T(2) <= ((addressstrobe AND Inst_shiftregm/index(2))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(0)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inst_shiftregm/index_T(2) <= (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(1));
 </td></tr><tr><td>
 FDCPE_serialout0: FDCPE port map (serialout_I(0),serialout(0),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(0) <= NOT (((NOT address(7) AND Inst_shiftreg/index(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(1) AND Inst_shiftreg/index(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(0) AND NOT address(6))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(0) AND NOT address(5))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(0) AND NOT address(4))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(0) AND NOT address(3))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(0) AND NOT address(2))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(0) AND NOT address(1))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(0) AND NOT address(0))));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(0) <= ((addressstrobe AND serialout(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND address(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(0) AND Inst_shiftreg/index(2) AND Inst_shiftreg/index(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND address(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND address(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND address(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(0)));
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(0) <= serialout_I(0) when serialout_OE(0) = '1' else 'Z';
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout_OE(0) <= NOT Inst_shiftreg/Mtrien_output;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout_OE(0) <= NOT addressstrobe;
 </td></tr><tr><td>
 FDCPE_serialout1: FDCPE port map (serialout_I(1),serialout(1),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(1) <= NOT (((NOT address(15) AND Inst_shiftregm/index(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(1) AND Inst_shiftregm/index(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(0) AND NOT address(14))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(0) AND NOT address(13))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(0) AND NOT address(12))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(0) AND NOT address(11))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(0) AND NOT address(10))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(0) AND NOT address(9))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(0) AND NOT address(8))));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(1) <= ((addressstrobe AND serialout(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND address(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(0) AND Inst_shiftregm/index(2) AND Inst_shiftregm/index(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND address(11))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND address(14))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND address(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(8)));
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(1) <= serialout_I(1) when serialout_OE(1) = '1' else 'Z';
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout_OE(1) <= NOT Inst_shiftregm/Mtrien_output;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout_OE(1) <= NOT addressstrobe;
 </td></tr><tr><td>
 FDCPE_serialout2: FDCPE port map (serialout_I(2),serialout(2),clock,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(2) <= NOT (((NOT address(23) AND Inst_shiftregh/index(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(1) AND Inst_shiftregh/index(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(0) AND NOT address(22))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(0) AND NOT address(21))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(0) AND NOT address(20))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(0) AND NOT address(19))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(0) AND NOT address(18))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(0) AND NOT address(17))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(0) AND NOT address(16))));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(2) <= ((addressstrobe AND serialout(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND address(23) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(0) AND Inst_shiftregh/index(2) AND Inst_shiftregh/index(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(21))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND address(19))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(17))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND address(22))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(20))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND address(18))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(16)));
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout(2) <= serialout_I(2) when serialout_OE(2) = '1' else 'Z';
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout_OE(2) <= NOT Inst_shiftregh/Mtrien_output;
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serialout_OE(2) <= NOT addressstrobe;
 </td></tr><tr><td>
 </td></tr><tr><td>
 Register Legend:

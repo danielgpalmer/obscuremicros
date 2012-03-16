@@ -1,7 +1,7 @@
  
 cpldfit:  version O.87xd                            Xilinx Inc.
                                   Fitter Report
-Design Name: toplevel                            Date:  3- 9-2012, 11:20PM
+Design Name: toplevel                            Date:  3-11-2012,  8:30PM
 Device Used: XC2C64A-7-VQ44
 Fitting Status: Successful
 
@@ -9,18 +9,18 @@ Fitting Status: Successful
 
 Macrocells     Product Terms    Function Block   Registers      Pins           
 Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
-15 /64  ( 23%) 44  /224  ( 20%) 46  /160  ( 29%) 15 /64  ( 23%) 29 /33  ( 88%)
+12 /64  ( 19%) 37  /224  ( 17%) 44  /160  ( 27%) 12 /64  ( 19%) 29 /33  ( 88%)
 
 ** Function Block Resources **
 
 Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
 Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
-FB1      11/16     10/40    17/56     0/ 8    0/1      0/1      0/1      0/1
-FB2       4/16     36/40    27/56     3/ 9    0/1      0/1      0/1      1/1*
+FB1       9/16      7/40     9/56     0/ 8    0/1      0/1      0/1      0/1
+FB2       3/16     37/40    28/56     3/ 9    0/1      0/1      0/1      1/1*
 FB3       0/16      0/40     0/56     0/ 9    0/1      0/1      0/1      0/1
 FB4       0/16      0/40     0/56     0/ 7    0/1      0/1      0/1      0/1
          -----    -------  -------   -----    ---      ---      ---      ---
-Total    15/64     46/160   44/224    3/33    0/4      0/4      0/4      1/4 
+Total    12/64     44/160   37/224    3/33    0/4      0/4      0/4      1/4 
 
 CTC - Control Term Clock
 CTR - Control Term Reset
@@ -72,59 +72,56 @@ WARNING:Cpld:1239 - The global clock designation (BUFG) on signal
 
 ** 3 Outputs **
 
-Signal                        Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
-Name                          Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
-serialout<2>                  9     12    1    FB2_2   40    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
-serialout<1>                  9     12    1    FB2_5   41    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
-serialout<0>                  9     12    1    FB2_6   42    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+Signal                   Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                     Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+serialout<2>             10    13    1    FB2_2   40    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+serialout<1>             10    13    1    FB2_5   41    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+serialout<0>             10    13    1    FB2_6   42    I/O       O       LVCMOS18 KPR       FAST DFF     RESET
 
-** 12 Buried Nodes **
+** 9 Buried Nodes **
 
-Signal                        Total Total Loc     Reg     Reg Init
-Name                          Pts   Inps          Use     State
-Inst_shiftregh/index<2>       2     4     FB1_4   TFF     RESET
-Inst_shiftregh/index<1>       2     3     FB1_5   DFF     RESET
-Inst_shiftregh/index<0>       1     2     FB1_6   DFF     RESET
-Inst_shiftreg/index<2>        2     4     FB1_7   TFF     RESET
-Inst_shiftreg/index<1>        2     3     FB1_8   DFF     RESET
-Inst_shiftregm/index<2>       2     4     FB1_11  TFF     RESET
-Inst_shiftregm/index<1>       2     3     FB1_12  DFF     RESET
-Inst_shiftregm/index<0>       1     2     FB1_13  DFF     RESET
-Inst_shiftreg/index<0>        1     2     FB1_14  DFF     RESET
-Inst_shiftregm/Mtrien_output  1     1     FB1_15  DFF     RESET
-Inst_shiftregh/Mtrien_output  1     1     FB1_16  DFF     RESET
-Inst_shiftreg/Mtrien_output   0     0     FB2_8   DFF     RESET
+Signal                   Total Total Loc     Reg     Reg Init
+Name                     Pts   Inps          Use     State
+Inst_shiftregm/index<1>  1     2     FB1_4   TFF     RESET
+Inst_shiftregh/index<2>  1     3     FB1_5   TFF     RESET
+Inst_shiftregh/index<1>  1     2     FB1_6   TFF     RESET
+Inst_shiftreg/index<2>   1     3     FB1_7   TFF     RESET
+Inst_shiftreg/index<1>   1     2     FB1_8   TFF     RESET
+Inst_shiftregm/index<2>  1     3     FB1_13  TFF     RESET
+Inst_shiftregm/index<0>  1     1     FB1_14  TFF     RESET
+Inst_shiftregh/index<0>  1     1     FB1_15  TFF     RESET
+Inst_shiftreg/index<0>   1     1     FB1_16  TFF     RESET
 
 ** 26 Inputs **
 
-Signal                        Bank Loc     Pin   Pin       Pin     I/O      I/O
-Name                                       No.   Type      Use     STD      Style
-address<14>                   2    FB1_2   37    I/O       I       LVCMOS18 KPR
-address<13>                   2    FB1_3   36    I/O       I       LVCMOS18 KPR
-address<12>                   2    FB1_9   34    GTS/I/O   I       LVCMOS18 KPR
-address<11>                   2    FB1_10  33    GTS/I/O   I       LVCMOS18 KPR
-address<10>                   2    FB1_11  32    GTS/I/O   I       LVCMOS18 KPR
-address<9>                    2    FB1_12  31    GTS/I/O   I       LVCMOS18 KPR
-address<8>                    2    FB1_13  30    GSR/I/O   I       LVCMOS18 KPR
-clock                         1    FB2_7   43    GCK/I/O   GCK     LVCMOS18 KPR
-addressstrobe                 1    FB2_8   44    GCK/I/O   I       LVCMOS18 KPR
-address<23>                   1    FB2_12  2     I/O       I       LVCMOS18 KPR
-address<22>                   1    FB2_13  3     I/O       I       LVCMOS18 KPR
-address<7>                    2    FB3_1   29    I/O       I       LVCMOS18 KPR
-address<6>                    2    FB3_2   28    I/O       I       LVCMOS18 KPR
-address<5>                    2    FB3_3   27    I/O       I       LVCMOS18 KPR
-address<4>                    2    FB3_6   23    I/O       I       LVCMOS18 KPR
-address<3>                    2    FB3_10  22    I/O       I       LVCMOS18 KPR
-address<2>                    2    FB3_11  21    I/O       I       LVCMOS18 KPR
-address<1>                    2    FB3_12  20    I/O       I       LVCMOS18 KPR
-address<0>                    2    FB3_14  19    I/O       I       LVCMOS18 KPR
-address<21>                   1    FB4_1   5     I/O       I       LVCMOS18 KPR
-address<20>                   1    FB4_2   6     I/O       I       LVCMOS18 KPR
-address<19>                   1    FB4_7   8     I/O       I       LVCMOS18 KPR
-address<18>                   1    FB4_11  12    I/O       I       LVCMOS18 KPR
-address<17>                   1    FB4_13  13    I/O       I       LVCMOS18 KPR
-address<16>                   1    FB4_14  14    I/O       I       LVCMOS18 KPR
-address<15>                   1    FB4_15  16    I/O       I       LVCMOS18 KPR
+Signal                   Bank Loc     Pin   Pin       Pin     I/O      I/O
+Name                                  No.   Type      Use     STD      Style
+address<14>              2    FB1_2   37    I/O       I       LVCMOS18 KPR
+address<13>              2    FB1_3   36    I/O       I       LVCMOS18 KPR
+address<12>              2    FB1_9   34    GTS/I/O   I       LVCMOS18 KPR
+address<11>              2    FB1_10  33    GTS/I/O   I       LVCMOS18 KPR
+address<10>              2    FB1_11  32    GTS/I/O   I       LVCMOS18 KPR
+address<9>               2    FB1_12  31    GTS/I/O   I       LVCMOS18 KPR
+address<8>               2    FB1_13  30    GSR/I/O   I       LVCMOS18 KPR
+clock                    1    FB2_7   43    GCK/I/O   GCK     LVCMOS18 KPR
+addressstrobe            1    FB2_8   44    GCK/I/O   I       LVCMOS18 KPR
+address<23>              1    FB2_12  2     I/O       I       LVCMOS18 KPR
+address<22>              1    FB2_13  3     I/O       I       LVCMOS18 KPR
+address<7>               2    FB3_1   29    I/O       I       LVCMOS18 KPR
+address<6>               2    FB3_2   28    I/O       I       LVCMOS18 KPR
+address<5>               2    FB3_3   27    I/O       I       LVCMOS18 KPR
+address<4>               2    FB3_6   23    I/O       I       LVCMOS18 KPR
+address<3>               2    FB3_10  22    I/O       I       LVCMOS18 KPR
+address<2>               2    FB3_11  21    I/O       I       LVCMOS18 KPR
+address<1>               2    FB3_12  20    I/O       I       LVCMOS18 KPR
+address<0>               2    FB3_14  19    I/O       I       LVCMOS18 KPR
+address<21>              1    FB4_1   5     I/O       I       LVCMOS18 KPR
+address<20>              1    FB4_2   6     I/O       I       LVCMOS18 KPR
+address<19>              1    FB4_7   8     I/O       I       LVCMOS18 KPR
+address<18>              1    FB4_11  12    I/O       I       LVCMOS18 KPR
+address<17>              1    FB4_13  13    I/O       I       LVCMOS18 KPR
+address<16>              1    FB4_14  14    I/O       I       LVCMOS18 KPR
+address<15>              1    FB4_15  16    I/O       I       LVCMOS18 KPR
 
 Legend:
 Pin No.   - ~     - User Assigned
@@ -152,75 +149,70 @@ Pin Type/Use - I  - Input             GCK - Global clock
 Pin No.      - ~  - User Assigned
 *********************************** FB1  ***********************************
 This function block is part of I/O Bank number:               2
-Number of function block inputs used/remaining:               10/30
+Number of function block inputs used/remaining:               7/33
 Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   17/39
+Number of PLA product terms used/remaining:                   9/47
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
 (unused)                      0     FB1_1   38   I/O           
 (unused)                      0     FB1_2   37   I/O     I     
 (unused)                      0     FB1_3   36   I/O     I     
-Inst_shiftregh/index<2>       2     FB1_4        (b)     (b)               
-Inst_shiftregh/index<1>       2     FB1_5        (b)     (b)               
-Inst_shiftregh/index<0>       1     FB1_6        (b)     (b)               
-Inst_shiftreg/index<2>        2     FB1_7        (b)     (b)               
-Inst_shiftreg/index<1>        2     FB1_8        (b)     (b)               
+Inst_shiftregm/index<1>       1     FB1_4        (b)     (b)               
+Inst_shiftregh/index<2>       1     FB1_5        (b)     (b)               
+Inst_shiftregh/index<1>       1     FB1_6        (b)     (b)               
+Inst_shiftreg/index<2>        1     FB1_7        (b)     (b)               
+Inst_shiftreg/index<1>        1     FB1_8        (b)     (b)               
 (unused)                      0     FB1_9   34   GTS/I/O I     
 (unused)                      0     FB1_10  33   GTS/I/O I     
-Inst_shiftregm/index<2>       2     FB1_11  32   GTS/I/O I                 
-Inst_shiftregm/index<1>       2     FB1_12  31   GTS/I/O I                 
-Inst_shiftregm/index<0>       1     FB1_13  30   GSR/I/O I                 
-Inst_shiftreg/index<0>        1     FB1_14       (b)     (b)               
-Inst_shiftregm/Mtrien_output  1     FB1_15       (b)     (b)               
-Inst_shiftregh/Mtrien_output  1     FB1_16       (b)     (b)               
+(unused)                      0     FB1_11  32   GTS/I/O I     
+(unused)                      0     FB1_12  31   GTS/I/O I     
+Inst_shiftregm/index<2>       1     FB1_13  30   GSR/I/O I                 
+Inst_shiftregm/index<0>       1     FB1_14       (b)     (b)               
+Inst_shiftregh/index<0>       1     FB1_15       (b)     (b)               
+Inst_shiftreg/index<0>        1     FB1_16       (b)     (b)               
 
 Signals Used by Logic in Function Block
-  1: Inst_shiftreg/index<0>    5: Inst_shiftregh/index<1>   8: Inst_shiftregm/index<1> 
-  2: Inst_shiftreg/index<1>    6: Inst_shiftregh/index<2>   9: Inst_shiftregm/index<2> 
-  3: Inst_shiftreg/index<2>    7: Inst_shiftregm/index<0>  10: addressstrobe 
-  4: Inst_shiftregh/index<0> 
+  1: Inst_shiftreg/index<0>    4: Inst_shiftregh/index<1>   6: Inst_shiftregm/index<1> 
+  2: Inst_shiftreg/index<1>    5: Inst_shiftregm/index<0>   7: addressstrobe 
+  3: Inst_shiftregh/index<0> 
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
-Inst_shiftregh/index<2> 
-                  ...XXX...X.............................. 4       
-Inst_shiftregh/index<1> 
-                  ...XX....X.............................. 3       
-Inst_shiftregh/index<0> 
-                  ...X.....X.............................. 2       
-Inst_shiftreg/index<2> 
-                  XXX......X.............................. 4       
-Inst_shiftreg/index<1> 
-                  XX.......X.............................. 3       
-Inst_shiftregm/index<2> 
-                  ......XXXX.............................. 4       
 Inst_shiftregm/index<1> 
-                  ......XX.X.............................. 3       
+                  ....X.X................................. 2       
+Inst_shiftregh/index<2> 
+                  ..XX..X................................. 3       
+Inst_shiftregh/index<1> 
+                  ..X...X................................. 2       
+Inst_shiftreg/index<2> 
+                  XX....X................................. 3       
+Inst_shiftreg/index<1> 
+                  X.....X................................. 2       
+Inst_shiftregm/index<2> 
+                  ....XXX................................. 3       
 Inst_shiftregm/index<0> 
-                  ......X..X.............................. 2       
+                  ......X................................. 1       
+Inst_shiftregh/index<0> 
+                  ......X................................. 1       
 Inst_shiftreg/index<0> 
-                  X........X.............................. 2       
-Inst_shiftregm/Mtrien_output 
-                  .........X.............................. 1       
-Inst_shiftregh/Mtrien_output 
-                  .........X.............................. 1       
+                  ......X................................. 1       
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB2  ***********************************
 This function block is part of I/O Bank number:               1
-Number of function block inputs used/remaining:               36/4
+Number of function block inputs used/remaining:               37/3
 Number of function block control terms used/remaining:        1/3
-Number of PLA product terms used/remaining:                   27/29
+Number of PLA product terms used/remaining:                   28/28
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
 (unused)                      0     FB2_1   39   I/O           
-serialout<2>                  9     FB2_2   40   I/O     O                  +  
+serialout<2>                  10    FB2_2   40   I/O     O                  +  
 (unused)                      0     FB2_3        (b)           
 (unused)                      0     FB2_4        (b)           
-serialout<1>                  9     FB2_5   41   I/O     O                 
-serialout<0>                  9     FB2_6   42   I/O     O                 
+serialout<1>                  10    FB2_5   41   I/O     O                  +  
+serialout<0>                  10    FB2_6   42   I/O     O                  +  
 (unused)                      0     FB2_7   43   GCK/I/O GCK   
-Inst_shiftreg/Mtrien_output   0     FB2_8   44   GCK/I/O I                 
+(unused)                      0     FB2_8   44   GCK/I/O I     
 (unused)                      0     FB2_9        (b)           
 (unused)                      0     FB2_10  1    GCK/I/O       
 (unused)                      0     FB2_11       (b)           
@@ -231,24 +223,25 @@ Inst_shiftreg/Mtrien_output   0     FB2_8   44   GCK/I/O I
 (unused)                      0     FB2_16       (b)           
 
 Signals Used by Logic in Function Block
-  1: Inst_shiftreg/Mtrien_output   13: address<0>        25: address<20> 
-  2: Inst_shiftreg/index<0>        14: address<10>       26: address<21> 
-  3: Inst_shiftreg/index<1>        15: address<11>       27: address<22> 
-  4: Inst_shiftreg/index<2>        16: address<12>       28: address<23> 
-  5: Inst_shiftregh/Mtrien_output  17: address<13>       29: address<2> 
-  6: Inst_shiftregh/index<0>       18: address<14>       30: address<3> 
-  7: Inst_shiftregh/index<1>       19: address<15>       31: address<4> 
-  8: Inst_shiftregh/index<2>       20: address<16>       32: address<5> 
-  9: Inst_shiftregm/Mtrien_output  21: address<17>       33: address<6> 
- 10: Inst_shiftregm/index<0>       22: address<18>       34: address<7> 
- 11: Inst_shiftregm/index<1>       23: address<19>       35: address<8> 
- 12: Inst_shiftregm/index<2>       24: address<1>        36: address<9> 
+  1: Inst_shiftreg/index<0>   14: address<13>       26: address<2> 
+  2: Inst_shiftreg/index<1>   15: address<14>       27: address<3> 
+  3: Inst_shiftreg/index<2>   16: address<15>       28: address<4> 
+  4: Inst_shiftregh/index<0>  17: address<16>       29: address<5> 
+  5: Inst_shiftregh/index<1>  18: address<17>       30: address<6> 
+  6: Inst_shiftregh/index<2>  19: address<18>       31: address<7> 
+  7: Inst_shiftregm/index<0>  20: address<19>       32: address<8> 
+  8: Inst_shiftregm/index<1>  21: address<1>        33: address<9> 
+  9: Inst_shiftregm/index<2>  22: address<20>       34: addressstrobe 
+ 10: address<0>               23: address<21>       35: serialout<0> 
+ 11: address<10>              24: address<22>       36: serialout<1> 
+ 12: address<11>              25: address<23>       37: serialout<2> 
+ 13: address<12>             
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
-serialout<2>      ....XXXX...........XXXX.XXXX............ 12      
-serialout<1>      ........XXXX.XXXXXX...............XX.... 12      
-serialout<0>      XXXX........X..........X....XXXXXX...... 12      
+serialout<2>      ...XXX..........XXXX.XXXX........X..X... 13      
+serialout<1>      ......XXX.XXXXXX...............XXX.X.... 13      
+serialout<0>      XXX......X..........X....XXXXXX..XX..... 13      
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB3  ***********************************
@@ -301,113 +294,95 @@ Name                          Pt            No.  Type    Use
 
 ********** Mapped Logic **********
 
-FDCPE_Inst_shiftreg/Mtrien_output: FDCPE port map (Inst_shiftreg/Mtrien_output,addressstrobe,clock,'0','0','1');
+FTCPE_Inst_shiftreg/index0: FTCPE port map (Inst_shiftreg/index(0),NOT addressstrobe,clock,'0','0','1');
 
-FDCPE_Inst_shiftreg/index0: FDCPE port map (Inst_shiftreg/index(0),Inst_shiftreg/index_D(0),clock,'0','0','1');
-Inst_shiftreg/index_D(0) <= (NOT addressstrobe AND NOT Inst_shiftreg/index(0));
-
-FDCPE_Inst_shiftreg/index1: FDCPE port map (Inst_shiftreg/index(1),Inst_shiftreg/index_D(1),clock,'0','0','1');
-Inst_shiftreg/index_D(1) <= ((NOT addressstrobe AND Inst_shiftreg/index(1) AND 
-	NOT Inst_shiftreg/index(0))
-	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(1) AND 
-	Inst_shiftreg/index(0)));
+FTCPE_Inst_shiftreg/index1: FTCPE port map (Inst_shiftreg/index(1),Inst_shiftreg/index_T(1),clock,'0','0','1');
+Inst_shiftreg/index_T(1) <= (NOT addressstrobe AND Inst_shiftreg/index(0));
 
 FTCPE_Inst_shiftreg/index2: FTCPE port map (Inst_shiftreg/index(2),Inst_shiftreg/index_T(2),clock,'0','0','1');
-Inst_shiftreg/index_T(2) <= ((Inst_shiftreg/index(2) AND addressstrobe)
-	OR (NOT addressstrobe AND Inst_shiftreg/index(1) AND 
-	Inst_shiftreg/index(0)));
+Inst_shiftreg/index_T(2) <= (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+	Inst_shiftreg/index(1));
 
-FDCPE_Inst_shiftregh/Mtrien_output: FDCPE port map (Inst_shiftregh/Mtrien_output,addressstrobe,clock,'0','0','1');
+FTCPE_Inst_shiftregh/index0: FTCPE port map (Inst_shiftregh/index(0),NOT addressstrobe,clock,'0','0','1');
 
-FDCPE_Inst_shiftregh/index0: FDCPE port map (Inst_shiftregh/index(0),Inst_shiftregh/index_D(0),clock,'0','0','1');
-Inst_shiftregh/index_D(0) <= (NOT addressstrobe AND NOT Inst_shiftregh/index(0));
-
-FDCPE_Inst_shiftregh/index1: FDCPE port map (Inst_shiftregh/index(1),Inst_shiftregh/index_D(1),clock,'0','0','1');
-Inst_shiftregh/index_D(1) <= ((NOT addressstrobe AND Inst_shiftregh/index(1) AND 
-	NOT Inst_shiftregh/index(0))
-	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(1) AND 
-	Inst_shiftregh/index(0)));
+FTCPE_Inst_shiftregh/index1: FTCPE port map (Inst_shiftregh/index(1),Inst_shiftregh/index_T(1),clock,'0','0','1');
+Inst_shiftregh/index_T(1) <= (NOT addressstrobe AND Inst_shiftregh/index(0));
 
 FTCPE_Inst_shiftregh/index2: FTCPE port map (Inst_shiftregh/index(2),Inst_shiftregh/index_T(2),clock,'0','0','1');
-Inst_shiftregh/index_T(2) <= ((addressstrobe AND Inst_shiftregh/index(2))
-	OR (NOT addressstrobe AND Inst_shiftregh/index(1) AND 
-	Inst_shiftregh/index(0)));
+Inst_shiftregh/index_T(2) <= (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+	Inst_shiftregh/index(1));
 
-FDCPE_Inst_shiftregm/Mtrien_output: FDCPE port map (Inst_shiftregm/Mtrien_output,addressstrobe,clock,'0','0','1');
+FTCPE_Inst_shiftregm/index0: FTCPE port map (Inst_shiftregm/index(0),NOT addressstrobe,clock,'0','0','1');
 
-FDCPE_Inst_shiftregm/index0: FDCPE port map (Inst_shiftregm/index(0),Inst_shiftregm/index_D(0),clock,'0','0','1');
-Inst_shiftregm/index_D(0) <= (NOT addressstrobe AND NOT Inst_shiftregm/index(0));
-
-FDCPE_Inst_shiftregm/index1: FDCPE port map (Inst_shiftregm/index(1),Inst_shiftregm/index_D(1),clock,'0','0','1');
-Inst_shiftregm/index_D(1) <= ((NOT addressstrobe AND Inst_shiftregm/index(1) AND 
-	NOT Inst_shiftregm/index(0))
-	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(1) AND 
-	Inst_shiftregm/index(0)));
+FTCPE_Inst_shiftregm/index1: FTCPE port map (Inst_shiftregm/index(1),Inst_shiftregm/index_T(1),clock,'0','0','1');
+Inst_shiftregm/index_T(1) <= (NOT addressstrobe AND Inst_shiftregm/index(0));
 
 FTCPE_Inst_shiftregm/index2: FTCPE port map (Inst_shiftregm/index(2),Inst_shiftregm/index_T(2),clock,'0','0','1');
-Inst_shiftregm/index_T(2) <= ((addressstrobe AND Inst_shiftregm/index(2))
-	OR (NOT addressstrobe AND Inst_shiftregm/index(1) AND 
-	Inst_shiftregm/index(0)));
+Inst_shiftregm/index_T(2) <= (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+	Inst_shiftregm/index(1));
 
 FDCPE_serialout0: FDCPE port map (serialout_I(0),serialout(0),clock,'0','0','1');
-serialout(0) <= NOT (((NOT address(7) AND Inst_shiftreg/index(2) AND 
-	Inst_shiftreg/index(1) AND Inst_shiftreg/index(0))
-	OR (Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND 
-	NOT Inst_shiftreg/index(0) AND NOT address(6))
-	OR (Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-	Inst_shiftreg/index(0) AND NOT address(5))
-	OR (Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-	NOT Inst_shiftreg/index(0) AND NOT address(4))
-	OR (NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND 
-	Inst_shiftreg/index(0) AND NOT address(3))
-	OR (NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND 
-	NOT Inst_shiftreg/index(0) AND NOT address(2))
-	OR (NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-	Inst_shiftreg/index(0) AND NOT address(1))
-	OR (NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND 
-	NOT Inst_shiftreg/index(0) AND NOT address(0))));
+serialout(0) <= ((addressstrobe AND serialout(0))
+	OR (NOT addressstrobe AND address(7) AND 
+	Inst_shiftreg/index(0) AND Inst_shiftreg/index(2) AND Inst_shiftreg/index(1))
+	OR (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+	Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(5))
+	OR (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+	NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND address(3))
+	OR (NOT addressstrobe AND Inst_shiftreg/index(0) AND 
+	NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(1))
+	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+	Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND address(6))
+	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+	Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(4))
+	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+	NOT Inst_shiftreg/index(2) AND Inst_shiftreg/index(1) AND address(2))
+	OR (NOT addressstrobe AND NOT Inst_shiftreg/index(0) AND 
+	NOT Inst_shiftreg/index(2) AND NOT Inst_shiftreg/index(1) AND address(0)));
 serialout(0) <= serialout_I(0) when serialout_OE(0) = '1' else 'Z';
-serialout_OE(0) <= NOT Inst_shiftreg/Mtrien_output;
+serialout_OE(0) <= NOT addressstrobe;
 
 FDCPE_serialout1: FDCPE port map (serialout_I(1),serialout(1),clock,'0','0','1');
-serialout(1) <= NOT (((NOT address(15) AND Inst_shiftregm/index(2) AND 
-	Inst_shiftregm/index(1) AND Inst_shiftregm/index(0))
-	OR (Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND 
-	NOT Inst_shiftregm/index(0) AND NOT address(14))
-	OR (Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-	Inst_shiftregm/index(0) AND NOT address(13))
-	OR (Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-	NOT Inst_shiftregm/index(0) AND NOT address(12))
-	OR (NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND 
-	Inst_shiftregm/index(0) AND NOT address(11))
-	OR (NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND 
-	NOT Inst_shiftregm/index(0) AND NOT address(10))
-	OR (NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-	Inst_shiftregm/index(0) AND NOT address(9))
-	OR (NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND 
-	NOT Inst_shiftregm/index(0) AND NOT address(8))));
+serialout(1) <= ((addressstrobe AND serialout(1))
+	OR (NOT addressstrobe AND address(15) AND 
+	Inst_shiftregm/index(0) AND Inst_shiftregm/index(2) AND Inst_shiftregm/index(1))
+	OR (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+	Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(13))
+	OR (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+	NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND address(11))
+	OR (NOT addressstrobe AND Inst_shiftregm/index(0) AND 
+	NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(9))
+	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+	Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND address(14))
+	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+	Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(12))
+	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+	NOT Inst_shiftregm/index(2) AND Inst_shiftregm/index(1) AND address(10))
+	OR (NOT addressstrobe AND NOT Inst_shiftregm/index(0) AND 
+	NOT Inst_shiftregm/index(2) AND NOT Inst_shiftregm/index(1) AND address(8)));
 serialout(1) <= serialout_I(1) when serialout_OE(1) = '1' else 'Z';
-serialout_OE(1) <= NOT Inst_shiftregm/Mtrien_output;
+serialout_OE(1) <= NOT addressstrobe;
 
 FDCPE_serialout2: FDCPE port map (serialout_I(2),serialout(2),clock,'0','0','1');
-serialout(2) <= NOT (((NOT address(23) AND Inst_shiftregh/index(2) AND 
-	Inst_shiftregh/index(1) AND Inst_shiftregh/index(0))
-	OR (Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND 
-	NOT Inst_shiftregh/index(0) AND NOT address(22))
-	OR (Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-	Inst_shiftregh/index(0) AND NOT address(21))
-	OR (Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-	NOT Inst_shiftregh/index(0) AND NOT address(20))
-	OR (NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND 
-	Inst_shiftregh/index(0) AND NOT address(19))
-	OR (NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND 
-	NOT Inst_shiftregh/index(0) AND NOT address(18))
-	OR (NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-	Inst_shiftregh/index(0) AND NOT address(17))
-	OR (NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND 
-	NOT Inst_shiftregh/index(0) AND NOT address(16))));
+serialout(2) <= ((addressstrobe AND serialout(2))
+	OR (NOT addressstrobe AND address(23) AND 
+	Inst_shiftregh/index(0) AND Inst_shiftregh/index(2) AND Inst_shiftregh/index(1))
+	OR (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+	Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(21))
+	OR (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+	NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND address(19))
+	OR (NOT addressstrobe AND Inst_shiftregh/index(0) AND 
+	NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(17))
+	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+	Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND address(22))
+	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+	Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(20))
+	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+	NOT Inst_shiftregh/index(2) AND Inst_shiftregh/index(1) AND address(18))
+	OR (NOT addressstrobe AND NOT Inst_shiftregh/index(0) AND 
+	NOT Inst_shiftregh/index(2) AND NOT Inst_shiftregh/index(1) AND address(16)));
 serialout(2) <= serialout_I(2) when serialout_OE(2) = '1' else 'Z';
-serialout_OE(2) <= NOT Inst_shiftregh/Mtrien_output;
+serialout_OE(2) <= NOT addressstrobe;
 
 
 Register Legend:

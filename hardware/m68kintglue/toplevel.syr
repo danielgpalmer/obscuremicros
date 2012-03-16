@@ -99,6 +99,8 @@ Analyzing Entity <toplevel> in library <work> (Architecture <behavioral>).
 Entity <toplevel> analyzed. Unit <toplevel> generated.
 
 Analyzing Entity <shiftreg> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <clear> in unit <shiftreg> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <clear> in unit <shiftreg> has a constant value of 0 during circuit operation. The register is replaced by logic.
 Entity <shiftreg> analyzed. Unit <shiftreg> generated.
 
 
@@ -111,13 +113,13 @@ Performing bidirectional port resolution...
 Synthesizing Unit <shiftreg>.
     Related source file is "/home/daniel/coding/obscuremicros/hardware/m68kintglue/shiftreg.vhd".
     Found 1-bit tristate buffer for signal <output>.
-    Found 3-bit up counter for signal <index>.
-    Found 1-bit register for signal <Mtridata_output> created at line 49.
-    Found 1-bit 8-to-1 multiplexer for signal <Mtridata_output$mux0000> created at line 52.
-    Found 1-bit register for signal <Mtrien_output> created at line 49.
+    Found 3-bit register for signal <index>.
+    Found 3-bit adder for signal <index$add0000> created at line 64.
+    Found 1-bit register for signal <serialout>.
+    Found 1-bit 8-to-1 multiplexer for signal <serialout$mux0000> created at line 63.
     Summary:
-	inferred   1 Counter(s).
-	inferred   2 D-type flip-flop(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
 	inferred   1 Tristate(s).
 Unit <shiftreg> synthesized.
 
@@ -131,10 +133,11 @@ Unit <toplevel> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 3
- 3-bit up counter                                      : 3
+# Adders/Subtractors                                   : 3
+ 3-bit adder                                           : 3
 # Registers                                            : 6
- 1-bit register                                        : 6
+ 1-bit register                                        : 3
+ 3-bit register                                        : 3
 # Multiplexers                                         : 3
  1-bit 8-to-1 multiplexer                              : 3
 # Tristates                                            : 3
@@ -151,10 +154,10 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 3
- 3-bit up counter                                      : 3
-# Registers                                            : 6
- Flip-Flops                                            : 6
+# Adders/Subtractors                                   : 3
+ 3-bit adder                                           : 3
+# Registers                                            : 3
+ Flip-Flops                                            : 3
 # Multiplexers                                         : 3
  1-bit 8-to-1 multiplexer                              : 3
 
@@ -163,77 +166,29 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1348 - Unit shiftreg is merged (output interface has tristates)
 
-Optimizing unit <toplevel> ...
-  implementation constraint: IOB=auto	 : Inst_shiftreg/Mtridata_output
-  implementation constraint: IOB=auto	 : Inst_shiftreg/Mtrien_output
-  implementation constraint: IOB=auto	 : Inst_shiftregm/Mtridata_output
-  implementation constraint: IOB=auto	 : Inst_shiftregm/Mtrien_output
-  implementation constraint: IOB=auto	 : Inst_shiftregh/Mtridata_output
-  implementation constraint: IOB=auto	 : Inst_shiftregh/Mtrien_output
-  implementation constraint: INIT=r	 : Inst_shiftreg/index_2
-  implementation constraint: INIT=r	 : Inst_shiftreg/index_1
-  implementation constraint: INIT=r	 : Inst_shiftreg/index_0
-  implementation constraint: INIT=r	 : Inst_shiftregm/index_2
-  implementation constraint: INIT=r	 : Inst_shiftregm/index_1
-  implementation constraint: INIT=r	 : Inst_shiftregm/index_0
-  implementation constraint: INIT=r	 : Inst_shiftregh/index_2
-  implementation constraint: INIT=r	 : Inst_shiftregh/index_1
-  implementation constraint: INIT=r	 : Inst_shiftregh/index_0
+ERROR:Xst:528 - Multi-source in Unit <shiftreg> on signal <clear>; this signal is connected to multiple drivers.
+Drivers are: 
+   Signal <Inst_shiftregh/clear> in Unit <shiftreg> is assigned to GND
 
-=========================================================================
-*                           Partition Report                            *
-=========================================================================
+ERROR:Xst:528 - Multi-source in Unit <shiftreg> on signal <clear>; this signal is connected to multiple drivers.
+Drivers are: 
+   Signal <Inst_shiftregm/clear> in Unit <shiftreg> is assigned to GND
 
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-=========================================================================
-*                            Final Report                               *
-=========================================================================
-Final Results
-RTL Top Level Output File Name     : toplevel.ngr
-Top Level Output File Name         : toplevel
-Output Format                      : NGC
-Optimization Goal                  : Speed
-Keep Hierarchy                     : Yes
-Target Technology                  : CoolRunner2 CPLDs
-Macro Preserve                     : YES
-XOR Preserve                       : YES
-Clock Enable                       : YES
-wysiwyg                            : NO
-
-Design Statistics
-# IOs                              : 29
-
-Cell Usage :
-# BELS                             : 117
-#      AND2                        : 54
-#      INV                         : 36
-#      OR2                         : 21
-#      XOR2                        : 6
-# FlipFlops/Latches                : 15
-#      FD                          : 15
-# IO Buffers                       : 29
-#      IBUF                        : 26
-#      OBUFE                       : 3
-=========================================================================
+ERROR:Xst:528 - Multi-source in Unit <shiftreg> on signal <clear>; this signal is connected to multiple drivers.
+Drivers are: 
+   Signal <Inst_shiftreg/clear> in Unit <shiftreg> is assigned to GND
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.77 secs
+Total CPU time to Xst completion: 6.75 secs
  
 --> 
 
 
-Total memory usage is 511912 kilobytes
+Total memory usage is 511676 kilobytes
 
-Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    3 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

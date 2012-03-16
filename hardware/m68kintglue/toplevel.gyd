@@ -35,13 +35,12 @@ serialout<2> S:PIN40
 ;The remaining section of the .gyd file is for documentation purposes only.
 ;It shows where your internal equations were placed in the last successful fit.
 
-PARTITION FB1_4 Inst_shiftregh/index<2> Inst_shiftregh/index<1> Inst_shiftregh/index<0> Inst_shiftreg/index<2>
+PARTITION FB1_4 Inst_shiftregm/index<1> Inst_shiftregh/index<2> Inst_shiftregh/index<1> Inst_shiftreg/index<2>
 		 Inst_shiftreg/index<1>
-PARTITION FB1_11 Inst_shiftregm/index<2> Inst_shiftregm/index<1> Inst_shiftregm/index<0> Inst_shiftreg/index<0>
-		 Inst_shiftregm/Mtrien_output Inst_shiftregh/Mtrien_output
+PARTITION FB1_13 Inst_shiftregm/index<2> Inst_shiftregm/index<0> Inst_shiftregh/index<0> Inst_shiftreg/index<0>
+		
 PARTITION FB2_2 serialout<2>
 PARTITION FB2_5 serialout<1> serialout<0>
-PARTITION FB2_8 Inst_shiftreg/Mtrien_output
 
 
 
