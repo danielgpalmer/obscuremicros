@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#include "core.h"
 #include "interrupts.h"
 
 // Flash headers
@@ -30,6 +31,10 @@ void main() {
 	jedecid_t* id = jedec_getid();
 	printf("done\n");
 	printf("MFR - 0x%04x, DEVICE - 0x%04x\n", id->mfrid, id->deviceid);
+
+	printf("Querying identity via CFI..");
+	cfi_getid();
+	printf("done\n");
 
 	while (1) {
 	}

@@ -2,7 +2,7 @@ ifndef OUTPUTDIR
 	OUTPUTDIR = ./
 endif
 
-CFLAGS = -std=gnu99
+CFLAGS = -std=gnu99 -Wall -ggdb
 
 all: testharness libflash.a
 

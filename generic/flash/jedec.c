@@ -7,6 +7,7 @@
 
 #include "jedec.h"
 #include "flashstubs.h"
+#include <stdlib.h>
 #include <stddef.h>
 
 jedecid_t* jedec_getid() {
@@ -17,6 +18,9 @@ jedecid_t* jedec_getid() {
 		id->mfrid = flash_read(0);
 		id->deviceid = flash_read(1);
 		flash_write(0, READARRAY);
+	}
+	else {
+		printf("\n\n*** couldn't allocate memory for struct ***\n\n");
 	}
 	return id;
 }
