@@ -11,6 +11,7 @@
 #include <stdint.h>
 
 void flash_write(uint8_t address, uint8_t data);
-uint8_t flash_read(uint8_t address);
+uint8_t flash_read_byte(uint8_t address);
+uint16_t flash_read_word(uint8_t address);
 
 #endif /* CFISTUBS_H_ */

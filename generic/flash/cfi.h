@@ -16,7 +16,7 @@
 
 #define ADDRESS_IDSTRING			0x10
 #define ADDRESS_SYSTEMINTERFACE		0x1b
-#define GEOMETRY 					0x27
+#define ADDRESS_GEOMETRY 			0x27
 
 typedef struct {
 	char querystring[4];
@@ -40,7 +40,8 @@ typedef struct {
 
 } cfigeometry_t;
 
-void cfi_init();
 cfiid_t* cfi_getid();
+cfisysint_t* cfi_getsysteminterface();
+cfigeometry_t* cfi_getgeometry();
 
 #endif /* CFI_H_ */

@@ -9,14 +9,21 @@
 #include "flashstubs.h"
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdbool.h>
 
-jedecid_t* jedec_getid() {
+jedecid_t* jedec_getid(bool eightbitbus) {
 
 	jedecid_t* id = malloc(sizeof(jedecid_t));
 	if (id != NULL) {
 		flash_write(0, JEDECIDMODE);
-		id->mfrid = flash_read(0);
-		id->deviceid = flash_read(1);
+		if (eightbitbus) {
+			id->mfrid = flash_read_byte(0);
+			id->deviceid = flash_read_byte(1);
+		}
+		else {
+			id->mfrid = flash_read_word(0);
+			id->deviceid = flash_read_word(1);
+		}
 		flash_write(0, READARRAY);
 	}
 	else {

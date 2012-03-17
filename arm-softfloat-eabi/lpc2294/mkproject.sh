@@ -17,7 +17,7 @@ mkdir $1;
 
 LINKEDSOURCES="crt-ram.s crt.s \
 syscalls.c syscalls.h \
-lpc21xx.h lpc22xx.h \
+lpc21xx.h lpc22xx.h olimexh2294.h \
 core.h core.c config.h .gdbinit \
 interrupts.c interrupts.h \
 uart.c uart.h lpcUART.h \

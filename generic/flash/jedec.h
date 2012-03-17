@@ -9,6 +9,7 @@
 #define JEDEC_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 
 #define JEDECIDMODE 0x90
 #define READARRAY 0xFF
@@ -18,6 +19,6 @@ typedef struct {
 	uint16_t deviceid;
 } jedecid_t;
 
-jedecid_t* jedec_getid();
+jedecid_t* jedec_getid(bool eightbitbus);
 
 #endif /* JEDEC_H_ */
