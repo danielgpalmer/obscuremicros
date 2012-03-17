@@ -12,6 +12,7 @@
 #include "flash/jedec.h"
 #include "flash/cfi.h"
 #include "flash/flashmfr.h"
+#include "flash/intel.h"
 //
 
 #define SIZEOFARRAY(array) (sizeof(array)/sizeof(array[0]))
@@ -61,6 +62,12 @@ void main() {
 	printf("Querying  device geometry via CFI..");
 	cfi_getgeometry();
 	printf("done\n");
+
+	printf("Getting status register from CUI..");
+	uint8_t sr = intel_readstatusregister();
+	printf("done\n");
+
+	printf("Status register is 0x%02x\n", sr);
 
 	while (1) {
 	}
