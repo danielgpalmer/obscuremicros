@@ -14,3 +14,5 @@ CPFLAGS = -O binary
 ODFLAGS = -x --syms
 
 FATFSCFLAGS = -I ./fatfs/src/
+
+TOP = $(shell pwd)

@@ -1,0 +1,1 @@
+../skel/ldscript-intflash.x
