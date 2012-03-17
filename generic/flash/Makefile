@@ -16,7 +16,7 @@ $(OUTPUTDIR)/intel.o: intel.c flashstubs.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(OUTPUTDIR)/libflash.a: $(OUTPUTDIR)/jedec.o $(OUTPUTDIR)/cfi.o $(OUTPUTDIR)/intel.o
-	ar cr $@ $^	
+	$(AR) cr $@ $^	
 
 $(OUTPUTDIR)/testharness: testharness.c cfi.o jedec.o cfi.h flashstubs.h
 	$(CC) $(CFLAGS) -o $@ $< cfi.o jedec.o

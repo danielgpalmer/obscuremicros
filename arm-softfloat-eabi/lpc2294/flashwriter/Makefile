@@ -22,10 +22,10 @@ main.elf: crt.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o
 	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o
 
 main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o i2c.o core.o ldscript-intram.x
-	$(CC) -Tldscript-intram.x $(LFLAGS) -o main-ram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o
+	$(CC) -Tldscript-intram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o
 
-main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o core.o ldscript-extram.x
-	$(CC) -Tldscript-extram.x $(LFLAGS) -o main-extram.elf crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o
+main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o core.o i2c.o ldscript-extram.x libflash.a
+	$(CC) -Tldscript-extram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a
 
 main.o: main.c
 	$(CC) $(CFLAGS) main.c
@@ -37,10 +37,11 @@ debug: main-extram.bin main-extram.elf
 .PHONY: clean rtcpreload.h libflash.a
 
 libflash.a: 
-	$(MAKE) OUTPUTDIR=$(TOP) -C ./flash $(TOP)"/libflash.a"
+	$(MAKE) CC=$(TOP)/$(CC) AR=$(TOP)/$(AR) OUTPUTDIR=$(TOP) -C ./flash $(TOP)"/libflash.a"
 
 clean:
 	rm -f *.o *.bin *.dmp *.elf
+	$(MAKE) CC=$(TOP)/$(CC) AR=$(TOP)/$(AR) OUTPUTDIR=$(TOP) -C ./flash clean
 
 rtcpreload.h:
 	./mkrtcpreload.sh > rtcpreload.h

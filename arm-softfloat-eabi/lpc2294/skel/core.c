@@ -1,5 +1,6 @@
 #include "lpc22xx.h"
 #include "config.h"
+#include "uart.h"
 
 #define PLOCK 0x400
 
@@ -33,5 +34,8 @@ void initialize() {
 
 	// Setting peripheral Clock (pclk) to System Clock (cclk)
 	VPBDIV = VPBDIV_VAL;
+
+	//bring UART0 up
+	uart0Init(UART_BAUD(115200), UART_8N1, UART_FIFO_8);
 
 }
