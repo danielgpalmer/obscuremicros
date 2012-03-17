@@ -86,18 +86,18 @@ caddr_t _sbrk(int incr) {
 
 	prev_heap_end = heap_end;
 
-	if (heap_end + incr > stack_ptr) {
-		/* Some of the libstdc++-v3 tests rely upon detecting
-		 out of memory errors, so do not abort here.  */
-#if 0
-		extern void abort (void);
-		_write (1, "_sbrk: Heap and stack collision\n", 32);
-		abort ();
-#else
-		errno = ENOMEM;
-		return (caddr_t) -1;
-#endif
-	}
+//	if (heap_end + incr > stack_ptr) {
+//		/* Some of the libstdc++-v3 tests rely upon detecting
+//		 out of memory errors, so do not abort here.  */
+//#if 0
+//		extern void abort (void);
+//		_write (1, "_sbrk: Heap and stack collision\n", 32);
+//		abort ();
+//#else
+//		errno = ENOMEM;
+//		return (caddr_t) -1;
+//#endif
+//	}
 
 	heap_end += incr;
 
