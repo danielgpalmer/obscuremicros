@@ -6,7 +6,7 @@
  */
 
 #include "cfi.h"
-#include "cfistubs.h"
+#include "flashstubs.h"
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -17,16 +17,16 @@ void cfi_init() {
 
 cfiid_t* cfi_getid() {
 
-	cfiid_t* id = malloc(sizeof(id));
+	cfiid_t* id = malloc(sizeof(cfiid_t));
 
 	if (id != NULL) {
-		cfi_write(QUERYADDRESS, QUERYDATA);
+		flash_write(QUERYADDRESS, QUERYDATA);
 
 		for (int i = ADDRESS_IDSTRING; i < ADDRESS_SYSTEMINTERFACE; i++) {
-			cfi_read(i);
+			flash_read(i);
 		}
 
-		cfi_write(0, READARRAY);
+		flash_write(0, READARRAY);
 
 	}
 	return id;
@@ -34,7 +34,7 @@ cfiid_t* cfi_getid() {
 }
 
 cfigeometry_t* cfi_getgeometry() {
-	cfigeometry_t* geo = malloc(sizeof(geo));
+	cfigeometry_t* geo = malloc(sizeof(cfigeometry_t));
 
 	if (geo != NULL) {
 
@@ -44,7 +44,7 @@ cfigeometry_t* cfi_getgeometry() {
 }
 
 cfisysint_t* cfi_getsysteminterface() {
-	cfisysint_t* sysint = malloc(sizeof(sysint));
+	cfisysint_t* sysint = malloc(sizeof(cfisysint_t));
 
 	if (sysint != NULL) {
 
