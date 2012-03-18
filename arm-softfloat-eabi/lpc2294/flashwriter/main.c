@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <errno.h>
 
 #include "core.h"
 #include "interrupts.h"
@@ -76,6 +77,21 @@ void main() {
 	printf("done\n");
 
 	printf("Status register is 0x%02x\n", sr);
+
+	printf("Using intel driver to erase first block...");
+	if (!intel_eraseblock(0)) {
+		printf("Erase Error - ");
+		switch (errno) {
+			case ERROR_ERASEBLOCKLOCKED:
+			printf("block is locked\n");
+			break;
+		default:
+			printf("unknown error\n");
+			break;
+		}
+
+	}
+	printf("done\n");
 
 	while (1) {
 	}
