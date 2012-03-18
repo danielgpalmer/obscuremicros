@@ -60,8 +60,16 @@ void main() {
 	printf("done\n");
 
 	printf("Querying  device geometry via CFI..");
-	cfi_getgeometry();
+	cfigeometry_t* geo = cfi_getgeometry();
 	printf("done\n");
+	printf("Size: %d bytes, Interface code: %d, Max bytes in multi byte program %d,Erase blocks %d\n", geo->bytes,
+			geo->flashdeviceinterfacecode, geo->multibytemax, geo->eraseblockregions);
+
+	for (int eraseblock = 0; eraseblock < geo->eraseblockregions; eraseblock++) {
+		cfieraseblockinfo_t* blockinfo = &(geo->eraseblockinfo[eraseblock]);
+		printf("Erase block region %d has %d blocks of %d bytes\n", eraseblock, blockinfo->numblocks,
+				blockinfo->blocksize);
+	}
 
 	printf("Getting status register from CUI..");
 	uint8_t sr = intel_readstatusregister();

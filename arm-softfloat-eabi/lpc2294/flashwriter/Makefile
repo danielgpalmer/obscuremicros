@@ -19,13 +19,13 @@ main-extram.bin: main-extram.elf
 	$(OD) $(ODFLAGS) main-extram.elf > main-extram.dmp
 
 main.elf: crt.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o i2c.o core.o ldscript-intflash.x libflash.a
-	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a
+	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a -lm
 
 main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o i2c.o core.o ldscript-intram.x libflash.a
-	$(CC) -Tldscript-intram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a
+	$(CC) -Tldscript-intram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a -lm
 
 main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o core.o i2c.o ldscript-extram.x libflash.a
-	$(CC) -Tldscript-extram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a
+	$(CC) -Tldscript-extram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a -lm
 
 main.o: main.c
 	$(CC) $(CFLAGS) main.c
