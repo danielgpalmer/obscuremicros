@@ -11,6 +11,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stddef.h>
 #include <errno.h>
 
 #define STATUS_WRITESTATEMACHINESTATUS 0x80
@@ -33,6 +34,11 @@
 #define MODE_ID						JEDECIDMODE
 #define MODE_PROGSETUP				0x40
 #define MODE_ALTPROGSETUP			0x10
+
+#define PRLOCKREGISTER				0x80
+#define PRREGISTER					0x81
+#define PRLEN						8
+#define PRSPLIT						4
 
 static uint8_t intel_readstatusregister() {
 	flash_write_byte(0, MODE_READSTATUSREGISTER);
@@ -96,7 +102,7 @@ bool intel_lockdownblock(uint32_t blockaddress) {
 
 blocklockstatus_t intel_getlockstatus(uint32_t blockaddress) {
 	flash_write_byte(0, MODE_ID);
-	uint8_t blockstatus = (flash_read_word(blockaddress + 2) & 0x03);
+	uint8_t blockstatus = (flash_read_byte(blockaddress + 4) & 0x03);
 	flash_write_byte(0, MODE_READARRAY);
 	switch (blockstatus) {
 		case 0:
@@ -133,7 +139,7 @@ static bool intel_checkwriteerror(uint8_t sr) {
 static uint8_t writebyte(uint32_t address, uint8_t byte) {
 	flash_write_byte(address, MODE_PROGSETUP);
 	flash_write_byte(address, byte);
-	uint8_t sr = intel_waitforwsm();
+	return intel_waitforwsm();
 }
 
 bool intel_writebyte(uint32_t address, uint8_t byte) {
@@ -145,11 +151,11 @@ bool intel_writebyte(uint32_t address, uint8_t byte) {
 static uint8_t writeword(uint32_t address, uint16_t word) {
 	flash_write_byte(address, MODE_PROGSETUP);
 	flash_write_word(address, word);
-	return intel_checkwriteerror(sr);
+	return intel_waitforwsm();
 }
 
 bool intel_writeword(uint32_t address, uint16_t word) {
-	uint8_t sr = writeword();
+	uint8_t sr = writeword(address, word);
 	flash_write_byte(0, MODE_READARRAY);
 	return intel_checkwriteerror(sr);
 }
@@ -184,4 +190,33 @@ int intel_writeblockaswords(uint32_t startaddress, int len, uint8_t* data) {
 	return i;
 
 	return 0;
+}
+
+bool intel_getprotectionuserlock() {
+	cfi_writebyte(0, MODE_ID);
+	uint16_t prlockreg = cfi_readword(PRLOCKREGISTER);
+	cfi_writebyte(0, MODE_READARRAY);
+	return false;
+}
+
+intelprotectionregister_t* intel_getprotectionregister() {
+	intelprotectionregister_t* pr = malloc(sizeof(intelprotectionregister_t));
+	if (pr != NULL) {
+		memset(pr, 0, sizeof(intelprotectionregister_t));
+		cfi_writebyte(0, MODE_ID);
+		for (int i = 0; i < PRLEN; i++) {
+			uint16_t word = cfi_readword(PRREGISTER + i);
+			printf("word %d is 0x%04x\n", i, word);
+			if (i < PRSPLIT) {
+				pr->factory |= (word << (16 * i));
+				printf("f\n", i, word);
+			}
+			else {
+				pr->user |= (word << (16 * (i - PRSPLIT)));
+				printf("u\n", i, word);
+			}
+		}
+		cfi_writebyte(0, MODE_READARRAY);
+	}
+	return pr;
 }

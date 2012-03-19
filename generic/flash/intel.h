@@ -28,4 +28,9 @@ typedef enum {
 	unlocked, locked, lockeddown, dunno
 } blocklockstatus_t;
 
+typedef struct {
+	uint64_t user;
+	uint64_t factory;
+} intelprotectionregister_t;
+
 #endif /* INTEL_H_ */

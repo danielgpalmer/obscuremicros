@@ -72,8 +72,6 @@ void main() {
 
 	printf("-- Flash Writer --\n");
 
-	printf("Data is 0x%04x\n", flash_read_byte(0));
-
 	printf("Getting JEDEC ID...");
 	jedecid_t* id = jedec_getid(false);
 	printf("done\n");
@@ -84,6 +82,11 @@ void main() {
 			break;
 		}
 	}
+
+	printf("Getting protection register...");
+	intelprotectionregister_t* pr = intel_getprotectionregister();
+	printf("done");
+	printf("Protection register factory portion: 0x%016llx, user portion: 0x%016llx\n", pr->factory, pr->user);
 
 	printf("Querying identity via CFI..");
 	cfiid_t* cfiid = cfi_getid();
@@ -106,7 +109,7 @@ void main() {
 		printf("Erase block region %d has %d blocks of %d bytes\n", eraseblock, blockinfo->numblocks,
 				blockinfo->blocksize);
 	}
-
+/*
 	printf("Using intel driver to unlock first block...");
 	intel_unlockblock(0);
 	printf("done\n");
@@ -128,15 +131,15 @@ void main() {
 	}
 	else {
 		printf("done\n");
-	}
+	}*/
+	/*
+	 printf("Writing some data to the the first block...");
 
-	printf("Writing some data to the the first block...");
-
-	//for (int i = 0; i < 0xff; i++) {
-	intel_writeword(0, 0xAA55);
-	intel_writeword(2, 0x55AA);
-	//}
-	printf("done\n");
+	 //for (int i = 0; i < 0xff; i++) {
+	 intel_writeword(0, 0xAA55);
+	 intel_writeword(2, 0x55AA);
+	 //}
+	 printf("done\n");*/
 
 	for (int i = 0; i < 0xff; i++) {
 		if (i % 0xf == 0) {

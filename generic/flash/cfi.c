@@ -7,6 +7,7 @@
 
 #include "cfi.h"
 #include "flashstubs.h"
+#include "common.h"
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -19,10 +20,9 @@ cfiid_t* cfi_getid() {
 
 	if (id != NULL) {
 		memset(id, 0, sizeof(cfiid_t));
-		flash_write_word(QUERYADDRESS, QUERYDATA);
-
+		cfi_writebyte(QUERYADDRESS, QUERYDATA);
 		for (int i = ADDRESS_IDSTRING; i < ADDRESS_SYSTEMINTERFACE; i++) {
-			uint8_t byte = flash_read_word(i);
+			uint8_t byte = cfi_readbyte(i);
 
 			if (i < 0x13) {
 				id->querystring[i - ADDRESS_IDSTRING] = byte;
@@ -53,9 +53,7 @@ cfiid_t* cfi_getid() {
 			}
 
 		}
-
-		flash_write_word(0, READARRAY);
-
+		cfi_writebyte(0, READARRAY);
 	}
 	return id;
 
@@ -65,11 +63,11 @@ cfisysint_t* cfi_getsysteminterface() {
 	cfisysint_t* sysint = malloc(sizeof(cfisysint_t));
 	if (sysint != NULL) {
 		memset(sysint, 0, sizeof(cfisysint_t));
-		flash_write_word(QUERYADDRESS, QUERYDATA);
+		cfi_writebyte(QUERYADDRESS, QUERYDATA);
 		for (int i = ADDRESS_SYSTEMINTERFACE; i < ADDRESS_GEOMETRY; i++) {
-			uint8_t byte = flash_read_word(i);
+			uint8_t byte = cfi_readbyte(i);
 		}
-		flash_write_word(0, READARRAY);
+		cfi_writebyte(0, READARRAY);
 
 	}
 
@@ -80,9 +78,9 @@ cfigeometry_t* cfi_getgeometry() {
 
 	if (geo != NULL) {
 		memset(geo, 0, sizeof(cfigeometry_t));
-		flash_write_word(QUERYADDRESS, QUERYDATA);
+		cfi_writebyte(QUERYADDRESS, QUERYDATA);
 		for (int i = ADDRESS_GEOMETRY; i < ADDRESS_GEOMETRY_ERASEBINFO; i++) {
-			uint8_t byte = flash_read_word(i);
+			uint8_t byte = cfi_readbyte(i);
 			switch (i) {
 				case GEOMETRY_SIZE:
 					geo->bytes = pow(2, byte);
@@ -112,7 +110,7 @@ cfigeometry_t* cfi_getgeometry() {
 		for (int eraseblock = 0; eraseblock < geo->eraseblockregions; eraseblock++) {
 			for (int i = 0; i < 4; i++) {
 				cfieraseblockinfo_t* blockinfo = &(geo->eraseblockinfo[eraseblock]);
-				uint8_t byte = flash_read_word(ADDRESS_GEOMETRY_ERASEBINFO + (eraseblock * 4) + i);
+				uint8_t byte = cfi_readbyte(ADDRESS_GEOMETRY_ERASEBINFO + (eraseblock * 4) + i);
 				switch (i) {
 					case 0:
 						blockinfo->numblocks = byte;
@@ -137,7 +135,7 @@ cfigeometry_t* cfi_getgeometry() {
 			}
 		}
 
-		flash_write_word(0, READARRAY);
+		cfi_writebyte(0, READARRAY);
 	}
 
 	return geo;

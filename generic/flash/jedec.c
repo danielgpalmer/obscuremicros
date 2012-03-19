@@ -18,12 +18,12 @@ jedecid_t* jedec_getid(bool eightbitbus) {
 	if (id != NULL) {
 		flash_write_byte(0, JEDECIDMODE);
 		if (eightbitbus) {
-			id->mfrid = flash_read_byte(0);
-			id->deviceid = flash_read_byte(1);
+			id->mfrid = cfi_readbyte(0);
+			id->deviceid = cfi_readbyte(1);
 		}
 		else {
-			id->mfrid = flash_read_word(0);
-			id->deviceid = flash_read_word(1);
+			id->mfrid = cfi_readword(0);
+			id->deviceid = cfi_readword(1);
 		}
 		flash_write_byte(0, READARRAY);
 	}
