@@ -36,7 +36,7 @@
 
 static uint8_t intel_readstatusregister() {
 	flash_write_byte(0, MODE_READSTATUSREGISTER);
-	return flash_read_byte(0);
+	return flash_read_word(0);
 }
 
 static uint8_t intel_waitforwsm() {
@@ -96,7 +96,7 @@ bool intel_lockdownblock(uint32_t blockaddress) {
 
 blocklockstatus_t intel_getlockstatus(uint32_t blockaddress) {
 	flash_write_byte(0, MODE_ID);
-	uint8_t blockstatus = (flash_read_byte(blockaddress + 2) & 0x03);
+	uint8_t blockstatus = (flash_read_word(blockaddress + 2) & 0x03);
 	flash_write_byte(0, MODE_READARRAY);
 	switch (blockstatus) {
 		case 0:
@@ -130,26 +130,58 @@ static bool intel_checkwriteerror(uint8_t sr) {
 	return false;
 }
 
-bool intel_writebyte(uint32_t address, uint8_t byte) {
+static uint8_t writebyte(uint32_t address, uint8_t byte) {
 	flash_write_byte(address, MODE_PROGSETUP);
 	flash_write_byte(address, byte);
 	uint8_t sr = intel_waitforwsm();
+}
+
+bool intel_writebyte(uint32_t address, uint8_t byte) {
+	uint8_t sr = writebyte(address, byte);
 	flash_write_byte(0, MODE_READARRAY);
 	return intel_checkwriteerror(sr);
 }
 
-bool intel_writeword(uint32_t address, uint16_t word) {
+static uint8_t writeword(uint32_t address, uint16_t word) {
 	flash_write_byte(address, MODE_PROGSETUP);
 	flash_write_word(address, word);
-	uint8_t sr = intel_waitforwsm();
+	return intel_checkwriteerror(sr);
+}
+
+bool intel_writeword(uint32_t address, uint16_t word) {
+	uint8_t sr = writeword();
 	flash_write_byte(0, MODE_READARRAY);
 	return intel_checkwriteerror(sr);
 }
 
 int intel_writeblockasbytes(uint32_t startaddress, int len, uint8_t* data) {
-	return 0;
+
+	int i;
+	for (i = 0; i < len; i++) {
+		uint8_t sr = writebyte(startaddress + i, data);
+		if (intel_checkwriteerror(sr)) {
+			break;
+		}
+	}
+	flash_write_byte(0, MODE_READARRAY);
+	return i;
 }
 
 int intel_writeblockaswords(uint32_t startaddress, int len, uint8_t* data) {
+
+	if (len % 2 != 0) {
+		return -1;
+	}
+
+	int i;
+	for (i = 0; i < len; i + 2) {
+		uint8_t sr = writeword(startaddress + i, data);
+		if (intel_checkwriteerror(sr)) {
+			break;
+		}
+	}
+	flash_write_byte(0, MODE_READARRAY);
+	return i;
+
 	return 0;
 }

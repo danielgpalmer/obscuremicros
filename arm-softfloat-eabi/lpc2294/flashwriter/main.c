@@ -24,15 +24,30 @@ void flash_write_byte(uint32_t address, uint8_t data) {
 }
 void flash_write_word(uint32_t address, uint16_t data) {
 	//printf("flash_write(0x%04x, 0x%04x)\n", address, data);
-	*(EXTFLASH + address) = data;
+
+	uint32_t offset = address;
+	if (offset) {
+		offset &= 0xFFFFFFFFFE;
+		if (offset) {
+			offset /= 2;
+		}
+	}
+	*(EXTFLASH + offset) = data;
 }
 uint8_t flash_read_byte(uint32_t address) {
 	//printf("flash_read_byte(0x%04x) - 0x%02x\n", address, *(EXTFLASH + address));
-	return *(EXTFLASH + address);
+	return *(((uint8_t*) EXTFLASH) + address);
 }
 uint16_t flash_read_word(uint32_t address) {
 	//printf("flash_read_word(0x%04x)\n", address);
-	return *(EXTFLASH + address);
+	uint32_t offset = address;
+	if (offset) {
+		offset &= 0xFFFFFFFFFE;
+		if (offset) {
+			offset /= 2;
+		}
+	}
+	return *(EXTFLASH + offset);
 }
 
 static void getlockstatus() {
@@ -92,7 +107,7 @@ void main() {
 				blockinfo->blocksize);
 	}
 
-	printf("Using intel driver to lock first block...");
+	printf("Using intel driver to unlock first block...");
 	intel_unlockblock(0);
 	printf("done\n");
 
@@ -116,10 +131,17 @@ void main() {
 	}
 
 	printf("Writing some data to the the first block...");
-	intel_writebyte(0, 0xAA);
+
+	//for (int i = 0; i < 0xff; i++) {
+	intel_writeword(0, 0xAA55);
+	intel_writeword(2, 0x55AA);
+	//}
 	printf("done\n");
 
-	for (int i = 0; i < 0xf; i++) {
+	for (int i = 0; i < 0xff; i++) {
+		if (i % 0xf == 0) {
+			printf("\n");
+		}
 		printf("0x%02x ", flash_read_byte(i));
 	}
 	printf("\n");
