@@ -5,39 +5,49 @@
  *      Author: daniel
  */
 
+#include "common.h"
 #include "intel.h"
+#include "flashstubs.h"
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <errno.h>
 
-#define MODE_READARRAY 				0xFF
+#define STATUS_WRITESTATEMACHINESTATUS 0x80
+#define STATUS_ERASESUSPENDSTATUS 0x40
+#define STATUS_ERASESTATUS 0x20
+#define STATUS_PROGRAMESTATUS 0x10
+#define STATUS_VPPSTATUS 0x08
+#define STATUS_PROGRAMSUSPENDSTATUS 0x04
+#define STATUS_BLOCKLOCKSTATUS 0x02
+
+#define MODE_READARRAY 				READARRAY
 #define MODE_READSTATUSREGISTER 	0x70
 #define MODE_CLEARSTATUS			0x50
 #define MODE_BLOCKERASE				0x20
 #define MODE_BLOCKERASE_CONFIRM		0xD0
+#define MODE_BLOCKLOCKCHANGESETUP	0x60
+#define MODE_BLOCKLOCKBLOCK			0x01
+#define MODE_BLOCKUNLOCK			MODE_BLOCKERASE_CONFIRM
+#define MODE_BLOCKLOCKDOWN			0x2F
+#define MODE_ID						JEDECIDMODE
+#define MODE_PROGSETUP				0x40
+#define MODE_ALTPROGSETUP			0x10
 
-uint8_t intel_readstatusregister() {
+static uint8_t intel_readstatusregister() {
+	flash_write_byte(0, MODE_READSTATUSREGISTER);
+	return flash_read_byte(0);
+}
 
-	flash_write(0, MODE_READSTATUSREGISTER);
-	uint8_t sr = flash_read_byte(0);
-	flash_write(0, MODE_READARRAY);
+static uint8_t intel_waitforwsm() {
+	uint8_t sr;
+	while (!((sr = intel_readstatusregister()) & STATUS_WRITESTATEMACHINESTATUS)) {
+	}
+	flash_write_byte(0, MODE_CLEARSTATUS);
 	return sr;
 }
 
-bool intel_eraseblock(uint32_t blockaddress) {
-
-	flash_write(blockaddress, MODE_BLOCKERASE);
-	flash_write(blockaddress, MODE_BLOCKERASE_CONFIRM);
-
-	uint8_t sr;
-	while (!(sr = intel_readstatusregister()) & STATUS_WRITESTATEMACHINESTATUS) {
-		printf(".\n");
-	}
-
-	printf("SR - 0x%02x\n", sr);
-
-	flash_write(blockaddress, MODE_CLEARSTATUS);
-
+static bool intel_checkeraseerror(uint8_t sr) {
 	if (sr & STATUS_ERASESTATUS) {
 
 		if (sr & STATUS_BLOCKLOCKSTATUS) {
@@ -49,7 +59,97 @@ bool intel_eraseblock(uint32_t blockaddress) {
 
 		return false;
 	}
-
 	return true;
+}
 
+bool intel_eraseblock(uint32_t blockaddress) {
+	flash_write_byte(blockaddress, MODE_BLOCKERASE);
+	flash_write_byte(blockaddress, MODE_BLOCKERASE_CONFIRM);
+	uint8_t sr = intel_waitforwsm();
+	flash_write_byte(0, MODE_READARRAY);
+	return intel_checkeraseerror(sr);
+}
+
+bool intel_unlockblock(uint32_t blockaddress) {
+	flash_write_byte(blockaddress, MODE_BLOCKLOCKCHANGESETUP);
+	flash_write_byte(blockaddress, MODE_BLOCKUNLOCK);
+	uint8_t sr = intel_waitforwsm();
+	flash_write_byte(0, MODE_READARRAY);
+	return true;
+}
+
+bool intel_lockblock(uint32_t blockaddress) {
+	flash_write_byte(blockaddress, MODE_BLOCKLOCKCHANGESETUP);
+	flash_write_byte(blockaddress, MODE_BLOCKLOCKBLOCK);
+	uint8_t sr = intel_waitforwsm();
+	flash_write_byte(0, MODE_READARRAY);
+	return true;
+}
+
+bool intel_lockdownblock(uint32_t blockaddress) {
+	flash_write_byte(blockaddress, MODE_BLOCKLOCKCHANGESETUP);
+	flash_write_byte(blockaddress, MODE_BLOCKLOCKDOWN);
+	uint8_t sr = intel_waitforwsm();
+	flash_write_byte(0, MODE_READARRAY);
+	return true;
+}
+
+blocklockstatus_t intel_getlockstatus(uint32_t blockaddress) {
+	flash_write_byte(0, MODE_ID);
+	uint8_t blockstatus = (flash_read_byte(blockaddress + 2) & 0x03);
+	flash_write_byte(0, MODE_READARRAY);
+	switch (blockstatus) {
+		case 0:
+			return unlocked;
+		case 1:
+			return locked;
+		case 3:
+			return lockeddown;
+		default:
+			return dunno;
+	}
+}
+
+static bool intel_checkwriteerror(uint8_t sr) {
+	errno = 0;
+	if (sr & STATUS_VPPSTATUS) {
+		printf("VPP too low\n");
+		errno = ERROR_VPP;
+	}
+	else if (sr & STATUS_PROGRAMESTATUS) {
+		printf("Program failed 0x%02x\n", sr);
+		errno = ERROR_PROGERROR;
+	}
+	else if (sr & STATUS_BLOCKLOCKSTATUS) {
+		printf("Program failed 0x%02x\n", sr);
+		errno = ERROR_ERASEBLOCKLOCKED;
+	}
+	else {
+		return true;
+	}
+	return false;
+}
+
+bool intel_writebyte(uint32_t address, uint8_t byte) {
+	flash_write_byte(address, MODE_PROGSETUP);
+	flash_write_byte(address, byte);
+	uint8_t sr = intel_waitforwsm();
+	flash_write_byte(0, MODE_READARRAY);
+	return intel_checkwriteerror(sr);
+}
+
+bool intel_writeword(uint32_t address, uint16_t word) {
+	flash_write_byte(address, MODE_PROGSETUP);
+	flash_write_word(address, word);
+	uint8_t sr = intel_waitforwsm();
+	flash_write_byte(0, MODE_READARRAY);
+	return intel_checkwriteerror(sr);
+}
+
+int intel_writeblockasbytes(uint32_t startaddress, int len, uint8_t* data) {
+	return 0;
+}
+
+int intel_writeblockaswords(uint32_t startaddress, int len, uint8_t* data) {
+	return 0;
 }

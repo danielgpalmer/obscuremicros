@@ -9,17 +9,23 @@
 #define INTEL_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 
 #define ERROR_ERASEBLOCKLOCKED 1
+#define ERROR_VPP 2
+#define ERROR_PROGERROR 3
 
-#define STATUS_WRITESTATEMACHINESTATUS 0x80
-#define STATUS_ERASESUSPENDSTATUS 0x40
-#define STATUS_ERASESTATUS 0x20
-#define STATUS_PROGRAMESTATUS 0x10
-#define STATUS_VPPSTATUS 0x08
-#define STATUS_PROGRAMSUSPENDSTATUS 0x04
-#define STATUS_BLOCKLOCKSTATUS 0x02
+bool intel_eraseblock(uint32_t blockaddress);
+bool intel_unlockblock(uint32_t blockaddress);
+bool intel_lockblock(uint32_t blockaddress);
+bool intel_lockdownblock(uint32_t blockaddress);
+bool intel_writebyte(uint32_t address, uint8_t byte);
+bool intel_writeword(uint32_t address, uint16_t word);
+int intel_writeblockasbytes(uint32_t startaddress, int len, uint8_t* data);
+int intel_writeblockaswords(uint32_t startaddress, int len, uint8_t* data);
 
-uint8_t intel_readstatusregister();
+typedef enum {
+	unlocked, locked, lockeddown, dunno
+} blocklockstatus_t;
 
 #endif /* INTEL_H_ */

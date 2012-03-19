@@ -19,11 +19,10 @@ cfiid_t* cfi_getid() {
 
 	if (id != NULL) {
 		memset(id, 0, sizeof(cfiid_t));
-		flash_write(QUERYADDRESS, QUERYDATA);
+		flash_write_word(QUERYADDRESS, QUERYDATA);
 
 		for (int i = ADDRESS_IDSTRING; i < ADDRESS_SYSTEMINTERFACE; i++) {
 			uint8_t byte = flash_read_byte(i);
-			printf("0x%02x[%c]\n", byte, byte);
 
 			if (i < 0x13) {
 				id->querystring[i - ADDRESS_IDSTRING] = byte;
@@ -55,7 +54,7 @@ cfiid_t* cfi_getid() {
 
 		}
 
-		flash_write(0, READARRAY);
+		flash_write_word(0, READARRAY);
 
 	}
 	return id;
@@ -64,15 +63,13 @@ cfiid_t* cfi_getid() {
 
 cfisysint_t* cfi_getsysteminterface() {
 	cfisysint_t* sysint = malloc(sizeof(cfisysint_t));
-
 	if (sysint != NULL) {
-		flash_write(QUERYADDRESS, QUERYDATA);
+		memset(sysint, 0, sizeof(cfisysint_t));
+		flash_write_word(QUERYADDRESS, QUERYDATA);
 		for (int i = ADDRESS_SYSTEMINTERFACE; i < ADDRESS_GEOMETRY; i++) {
 			uint8_t byte = flash_read_byte(i);
-			printf("0x%02x[%c]\n", byte, byte);
-
 		}
-		flash_write(0, READARRAY);
+		flash_write_word(0, READARRAY);
 
 	}
 
@@ -83,11 +80,9 @@ cfigeometry_t* cfi_getgeometry() {
 
 	if (geo != NULL) {
 		memset(geo, 0, sizeof(cfigeometry_t));
-		flash_write(QUERYADDRESS, QUERYDATA);
+		flash_write_word(QUERYADDRESS, QUERYDATA);
 		for (int i = ADDRESS_GEOMETRY; i < ADDRESS_GEOMETRY_ERASEBINFO; i++) {
 			uint8_t byte = flash_read_byte(i);
-			printf("0x%02x[%c]\n", byte, byte);
-
 			switch (i) {
 				case GEOMETRY_SIZE:
 					geo->bytes = pow(2, byte);
@@ -142,7 +137,7 @@ cfigeometry_t* cfi_getgeometry() {
 			}
 		}
 
-		flash_write(0, READARRAY);
+		flash_write_word(0, READARRAY);
 	}
 
 	return geo;

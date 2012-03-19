@@ -10,8 +10,9 @@
 
 #include <stdint.h>
 
-void flash_write(uint8_t address, uint8_t data);
-uint8_t flash_read_byte(uint8_t address);
-uint16_t flash_read_word(uint8_t address);
+void flash_write_byte(uint32_t address, uint8_t data);
+void flash_write_word(uint32_t address, uint16_t data);
+uint8_t flash_read_byte(uint32_t address);
+uint16_t flash_read_word(uint32_t address);
 
 #endif /* CFISTUBS_H_ */

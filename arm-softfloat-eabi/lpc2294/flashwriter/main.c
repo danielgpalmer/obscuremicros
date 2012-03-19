@@ -18,18 +18,36 @@
 
 #define SIZEOFARRAY(array) (sizeof(array)/sizeof(array[0]))
 
-void flash_write(uint8_t address, uint8_t data) {
-	printf("flash_write(0x%04x, 0x%04x)\n", address, data);
+void flash_write_byte(uint32_t address, uint8_t data) {
+	//printf("flash_write(0x%04x, 0x%04x)\n", address, data);
+	*(((uint8_t*) (EXTFLASH)) + address) = data;
+}
+void flash_write_word(uint32_t address, uint16_t data) {
+	//printf("flash_write(0x%04x, 0x%04x)\n", address, data);
 	*(EXTFLASH + address) = data;
+}
+uint8_t flash_read_byte(uint32_t address) {
+	//printf("flash_read_byte(0x%04x) - 0x%02x\n", address, *(EXTFLASH + address));
+	return *(EXTFLASH + address);
+}
+uint16_t flash_read_word(uint32_t address) {
+	//printf("flash_read_word(0x%04x)\n", address);
+	return *(EXTFLASH + address);
+}
 
-}
-uint8_t flash_read_byte(uint8_t address) {
-	printf("flash_read_byte(0x%04x)\n", address);
-	return *(EXTFLASH + address);
-}
-uint16_t flash_read_word(uint8_t address) {
-	printf("flash_read_word(0x%04x)\n", address);
-	return *(EXTFLASH + address);
+static void getlockstatus() {
+	printf("Getting block lock status for first block...");
+	switch (intel_getlockstatus(0)) {
+		case unlocked:
+			printf("unlocked\n");
+			break;
+		case locked:
+			printf("locked\n");
+			break;
+		case lockeddown:
+			printf("lockeddown\n");
+			break;
+	}
 }
 
 void main() {
@@ -38,6 +56,8 @@ void main() {
 	interrupts_reset();
 
 	printf("-- Flash Writer --\n");
+
+	printf("Data is 0x%04x\n", flash_read_byte(0));
 
 	printf("Getting JEDEC ID...");
 	jedecid_t* id = jedec_getid(false);
@@ -63,8 +83,8 @@ void main() {
 	printf("Querying  device geometry via CFI..");
 	cfigeometry_t* geo = cfi_getgeometry();
 	printf("done\n");
-	printf("Size: %d bytes, Interface code: %d, Max bytes in multi byte program %d,Erase blocks %d\n", geo->bytes,
-			geo->flashdeviceinterfacecode, geo->multibytemax, geo->eraseblockregions);
+	printf("Size: %d bytes, Interface code: %d, Max bytes in multi byte program %d,Erase block regions %d\n",
+			geo->bytes, geo->flashdeviceinterfacecode, geo->multibytemax, geo->eraseblockregions);
 
 	for (int eraseblock = 0; eraseblock < geo->eraseblockregions; eraseblock++) {
 		cfieraseblockinfo_t* blockinfo = &(geo->eraseblockinfo[eraseblock]);
@@ -72,26 +92,37 @@ void main() {
 				blockinfo->blocksize);
 	}
 
-	printf("Getting status register from CUI..");
-	uint8_t sr = intel_readstatusregister();
+	printf("Using intel driver to lock first block...");
+	intel_unlockblock(0);
 	printf("done\n");
 
-	printf("Status register is 0x%02x\n", sr);
+	getlockstatus();
 
 	printf("Using intel driver to erase first block...");
 	if (!intel_eraseblock(0)) {
 		printf("Erase Error - ");
 		switch (errno) {
 			case ERROR_ERASEBLOCKLOCKED:
-			printf("block is locked\n");
-			break;
-		default:
-			printf("unknown error\n");
-			break;
+				printf("block is locked\n");
+				break;
+			default:
+				printf("unknown error\n");
+				break;
 		}
 
 	}
+	else {
+		printf("done\n");
+	}
+
+	printf("Writing some data to the the first block...");
+	intel_writebyte(0, 0xAA);
 	printf("done\n");
+
+	for (int i = 0; i < 0xf; i++) {
+		printf("0x%02x ", flash_read_byte(i));
+	}
+	printf("\n");
 
 	while (1) {
 	}

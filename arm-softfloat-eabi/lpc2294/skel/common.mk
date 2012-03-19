@@ -7,7 +7,7 @@ CP      = $(TCPREFIX)/arm-softfloat-eabi-objcopy
 OD      = $(TCPREFIX)/arm-softfloat-eabi-objdump
 GDB     = $(TCPREFIX)/arm-softfloat-eabi-gdb
 
-CFLAGS  = -I./ -c -fno-common -O0 -ggdb --std=gnu99
+CFLAGS  = -I./ -c -fno-common -O0 -ggdb --std=gnu99 -Wall -Wstrict-prototypes
 AFLAGS  = -mapcs-32
 LFLAGS  =  -nostartfiles  -Wl,-Map=output.map
 CPFLAGS = -O binary
