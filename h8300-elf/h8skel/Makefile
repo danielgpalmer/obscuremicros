@@ -1,15 +1,10 @@
-CROSS   = h8300-elf-
-
-CC	= $(CROSS)gcc
-AS	= $(CROSS)as
-LD	= $(CROSS)gcc
-OBJCOPY	= $(CROSS)objcopy
+include ./common.mk
 
 CFLAGS	= -I/opt/h8300-elf/ -mh -g -O2 -Wall -save-temps
 
 LDSCRIPT= h83069.lds
 
-LDFLAGS = -mh -Wl,-Map,$*.map -Wl,-T$(LDSCRIPT) -nostartfiles -L/opt/toolchains/h8300-elf/h8300-elf/lib/h8300h/
+LDFLAGS = -mh -Wl,-Map,$*.map -Wl,-T$(LDSCRIPT) -nostartfiles -L../../toolchains/inst/h8300-elf/h8300-elf/lib/h8300h/
 
 PROGRAM	= h8skel.mot
 
@@ -23,13 +18,13 @@ SRCS          = start.s main.c monitor.c sys.c vect3069.c
 	$(CC) $(CFLAGS) -c $<
 
 .elf.mot:
-	$(OBJCOPY) -Osrec $< $@
+	$(CP) -Osrec $< $@
 
 all: $(PROGRAM)
 
 $(PROGRAM): $(OBJS) $(START) $(LDSCRIPT) $(DEPEND)
-	$(LD) $(LDFLAGS) -o $*.elf $(START) $(OBJS) -lgcc
-	$(OBJCOPY) -Osrec $*.elf $*.mot
+	$(CC) $(LDFLAGS) -o $*.elf $(START) $(OBJS) -lgcc
+	$(CP) -Osrec $*.elf $*.mot
 
 clean:
 	rm -f -r $(OBJS) $(PROGRAM) $(DEPEND) *.mot *.map *.elf *~

@@ -1,10 +1,12 @@
 all: toolchains
 	$(MAKE) -C arm-softfloat-eabi
+	$(MAKE) -C h8300-elf
 
 .PHONY: clean toolchains
 
 clean:
 	$(MAKE) -C arm-softfloat-eabi clean
+	$(MAKE) -C h3800-elf clean
 
 toolchains:
 	cd toolchains && ./mkchain.sh arm-softfloat-eabi

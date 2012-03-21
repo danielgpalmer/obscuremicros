@@ -18,7 +18,10 @@ $(OUTPUTDIR)/jedec.o: jedec.c flashstubs.h
 $(OUTPUTDIR)/intel.o: intel.c flashstubs.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(OUTPUTDIR)/libflash.a: $(OUTPUTDIR)/jedec.o $(OUTPUTDIR)/cfi.o $(OUTPUTDIR)/intel.o $(OUTPUTDIR)/common.o
+$(OUTPUTDIR)/atmel.o: atmel.c flashstubs.h
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(OUTPUTDIR)/libflash.a: $(OUTPUTDIR)/jedec.o $(OUTPUTDIR)/cfi.o $(OUTPUTDIR)/intel.o $(OUTPUTDIR)/atmel.o $(OUTPUTDIR)/common.o
 	$(AR) cr $@ $^	
 
 $(OUTPUTDIR)/testharness: testharness.c cfi.o jedec.o cfi.h flashstubs.h
@@ -27,4 +30,4 @@ $(OUTPUTDIR)/testharness: testharness.c cfi.o jedec.o cfi.h flashstubs.h
 .PHONY: clean
 
 clean:
-	rm -f $(OUTPUTDIR)/libflash.a $(OUTPUTDIR)/cfi.o $(OUTPUTDIR)/jedec.o $(OUTPUTDIR)/intel.o $(OUTPUTDIR)/common.o
+	rm -f $(OUTPUTDIR)/libflash.a $(OUTPUTDIR)/cfi.o $(OUTPUTDIR)/jedec.o $(OUTPUTDIR)/intel.o $(OUTPUTDIR)/atmel.o $(OUTPUTDIR)/common.o
