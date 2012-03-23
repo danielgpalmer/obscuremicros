@@ -47,7 +47,8 @@ int main(void)
 
 	sysEnableInterrupts;
 	sysEnableClockOutput();
-	
+
+	printf("Hello, world!\n");
 	
 	return 0;
 }

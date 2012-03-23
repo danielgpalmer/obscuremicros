@@ -36,7 +36,8 @@ SECTIONS
         _bss_end = . ;
 	. = ALIGN(0x04);
 	_iram_data = .; 
-        } > dram
+        _end = .;
+	} > dram
 
 /* internal ram sections */
 .itext :

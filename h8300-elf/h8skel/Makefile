@@ -23,7 +23,7 @@ SRCS          = start.s main.c monitor.c sys.c vect3069.c
 all: $(PROGRAM)
 
 $(PROGRAM): $(OBJS) $(START) $(LDSCRIPT) $(DEPEND)
-	$(CC) $(LDFLAGS) -o $*.elf $(START) $(OBJS) -lgcc
+	$(CC) $(LDFLAGS) -o $*.elf $(START) $(OBJS)
 	$(CP) -Osrec $*.elf $*.mot
 
 clean:
