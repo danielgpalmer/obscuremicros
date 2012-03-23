@@ -6,9 +6,21 @@
 #include "vect3069.h"
 #include "monitor.h"
 #include "sys.h"
-
+#include "ymodem.h"
 
 #define ROMSIZE 32768
+
+int  _getchar(int timeout){
+
+}
+
+void _sleep(unsigned long seconds){
+
+}
+
+int  serial_read(void){
+
+}
 
 void ymodemsend(){
 	print("Start your ymodem send now..\n");
@@ -18,6 +30,9 @@ void ymodemrecv(){
 	print("Start your ymodem recv now..\n");
 }
 
+void _putchar(int c){
+
+}
 
 int main(void)
 {

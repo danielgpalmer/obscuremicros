@@ -36,8 +36,6 @@
  * o printf(), thought all the printfs can be removed if needed.
  */
 
-#include "util.h"
-#include "printf.h"
 #include "ymodem.h"
 
 #ifdef WITH_CRC32
@@ -228,7 +226,9 @@ unsigned long ymodem_receive(unsigned char *buf, unsigned long length)
 	unsigned char *buf_ptr;
 	unsigned long size = 0;
 
+#ifdef DEBUG
 	printf("Ymodem rcv:\n");
+#endif
 	file_name[0] = 0;
 
 	for (session_done = 0, errors = 0; ; ) {
@@ -282,7 +282,9 @@ unsigned long ymodem_receive(unsigned char *buf, unsigned long length)
 									_putchar(CAN);
 									_putchar(CAN);
 									_sleep(1);
+									#ifdef DEBUG
 									printf("\nrcv buffer too small (0x%08x vs 0x%08x)\n", length, size);
+									#endif
 									return 0;
 								}
 								_putchar(ACK);
@@ -302,7 +304,9 @@ unsigned long ymodem_receive(unsigned char *buf, unsigned long length)
 								_putchar(CAN);
 								_putchar(CAN);
 								_sleep(1);
+								#ifdef DEBUG
 								printf("\nbuffer overflow: %d\n", length);
+								#endif
 								return 0;
 							}
 							for (i=0; i<packet_length; i++) {
@@ -322,7 +326,9 @@ unsigned long ymodem_receive(unsigned char *buf, unsigned long length)
 						_putchar(CAN);
 						_putchar(CAN);
 						_sleep(1);
+						#ifdef DEBUG
 						printf("\ntoo many errors - aborted.\n");
+						#endif
 						return 0;
 					}
 				}
@@ -337,7 +343,7 @@ unsigned long ymodem_receive(unsigned char *buf, unsigned long length)
 			break;
 
 	}  /* receive files */
-
+	#ifdef DEBUG
 	printf("\n");
 	if (size > 0) {
 		printf("read:%s\n", file_name);
@@ -347,6 +353,7 @@ unsigned long ymodem_receive(unsigned char *buf, unsigned long length)
 		printf("len:0x%08x\n", size);
 #endif
 	}
+#endif
 	return size;
 }
 
@@ -447,8 +454,9 @@ unsigned long ymodem_send(unsigned char* buf, unsigned long size, char* filename
 {
 	int ch, crc_nak = 1;
 
+	#ifdef DEBUG
 	printf("Ymodem send:\n");
-
+	#endif
 	/* Flush the RX FIFO, after a cool off delay */
 	_sleep(1);
 	while (serial_read() >= 0);
@@ -473,11 +481,13 @@ unsigned long ymodem_send(unsigned char* buf, unsigned long size, char* filename
 				ch = _getchar(PACKET_TIMEOUT);
 				if (ch == CRC) {
 					send_data_packets(buf, size);
+					#ifdef DEBUG
 					printf("\nsent:%s\n", filename);
 #ifdef WITH_CRC32
 					printf("crc32:0x%08x, len:0x%08x\n", crc32(buf, size), size);
 #else
 					printf("len:0x%08x\n", size);
+#endif
 #endif
 					return size;
 				}
@@ -492,6 +502,8 @@ unsigned long ymodem_send(unsigned char* buf, unsigned long size, char* filename
 	_putchar(CAN);
 	_putchar(CAN);
 	_sleep(1);
+	#ifdef DEBUG
 	printf("\naborted.\n");
+	#endif
 	return 0;
 }
