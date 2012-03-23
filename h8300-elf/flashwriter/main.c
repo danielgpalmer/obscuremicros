@@ -23,7 +23,7 @@ int main(void)
 	print("press r to read the ROM or press w to write the ROM\n");
 	
 	// read rom
-	for(int i = 0; i < ROMSIZE; i++){
+	for(uint16_t i = 0; i < ROMSIZE; i++){
 		romdata[i] = eeprom[i];
 		print(".");
 	}
