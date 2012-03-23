@@ -1,0 +1,5 @@
+** Stuff nicked from third parties **
+
+This directory contains git submodules where possible.
+Stuff that isn't managed with git upstream is copied locally here.
+Stuff that I have pinched from somewhere else and edited is also copied here.
