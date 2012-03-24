@@ -5,6 +5,8 @@
  *      Author: daniel
  */
 
+#ifndef FLASH_DONTWANT_ATMEL
+
 #include "atmel.h"
 #include "flashstubs.h"
 #include "jedec.h"
@@ -13,6 +15,10 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+
+#ifdef FLASH_DONTUSE_MALLOC
+static jedecid_t jedecid;
+#endif
 
 // This is for the at29c256, should work on the at28hc256 etc
 
@@ -65,7 +71,11 @@ static void atmel_issuecommandmode(uint8_t command) {
 
 jedecid_t* atmel_identify() {
 
+#ifndef FLASH_DONTUSE_MALLOC
 	jedecid_t* id = malloc(sizeof(jedecid_t));
+#else
+	jedecid_t* id = &jedecid;
+#endif
 	if (id != NULL) {
 		memset(id, 0, sizeof(jedecid_t));
 		atmel_issuecommandmode(IDENTIFY);
@@ -106,3 +116,5 @@ void atmel_chiperase() {
 	atmel_issuecommandmode(CHIPERASE1);
 	atmel_issuecommandmode(CHIPERASE2);
 }
+
+#endif

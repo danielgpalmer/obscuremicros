@@ -1,3 +1,4 @@
+TOP = $(shell pwd)
 TCPREFIX = ../../toolchains/inst/h8300-elf/bin
 CC      = $(TCPREFIX)/h8300-elf-gcc
 LD      = $(TCPREFIX)/h8300-elf-ld

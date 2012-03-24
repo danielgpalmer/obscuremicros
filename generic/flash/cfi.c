@@ -5,6 +5,8 @@
  *      Author: daniel
  */
 
+#ifndef FLASH_DONTWANT_CFI
+
 #include "cfi.h"
 #include "flashstubs.h"
 #include "common.h"
@@ -145,3 +147,5 @@ void cfi_freegeometry(cfigeometry_t* geo) {
 	free(geo->eraseblockregions);
 	free(geo);
 }
+
+#endif

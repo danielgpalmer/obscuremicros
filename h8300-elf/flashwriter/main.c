@@ -7,6 +7,8 @@
 #include "monitor.h"
 #include "sys.h"
 #include "ymodem.h"
+#include "flash/atmel.h"
+#include "flash/flashstubs.h"
 
 #define ROMSIZE 32768
 
@@ -20,6 +22,11 @@ void _sleep(unsigned long seconds){
 
 int  serial_read(void){
 
+}
+
+void flash_write_byte(uint32_t address, uint8_t data){
+}
+uint8_t flash_read_byte(uint32_t address){
 }
 
 void ymodemsend(){
@@ -67,6 +74,7 @@ int main(void)
 		case 'w':
 		// write rom there
 		ymodemrecv();
+		atmel_identify();
 		print("Writing ROM..");
         	print("Done\n");
 		break;

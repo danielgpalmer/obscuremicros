@@ -5,6 +5,8 @@
  *      Author: daniel
  */
 
+#ifndef FLASH_DONTWANT_INTEL
+
 #include "common.h"
 #include "intel.h"
 #include "flashstubs.h"
@@ -220,3 +222,5 @@ intelprotectionregister_t* intel_getprotectionregister() {
 	}
 	return pr;
 }
+
+#endif

@@ -5,6 +5,8 @@
  *      Author: daniel
  */
 
+#ifndef FLASH_DONTWANT_JEDEC
+
 #include "jedec.h"
 #include "flashstubs.h"
 #include <stdlib.h>
@@ -32,3 +34,5 @@ jedecid_t* jedec_getid(bool eightbitbus) {
 	}
 	return id;
 }
+
+#endif
