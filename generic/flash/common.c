@@ -6,6 +6,7 @@
  */
 
 #include "common.h"
+#include "flashstubs.h"
 #include <stdint.h>
 
 uint16_t cfi_readword(uint8_t address) {

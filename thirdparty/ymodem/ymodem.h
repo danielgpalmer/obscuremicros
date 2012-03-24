@@ -53,9 +53,9 @@
 extern unsigned long ymodem_receive(unsigned char *buf, unsigned long length);
 extern unsigned long ymodem_send(unsigned char *buf, unsigned long size, char* filename);
 
-int  _getchar(int timeout);
+int _getchar(int timeout);
 void _sleep(unsigned long seconds);
-int  serial_read(void);
+int serial_read(void);
 void _putchar(int c);
 
 #endif  /* !define(_YMODEM_H) */

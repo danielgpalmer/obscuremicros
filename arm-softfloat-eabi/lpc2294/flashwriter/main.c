@@ -16,7 +16,24 @@
 #include "flash/intel.h"
 //
 
-#define SIZEOFARRAY(array) (sizeof(array)/sizeof(array[0]))
+//ymodem
+#include "ymodem.h"
+//
+
+#include "macros.h"
+
+int _getchar(int timeout) {
+
+}
+void _sleep(unsigned long seconds) {
+
+}
+int serial_read(void) {
+
+}
+void _putchar(int c) {
+
+}
 
 void flash_write_byte(uint32_t address, uint8_t data) {
 	//printf("flash_write(0x%04x, 0x%04x)\n", address, data);
@@ -109,29 +126,29 @@ void main() {
 		printf("Erase block region %d has %d blocks of %d bytes\n", eraseblock, blockinfo->numblocks,
 				blockinfo->blocksize);
 	}
-/*
-	printf("Using intel driver to unlock first block...");
-	intel_unlockblock(0);
-	printf("done\n");
+	/*
+	 printf("Using intel driver to unlock first block...");
+	 intel_unlockblock(0);
+	 printf("done\n");
 
-	getlockstatus();
+	 getlockstatus();
 
-	printf("Using intel driver to erase first block...");
-	if (!intel_eraseblock(0)) {
-		printf("Erase Error - ");
-		switch (errno) {
-			case ERROR_ERASEBLOCKLOCKED:
-				printf("block is locked\n");
-				break;
-			default:
-				printf("unknown error\n");
-				break;
-		}
+	 printf("Using intel driver to erase first block...");
+	 if (!intel_eraseblock(0)) {
+	 printf("Erase Error - ");
+	 switch (errno) {
+	 case ERROR_ERASEBLOCKLOCKED:
+	 printf("block is locked\n");
+	 break;
+	 default:
+	 printf("unknown error\n");
+	 break;
+	 }
 
-	}
-	else {
-		printf("done\n");
-	}*/
+	 }
+	 else {
+	 printf("done\n");
+	 }*/
 	/*
 	 printf("Writing some data to the the first block...");
 

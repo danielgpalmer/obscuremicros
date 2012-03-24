@@ -144,7 +144,7 @@ cfigeometry_t* cfi_getgeometry() {
 }
 
 void cfi_freegeometry(cfigeometry_t* geo) {
-	free(geo->eraseblockregions);
+	free(geo->eraseblockinfo);
 	free(geo);
 }
 

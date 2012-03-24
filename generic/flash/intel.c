@@ -13,8 +13,10 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <stddef.h>
 #include <errno.h>
+#include <string.h>
 
 #define STATUS_WRITESTATEMACHINESTATUS 0x80
 #define STATUS_ERASESUSPENDSTATUS 0x40
@@ -121,15 +123,12 @@ blocklockstatus_t intel_getlockstatus(uint32_t blockaddress) {
 static bool intel_checkwriteerror(uint8_t sr) {
 	errno = 0;
 	if (sr & STATUS_VPPSTATUS) {
-		printf("VPP too low\n");
 		errno = ERROR_VPP;
 	}
 	else if (sr & STATUS_PROGRAMESTATUS) {
-		printf("Program failed 0x%02x\n", sr);
 		errno = ERROR_PROGERROR;
 	}
 	else if (sr & STATUS_BLOCKLOCKSTATUS) {
-		printf("Program failed 0x%02x\n", sr);
 		errno = ERROR_ERASEBLOCKLOCKED;
 	}
 	else {

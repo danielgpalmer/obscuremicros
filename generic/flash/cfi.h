@@ -56,9 +56,9 @@ typedef struct {
 	cfieraseblockinfo_t* eraseblockinfo;
 } cfigeometry_t;
 
-cfiid_t* cfi_getid();
-cfisysint_t* cfi_getsysteminterface();
-cfigeometry_t* cfi_getgeometry();
+cfiid_t* cfi_getid(void);
+cfisysint_t* cfi_getsysteminterface(void);
+cfigeometry_t* cfi_getgeometry(void);
 void cfi_freegeometry(cfigeometry_t* geo);
 
 #endif /* CFI_H_ */

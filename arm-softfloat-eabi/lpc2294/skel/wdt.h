@@ -12,7 +12,7 @@
 #include <stdbool.h>
 
 void wdt_enable(uint32_t constant, bool reset);
-void wdt_feed();
+void wdt_feed(void);
 
 #define WDT_WDMOD_WDEN		1
 #define WDT_WDMOD_WDRESET	(1 << 1)

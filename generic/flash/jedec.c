@@ -29,9 +29,6 @@ jedecid_t* jedec_getid(bool eightbitbus) {
 		}
 		flash_write_byte(0, READARRAY);
 	}
-	else {
-		printf("\n\n*** couldn't allocate memory for struct ***\n\n");
-	}
 	return id;
 }
 
