@@ -23,7 +23,6 @@
 #define UIER_ETBEI          (1 << 1)    // Enable Transmit Holding Register Empty Interrupt
 #define UIER_ELSI           (1 << 2)    // Enable Receive Line Status Interrupt
 #define UIER_EDSSI          (1 << 3)    // Enable MODEM Status Interrupt
-
 // Interrupt ID Register bit definitions
 #define UIIR_NO_INT         (1 << 0)    // NO INTERRUPTS PENDING
 #define UIIR_MS_INT         (0 << 1)    // MODEM Status
@@ -41,7 +40,6 @@
 #define UFCR_FIFO_TRIG4     (1 << 6)    // Trigger @ 4 characters in FIFO
 #define UFCR_FIFO_TRIG8     (2 << 6)    // Trigger @ 8 characters in FIFO
 #define UFCR_FIFO_TRIG14    (3 << 6)    // Trigger @ 14 characters in FIFO
-
 // Line Control Register bit definitions
 #define ULCR_CHAR_5         (0 << 0)    // 5-bit character length
 #define ULCR_CHAR_6         (1 << 0)    // 6-bit character length
@@ -56,12 +54,10 @@
 #define ULCR_PAR_SPACE      (7 << 3)    // SPACE "0" Paruty
 #define ULCR_BREAK_ENABLE   (1 << 6)    // Output BREAK line condition
 #define ULCR_DLAB_ENABLE    (1 << 7)    // Enable Divisor Latch Access
-
 // Modem Control Register bit definitions
 #define UMCR_DTR            (1 << 0)    // Data Terminal Ready
 #define UMCR_RTS            (1 << 1)    // Request To Send
 #define UMCR_LB             (1 << 4)    // Loopback
-
 // Line Status Register bit definitions
 #define ULSR_RDR            (1 << 0)    // Receive Data Ready
 #define ULSR_OE             (1 << 1)    // Overrun Error
@@ -82,5 +78,4 @@
 #define UMSR_DSR            (1 << 5)    // Data Set Ready
 #define UMSR_RI             (1 << 6)    // Ring Indicator
 #define UMSR_DCD            (1 << 7)    // Data Carrier Detect
-
 #endif

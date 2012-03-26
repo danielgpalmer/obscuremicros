@@ -189,8 +189,6 @@ int intel_writeblockaswords(uint32_t startaddress, int len, uint8_t* data) {
 	}
 	flash_write_byte(0, MODE_READARRAY);
 	return i;
-
-	return 0;
 }
 
 bool intel_getprotectionuserlock() {

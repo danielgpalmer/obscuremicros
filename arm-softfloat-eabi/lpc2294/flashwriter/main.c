@@ -8,6 +8,8 @@
 
 #include "olimexh2294.h"
 
+#include "uart.h"
+
 // Flash headers
 #include "flash/flashstubs.h"
 #include "flash/jedec.h"
@@ -20,19 +22,33 @@
 #include "ymodem.h"
 //
 
+#include "sys/time.h"
+
 #include "macros.h"
 
 int _getchar(int timeout) {
-
+	int ch = -1;
+	struct timeval start, now;
+	gettimeofday(&start, NULL);
+	while ((ch = uart1Getch()) == -1) {
+		gettimeofday(&now, NULL);
+		if ((now.tv_sec - start.tv_sec) > timeout) {
+			printf("Timeout\n");
+			break;
+		}
+	}
+	return ch;
 }
 void _sleep(unsigned long seconds) {
-
+	printf("_sleep()\n");
 }
 int serial_read(void) {
+	printf("serial_read()\n");
 
 }
 void _putchar(int c) {
-
+	//printf("_putchar()\n");
+	uart1Putch(c);
 }
 
 void flash_write_byte(uint32_t address, uint8_t data) {
@@ -85,7 +101,13 @@ static void getlockstatus() {
 void main() {
 
 	initialize();
+	rtc_start();
 	interrupts_reset();
+
+	uart1Init(UART_BAUD(9600), UART_8N1, UART_FIFO_8);
+
+	char buff[1024];
+	ymodem_receive(buff, 1024);
 
 	printf("-- Flash Writer --\n");
 
@@ -121,11 +143,12 @@ void main() {
 	printf("Size: %d bytes, Interface code: %d, Max bytes in multi byte program %d,Erase block regions %d\n",
 			geo->bytes, geo->flashdeviceinterfacecode, geo->multibytemax, geo->eraseblockregions);
 
-	for (int eraseblock = 0; eraseblock < geo->eraseblockregions; eraseblock++) {
-		cfieraseblockinfo_t* blockinfo = &(geo->eraseblockinfo[eraseblock]);
-		printf("Erase block region %d has %d blocks of %d bytes\n", eraseblock, blockinfo->numblocks,
-				blockinfo->blocksize);
-	}
+	/*
+	 for (int eraseblock = 0; eraseblock < geo->eraseblockregions; eraseblock++) {
+	 cfieraseblockinfo_t* blockinfo = &(geo->eraseblockinfo[eraseblock]);
+	 printf("Erase block region %d has %d blocks of %d bytes\n", eraseblock, blockinfo->numblocks,
+	 blockinfo->blocksize);
+	 }*/
 	/*
 	 printf("Using intel driver to unlock first block...");
 	 intel_unlockblock(0);

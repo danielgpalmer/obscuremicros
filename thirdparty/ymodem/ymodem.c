@@ -141,6 +141,7 @@ static unsigned long str_to_u32(char* str) {
 
 /* Returns 0 on success, 1 on corrupt packet, -1 on error (timeout): */
 static int receive_packet(char *data, int *length) {
+
 	int i, c;
 	unsigned int packet_size;
 
