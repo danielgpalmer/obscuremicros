@@ -12,6 +12,14 @@
 #define STDOUT_FILENO 1 /* standard output file descriptor */
 #define STDERR_FILENO 2 /* standard error file descriptor */
 
+unsigned sleep(unsigned seconds) {
+	struct timeval start, now;
+	gettimeofday(&start, NULL);
+	do {
+		gettimeofday(&now, NULL);
+	} while ((now.tv_sec - start.tv_sec) < seconds);
+}
+
 int _gettimeofday(struct timeval *tv, void* tz) {
 	rtc_gettimeofday(tv);
 	return 0;

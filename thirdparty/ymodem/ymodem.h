@@ -55,7 +55,6 @@ extern unsigned long ymodem_send(unsigned char *buf, unsigned long size, char* f
 
 int _getchar(int timeout);
 void _sleep(unsigned long seconds);
-int serial_read(void);
 void _putchar(int c);
 
 #endif  /* !define(_YMODEM_H) */

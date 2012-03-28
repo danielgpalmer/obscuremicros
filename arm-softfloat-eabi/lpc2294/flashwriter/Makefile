@@ -6,6 +6,8 @@ include ./startup.mk
 include ./sys.mk
 include ./peripherals.mk
 
+OBJS = uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o core.o i2c.o libflash.a ymodem.o
+
 main.bin: main.elf
 	$(CP) $(CPFLAGS) main.elf main.bin
 	$(OD) $(ODFLAGS) main.elf > main.dmp
@@ -18,14 +20,14 @@ main-extram.bin: main-extram.elf
 	$(CP) $(CPFLAGS) main-extram.elf main-extram.bin
 	$(OD) $(ODFLAGS) main-extram.elf > main-extram.dmp
 
-main.elf: crt.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o i2c.o core.o ldscript-intflash.x libflash.a
-	$(CC) -Tldscript-intflash.x $(LFLAGS) -o main.elf crt.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a -lm
+main.elf: crt.o $(OBJS) ldscript-intflash.x
+	$(CC) -Tldscript-intflash.x $(LFLAGS) -o $@ crt.o $(OBJS) -lm
 
-main-ram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o i2c.o core.o ldscript-intram.x libflash.a
-	$(CC) -Tldscript-intram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a -lm
+main-ram.elf: crt-ram.o $(OBJS) ldscript-intram.x
+	$(CC) -Tldscript-intram.x $(LFLAGS) -o $@ crt-ram.o $(OBJS) -lm
 
-main-extram.elf: crt-ram.o uart.o timer.o main.o syscalls.o interrupts.o exceptions.o adc.o wdt.o rtc.o core.o i2c.o ymodem.o ldscript-extram.x libflash.a ymodem.o
-	$(CC) -Tldscript-extram.x $(LFLAGS) -o $@ crt-ram.o interrupts.o exceptions.o syscalls.o uart.o timer.o adc.o wdt.o rtc.o i2c.o core.o main.o libflash.a ymodem.o -lm
+main-extram.elf: crt-ram.o $(OBJS) ldscript-extram.x
+	$(CC) -Tldscript-extram.x $(LFLAGS) -o $@ crt-ram.o $(OBJS) -lm
 
 main.o: main.c
 	$(CC) $(CFLAGS) main.c

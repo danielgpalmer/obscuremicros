@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <errno.h>
-
+#include <unistd.h>
 #include "core.h"
 #include "interrupts.h"
 
@@ -39,13 +39,11 @@ int _getchar(int timeout) {
 	}
 	return ch;
 }
-void _sleep(unsigned long seconds) {
-	printf("_sleep()\n");
-}
-int serial_read(void) {
-	printf("serial_read()\n");
 
+void _sleep(unsigned long seconds) {
+	sleep(seconds);
 }
+
 void _putchar(int c) {
 	//printf("_putchar()\n");
 	uart1Putch(c);
@@ -106,8 +104,13 @@ void main() {
 
 	uart1Init(UART_BAUD(9600), UART_8N1, UART_FIFO_8);
 
-	char buff[1024];
-	ymodem_receive(buff, 1024);
+	while (1) {
+		char buff[1024];
+		uint32_t bytes = ymodem_receive(buff, sizeof(buff));
+		printf("Got bytes %d\n", bytes);
+		buff[bytes] = 0;
+		printf("%s\n", buff);
+	}
 
 	printf("-- Flash Writer --\n");
 

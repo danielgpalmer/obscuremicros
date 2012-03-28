@@ -447,8 +447,8 @@ unsigned long ymodem_send(unsigned char* buf, unsigned long size, char* filename
 #endif
 	/* Flush the RX FIFO, after a cool off delay */
 	_sleep(1);
-	while (serial_read() >= 0)
-		;
+	while (_getchar(0) == -1) {
+	};
 
 	/* Not in the specs, just for balance */
 	do {
