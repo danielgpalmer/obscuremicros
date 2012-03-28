@@ -19,7 +19,7 @@
  *
  */
 
-#if !defined(_YMODEM_H)
+#ifndef _YMODEM_H
 #define _YMODEM_H
 
 /* Comment this out if you don't plan to use extra CRC32 - removes ~1K */
