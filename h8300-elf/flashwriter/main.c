@@ -7,6 +7,7 @@
 #include "monitor.h"
 #include "sys.h"
 #include "ymodem.h"
+#include "flash/jedec.h"
 #include "flash/atmel.h"
 #include "flash/flashstubs.h"
 
@@ -53,7 +54,7 @@ int main(void)
 	print("flash write thingy\n");
 
 	while(1){
-	print("press r to read the ROM or press w to write the ROM or q to quit\n");
+	print("press i to identify, press r to read the ROM or press w to write the ROM or q to quit\n");
 	char ch = 0;
 
 	while(ch == 0){ // Spin here.
@@ -61,6 +62,14 @@ int main(void)
 	}
 
 	switch(ch){
+
+		case 'i':{
+		jedecid_t* id = atmel_identify();
+		char buff[64];
+		tiny_sprintf(buff,"mfr: 0x%02x, device 0x%02x\n" , id->mfrid, id->deviceid);
+		printf(buff);
+		}
+		break;
 		case 'r':
 		// read rom
 		print("Reading ROM into memory..");

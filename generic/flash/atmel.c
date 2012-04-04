@@ -87,13 +87,6 @@ jedecid_t* atmel_identify() {
 	return id;
 }
 
-void atmel_writebyte(uint32_t address, uint8_t data) {
-
-	flash_write_byte(address, data);
-	atmel_poll();
-
-}
-
 void atmel_writepage(bool unlock, bool protect, uint32_t pageaddress, uint8_t* data) {
 
 	if (unlock) {
