@@ -90,7 +90,7 @@ jedecid_t* atmel_identify() {
 
 void atmel_writepage(bool unlock, bool protect, uint32_t pageaddress, uint8_t* data) {
 
-	pageaddress &= ~0x1F;
+	pageaddress &= ~0x3F;
 
 	if (unlock) {
 		atmel_issuecommandmode(NWPPAGE1);

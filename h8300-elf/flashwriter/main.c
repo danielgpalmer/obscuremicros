@@ -15,9 +15,16 @@
 #define ROMSIZE 32768
 
 volatile uint8_t* eeprom = (volatile uint8_t*) 0xC00000;
+static uint8_t romdata[ROMSIZE];
+
+void _putchar(int c) {
+	char ch = (char) c;
+	mon_putch(&ch);
+}
 
 int _getchar(int timeout) {
-
+	//mon_print("_getchar\n");
+	return -1;
 }
 
 void _sleep(unsigned long seconds) {
@@ -25,7 +32,7 @@ void _sleep(unsigned long seconds) {
 }
 
 int serial_read(void) {
-
+	return -1;
 }
 
 void flash_write_byte(uint32_t address, uint8_t data) {
@@ -48,10 +55,7 @@ void ymodemsend() {
 
 void ymodemrecv() {
 	mon_print("Start your ymodem recv now..\n");
-}
-
-void _putchar(int c) {
-
+	ymodem_receive(romdata, ROMSIZE);
 }
 
 int main(void) {
@@ -59,8 +63,6 @@ int main(void) {
 	sysEnableChipSelect(6);
 	P2DDR = 0xFF;
 	sysDRAMRASUp();
-
-	static uint8_t romdata[ROMSIZE];
 
 	static uint8_t dummy[64];
 	for (int i = 0; i < sizeof(dummy); i++) {
