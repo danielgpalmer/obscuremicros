@@ -6,7 +6,7 @@
 void defaultinthandler() {
   
   TCSR0 &= 0x31;
-  print("x");
+ // print("x");
 }
 
 void installdefaulthandler(){

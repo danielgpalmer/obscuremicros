@@ -22,16 +22,21 @@
 	define. If the function should be called something else,
 	replace outbyte(c) by your own function call.
 */
-#define putchar(c) outbyte(c)
+
+#include "monitor.h"
+
+#define putchar(c) mon_putch(c)
 
 static void printchar(char **str, int c)
 {
-	extern int putchar(int c);
 	if (str) {
 		**str = c;
 		++(*str);
 	}
-	else (void)putchar(c);
+	else {
+		char ch = c;
+		putchar(&ch);
+	}
 }
 
 #define PAD_RIGHT 1
@@ -179,15 +184,15 @@ static int print(char **out, int *varg)
 
 /* assuming sizeof(void *) == sizeof(int) */
 
-int printf(const char *format, ...)
+int tiny_printf(const char *format, ...)
 {
-	register int *varg = (int *)(&format);
+	int *varg = (int *)(&format);
 	return print(0, varg);
 }
 
-int sprintf(char *out, const char *format, ...)
+int tiny_sprintf(char *out, const char *format, ...)
 {
-	register int *varg = (int *)(&format);
+	int *varg = (int *)(&format);
 	return print(&out, varg);
 }
 

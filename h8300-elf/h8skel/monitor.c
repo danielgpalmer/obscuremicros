@@ -5,7 +5,7 @@
 
 #include "monitor.h"
 
-void print(char *str)
+void mon_print(char *str)
 {
 	while(*str) {
 		mon_putch(str);

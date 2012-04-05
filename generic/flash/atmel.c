@@ -79,6 +79,7 @@ jedecid_t* atmel_identify() {
 	if (id != NULL) {
 		memset(id, 0, sizeof(jedecid_t));
 		atmel_issuecommandmode(IDENTIFY);
+		flash_sleep(15);
 		id->mfrid = flash_read_byte(0);
 		id->deviceid = flash_read_byte(1);
 		atmel_issuecommandmode(READARRAY);
@@ -88,6 +89,8 @@ jedecid_t* atmel_identify() {
 }
 
 void atmel_writepage(bool unlock, bool protect, uint32_t pageaddress, uint8_t* data) {
+
+	pageaddress &= ~0x1F;
 
 	if (unlock) {
 		atmel_issuecommandmode(NWPPAGE1);
@@ -108,6 +111,7 @@ void atmel_writepage(bool unlock, bool protect, uint32_t pageaddress, uint8_t* d
 void atmel_chiperase() {
 	atmel_issuecommandmode(CHIPERASE1);
 	atmel_issuecommandmode(CHIPERASE2);
+	flash_sleep(30);
 }
 
 #endif
