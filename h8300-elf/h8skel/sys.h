@@ -1,3 +1,6 @@
+#ifndef SYS_H_
+#define SYS_H_
+
 #define sysDisableInterrupts asm("orc.b #0x80,ccr")
 #define sysEnableInterrupts asm("andc.b #0x7f,ccr")
 
@@ -21,9 +24,10 @@ void sysEnableDigitalToAnalogueConverter(uint8_t dan);
 void sysDisableDigitalToAnalogueConverter(uint8_t dan);
 void sysEnableChipSelect(uint8_t csn);
 void sysDisableChipSelect(uint8_t csn);
-void sysEnableClockOutput();
-void sysDisableClockOutput();
-void sysEnableWaite();
+void sysEnableClockOutput(void);
+void sysDisableClockOutput(void);
+void sysEnableWaite(void);
 void sysSetEightBitTimerClockSource(uint8_t tn, uint8_t sourcemask);
-void sysDRAMRASUp();
-bool sysIsUISet() __attribute__((section(".itext")));
+void sysDRAMRASUp(void);
+bool sysIsUISet(void) __attribute__((section(".itext")));
+#endif

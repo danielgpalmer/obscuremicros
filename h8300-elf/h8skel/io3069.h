@@ -202,6 +202,5 @@
 #define ADDRDL (*(volatile unsigned char *) 0xFFFFE7) // ADC data register DL
 #define ADCSR (*(volatile unsigned char *) 0xFFFFE8) // ADC control/status register
 #define ADCR (*(volatile unsigned char *) 0xFFFFE9) // ADC control register
-
 #endif
 

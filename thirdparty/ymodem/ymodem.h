@@ -57,4 +57,9 @@ int _getchar(int timeout);
 void _sleep(unsigned long seconds);
 void _putchar(int c);
 
+#define YMODEM_ERROR_TOOMANYRECVERRORS 0x01
+#define YMODEM_ERROR_BUFFEROVERFLOW 0x02
+#define YMODEM_ERROR_BUFFERTOOSMALL 0x03
+#define YMODEM_ERROR_ABORT 0x04
+
 #endif  /* !define(_YMODEM_H) */

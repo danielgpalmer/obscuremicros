@@ -11,6 +11,8 @@
 #include "flash/atmel.h"
 #include "flash/flashstubs.h"
 #include "itoa.h"
+#include "printf.h"
+#include <errno.h>
 
 #define ROMSIZE 32768
 
@@ -23,8 +25,10 @@ void _putchar(int c) {
 }
 
 int _getchar(int timeout) {
-	//mon_print("_getchar\n");
-	return -1;
+	char ch;
+	mon_getch(&ch);
+	return ch;
+	//return -1;
 }
 
 void _sleep(unsigned long seconds) {
@@ -49,13 +53,14 @@ void flash_sleep(uint8_t millis) {
 	}
 }
 
-void ymodemsend() {
-	mon_print("Start your ymodem send now..\n");
+static void ymodemsend() {
+	mon_print("Start your ymodem receive now..\n");
+	ymodem_send(romdata, ROMSIZE, "rom.bin");
 }
 
-void ymodemrecv() {
-	mon_print("Start your ymodem recv now..\n");
-	ymodem_receive(romdata, ROMSIZE);
+static bool ymodemrecv() {
+	mon_print("Start your ymodem send now..\n");
+	return (ymodem_receive(romdata, ROMSIZE)) > 0;
 }
 
 int main(void) {
@@ -69,10 +74,10 @@ int main(void) {
 		dummy[i] = 0xFF;
 	}
 
-	mon_print("flash write thingy\n");
+	tiny_printf("flash writer thingy\n");
 
 	while (1) {
-		mon_print("press i to identify, press r to read the ROM or press w to write the ROM or q to quit\n");
+		tiny_printf("press i to identify, press r to read the ROM or press w to write the ROM or q to quit\n");
 		char ch = 0;
 
 		while (ch == 0) { // Spin here.
@@ -83,11 +88,7 @@ int main(void) {
 
 			case 'i': {
 				jedecid_t* id = atmel_identify();
-				mon_print("mfr ");
-				mon_print(itoa(id->mfrid));
-				mon_print(" dev ");
-				mon_print(itoa(id->deviceid));
-				mon_print("\n");
+				tiny_printf("mfr: 0x%02x dev: 0x%02x\n", (unsigned) id->mfrid, (unsigned) id->deviceid);
 			}
 				break;
 			case 'r':
@@ -111,16 +112,20 @@ int main(void) {
 				//break;
 			case 'w':
 				// write rom there
-				ymodemrecv();
-				atmel_identify();
-				mon_print("Writing ROM..");
-				mon_print("Done\n");
+				if (ymodemrecv()) {
+					atmel_identify();
+					mon_print("Writing ROM..");
+					mon_print("Done\n");
+				}
+				{
+					tiny_printf("ymodem receive failed - errno 0x%02x\n", (int) errno);
+				}
 				break;
 
 			case 'e':
-				mon_print("Erasing chip..");
+				tiny_printf("Erasing chip..");
 				atmel_chiperase();
-				mon_print("Done\n");
+				tiny_printf("Done\n");
 				break;
 
 			case 'f':

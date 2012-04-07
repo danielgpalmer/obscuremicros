@@ -12,8 +12,8 @@
 #include <stdint.h>
 #include "jedec.h"
 
-jedecid_t* atmel_identify();
+jedecid_t* atmel_identify(void);
 void atmel_writepage(bool unlock, bool protect, uint32_t pageaddress, uint8_t* data);
-void atmel_chiperase();
+void atmel_chiperase(void);
 
 #endif /* ATMEL_H_ */

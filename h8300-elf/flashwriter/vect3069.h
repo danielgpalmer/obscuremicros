@@ -4,7 +4,7 @@
 #define _VECT3069_H
 
 void defaultinthandler(void) __attribute__((interrupt_handler));
-void installdefaulthandler();
+void installdefaulthandler(void);
 void intInstallHandler(uint8_t vector, uint32_t handleraddress);
 
 #define NMI	7
@@ -14,7 +14,6 @@ void intInstallHandler(uint8_t vector, uint32_t handleraddress);
 #define	IRQ3	15
 #define	IRQ4	16
 #define	IRQ5	17
-
 
 #define	WOVI	20
 #define CMI	21
