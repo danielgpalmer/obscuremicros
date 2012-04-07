@@ -24,7 +24,7 @@ const char iramdata[] __attribute__((section(".idata"))); //
 const char iramdata[] = "Hello, world!";
 void iramfunction() __attribute__((section(".itext"))); //
 void iramfunction(){
-	print(iramdata);
+	mon_print(iramdata);
 	iramvar++;
 }
 
@@ -48,7 +48,7 @@ int main(void)
 	sysEnableInterrupts;
 	sysEnableClockOutput();
 
-	printf("Hello, world!\n");
+	mon_print("Hello, world!\n");
 	
 	return 0;
 }

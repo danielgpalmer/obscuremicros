@@ -10,7 +10,6 @@
 #include "flash/jedec.h"
 #include "flash/atmel.h"
 #include "flash/flashstubs.h"
-#include "itoa.h"
 #include "printf.h"
 #include <errno.h>
 
