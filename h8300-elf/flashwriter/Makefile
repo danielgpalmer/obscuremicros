@@ -8,9 +8,9 @@ LDFLAGS = -mh -Wl,-Map,$*.map -Wl,-T$(LDSCRIPT) -nostartfiles -L../../toolchains
 
 PROGRAM	= h8skel.mot
 
-OBJS          = start.o main.o monitor.o sys.o vect3069.o ymodem.o itoa.o printf.o
+OBJS          = start.o main.o monitor.o sys.o vect3069.o ymodem.o printf.o
 
-SRCS          = start.s main.c monitor.c sys.c vect3069.c ymodem.c itoa.c printf.c
+SRCS          = start.s main.c monitor.c sys.c vect3069.c ymodem.c printf.c
 
 .SUFFIXES:	.mot .exe .a .o .c .s .h
 
