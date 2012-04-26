@@ -32,12 +32,18 @@
 #define putchar(c) mon_putch(c)
 
 static void printchar(char **str, int c) {
+	static char cr = '\r';
 	if (str) {
 		**str = c;
 		++(*str);
 	}
 	else {
 		char ch = c;
+
+		if (ch == '\n') {
+			putchar(&cr);
+		}
+
 		putchar(&ch);
 	}
 }

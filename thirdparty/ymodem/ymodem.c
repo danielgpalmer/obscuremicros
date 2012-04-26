@@ -37,9 +37,10 @@
  */
 
 #include "ymodem.h"
-#include "errno.h"
+#include <errno.h>
 #include <stdint.h>
 
+#include "printf.h"
 #ifdef DEBUG
 #ifdef WITH_CRC32
 /* http://csbruce.com/~csbruce/software/crc32.c */
