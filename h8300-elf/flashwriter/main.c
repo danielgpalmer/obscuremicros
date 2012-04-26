@@ -14,6 +14,7 @@
 #include <errno.h>
 
 #define ROMSIZE 32768
+#define PAGESIZE 64
 
 uint8_t volatile * const eeprom = (uint8_t volatile * const ) 0xC00000;
 static volatile uint8_t romdata[ROMSIZE];
@@ -42,12 +43,12 @@ int _getchar(int timeout) {
 }
 
 void _sleep(unsigned long seconds) {
-
+	for (int i = 0; i < 512; i++) {
+		for (int j = 0; j < 512; j++) {
+			// spin
+		}
+	}
 }
-
-///int serial_read(void) {
-//	return -1;
-//}
 
 void flash_write_byte(uint32_t address, uint8_t data) {
 	*(eeprom + address) = data;
@@ -105,6 +106,18 @@ void crappygetchar(char* ch) {
 
 }
 
+// offset isn't an offset in the bytes, it's just for the printing!
+void printfhexblock(uint8_t* bytes, unsigned offset, unsigned rows) {
+	for (unsigned r = 0; r < rows * 16; r += 16) {
+		tiny_printf(
+				"0x%04x - 0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x\n",
+				(int) offset + r, (int) bytes[r + 0], (int) bytes[r + 1], (int) bytes[r + 2], (int) bytes[r + 3],
+				(int) bytes[r + 4], (int) bytes[r + 5], (int) bytes[r + 6], (int) bytes[r + 7], (int) bytes[r + 8],
+				(int) bytes[r + 9], (int) bytes[r + 10], (int) bytes[r + 11], (int) bytes[r + 12], (int) bytes[r + 13],
+				(int) bytes[r + 14], (int) bytes[r + 15]);
+	}
+}
+
 int main(void) {
 
 	sysEnableChipSelect(6);
@@ -116,22 +129,20 @@ int main(void) {
 		dummy[i] = 0xFF;
 	}
 
-	tiny_printf("flash writer thingy\n");
-
-	for (int i = 0; i < 64; i++) {
-		romdata[0 + i] = i;
-	}
-
-	for (int i = 0; i < 64; i++) {
-		dummy[i] = romdata[0 + i];
-		tiny_printf("%d - %x\n", i, (int) romdata[i]);
-		tiny_printf("%d - %x\n", i, (int) dummy[i]);
-	}
-
 	SCR1 &= 0x3f; // turn off the interrupts.. shame it breaks the monitor
+	tiny_printf("A crappy little flash writer thingy\n");
 
 	while (1) {
-		tiny_printf("press i to identify, press r to read the ROM or press w to write the ROM or q to quit\n");
+		tiny_printf("-- Menu --\n");
+		tiny_printf("i - identify\n");
+		tiny_printf("l - load buffer via ymodem\n");
+		tiny_printf("s - save buffer via ymodem\n");
+		tiny_printf("D - dump current temp memory content to output\n");
+		tiny_printf("d - dump ROM to output\n");
+		tiny_printf("r - read ROM to buffer\n");
+		tiny_printf("w - write buffer to the ROM\n");
+		tiny_printf("t - write a pattern to the rom\n");
+		tiny_printf("q - GTFO!\n");
 
 		char ch = 0;
 		crappygetchar(&ch);
@@ -162,30 +173,81 @@ int main(void) {
 				//		mon_print("\n");
 				//	}
 				//break;
-			case 'w':
-				// write rom there
+
+			case 'd':
+				tiny_printf("Dumping ROM .. hold tight!\n");
+
+				for (unsigned r = 0; r < ROMSIZE; r += PAGESIZE) {
+					tiny_printf("-- page --\n");
+					printfhexblock(&(eeprom[r]), r, 4);
+				}
+				break;
+
+			case 'D':
+				tiny_printf("Dumping temp data.. hold tight!\n");
+
+				for (unsigned r = 0; r < ROMSIZE; r += 16) {
+					tiny_printf(
+							"0%04x - 0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x\n",
+							(int) r, (int) romdata[r + 0], (int) romdata[r + 1], (int) romdata[r + 2],
+							(int) romdata[r + 3], (int) romdata[r + 4], (int) romdata[r + 5], (int) romdata[r + 6],
+							(int) romdata[r + 7], (int) romdata[r + 8], (int) romdata[r + 9], (int) romdata[r + 10],
+							(int) romdata[r + 11], (int) romdata[r + 12], (int) romdata[r + 13], (int) romdata[r + 14],
+							(int) romdata[r + 15]);
+				}
+				break;
+
+			case 'l':
 				if (ymodemrecv()) {
-					//atmel_identify();
-
-					tiny_printf("Writing ROM..\n");
-					for (uint16_t page = 0; page < 128; page += 64) {
-						tiny_printf("Offset 0x%04x\n", (int) page);
-						for (int i = 0; i < 64; i++) {
-							dummy[i] = romdata[page + i];
-							tiny_printf("%d - %x\n", i, (int) romdata[page + i]);
-							tiny_printf("%d - %x\n", i, (int) dummy[i]);
-						}
-						atmel_writepage(false, false, page, dummy);
-					}
-					tiny_printf("Done\n");
-
-					for (int i = 0; i < 128; i++) {
-						tiny_printf("v - %d\n", (int) eeprom[i]);
-					}
+					tiny_printf("buffer saved\n");
 				}
 				else {
 					tiny_printf("ymodem receive failed - %s\n", decodeymodemerror(errno));
 				}
+				break;
+
+			case 'w':
+				// write rom there
+
+				//atmel_identify();
+				_sleep(0);
+				tiny_printf("Writing ROM..\n");
+				for (uint16_t page = 0; page < ROMSIZE; page += 64) {
+					tiny_printf("Offset 0x%04x\n", (int) page);
+					// FIXME this fucking sucks.. copying the data from DRAM causes 0 to get written!!
+					for (int i = 0; i < 64; i++) {
+						dummy[i] = romdata[page + i];
+						if (dummy[i] != romdata[page + i]) {
+							tiny_printf("ON NO!!!\n");
+						}
+					}
+					tiny_printf("data in buffer\n");
+					printfhexblock(dummy, page, 4);
+					atmel_writepage(false, false, page, dummy);
+					for (int i = 0; i < 64; i++) {
+						if (eeprom[page + i] != dummy[i]) {
+							tiny_printf("Write failed\n");
+						}
+					}
+				}
+				tiny_printf("Done\n");
+
+				break;
+
+			case 't':
+
+				//atmel_identify();
+				_sleep(0);
+				tiny_printf("Writing ROM..\n");
+				for (uint16_t page = 0; page < ROMSIZE; page += 64) {
+					tiny_printf("Offset 0x%04x\n", (int) page);
+					for (int i = 0; i < 64; i++) {
+						dummy[i] = (page & 0xF0) + i;
+					}
+					atmel_writepage(false, false, page, dummy);
+				}
+				tiny_printf("Done\n");
+
 				break;
 
 			case 'e':
