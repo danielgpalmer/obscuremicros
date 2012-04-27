@@ -22,6 +22,8 @@
 #ifndef _YMODEM_H
 #define _YMODEM_H
 
+#include <stdint.h>
+
 /* Comment this out if you don't plan to use extra CRC32 - removes ~1K */
 #define WITH_CRC32
 
@@ -50,7 +52,7 @@
 /* Number of consecutive receive errors before giving up: */
 #define MAX_ERRORS    (5)
 
-extern unsigned long ymodem_receive(unsigned char *buf, unsigned long length);
+extern unsigned long ymodem_receive(uint8_t* buf, uint32_t length);
 extern unsigned long ymodem_send(unsigned char *buf, unsigned long size, char* filename);
 
 int _getchar(int timeout);

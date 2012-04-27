@@ -184,8 +184,9 @@ static int print(char **out, const char* format, void* varg) {
 			}
 			if (*format == 'c') {
 				/* char are converted to int then pushed on the stack */
-				//scr[0] = *varg++;
-				//scr[1] = '\0';
+				scr[0] = (char) GETINTFROMSTACK(varg);
+				NEXTINT(varg);
+				scr[1] = '\0';
 				pc += prints(out, scr, width, pad);
 				continue;
 			}

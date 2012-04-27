@@ -70,6 +70,7 @@ static void ymodemsend() {
 }
 
 static bool ymodemrecv() {
+	memset((void*) romdata, 0, ROMSIZE);
 	tiny_printf("Start your ymodem send now..\n");
 	int len = (ymodem_receive(romdata, ROMSIZE));
 	return len > 0;
@@ -106,15 +107,28 @@ void crappygetchar(char* ch) {
 
 }
 
+#define PRINTABLECHAR(ch) ( ((ch >= 0x20) && (ch <= 0x7e)) ? ch : 0x20 )
+
+#define HEXLINE "0x%02x 0x%02x 0x%02x 0x%02x [%c%c%c%c]  "
+
 // offset isn't an offset in the bytes, it's just for the printing!
 void printfhexblock(uint8_t* bytes, unsigned offset, unsigned rows) {
 	for (unsigned r = 0; r < rows * 16; r += 16) {
-		tiny_printf(
-				"0x%04x - 0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x\n",
-				(int) offset + r, (int) bytes[r + 0], (int) bytes[r + 1], (int) bytes[r + 2], (int) bytes[r + 3],
-				(int) bytes[r + 4], (int) bytes[r + 5], (int) bytes[r + 6], (int) bytes[r + 7], (int) bytes[r + 8],
-				(int) bytes[r + 9], (int) bytes[r + 10], (int) bytes[r + 11], (int) bytes[r + 12], (int) bytes[r + 13],
-				(int) bytes[r + 14], (int) bytes[r + 15]);
+		tiny_printf("0x%04x - "
+		HEXLINE
+		HEXLINE
+		HEXLINE
+		HEXLINE
+		"\n", (int) offset + r, (int) bytes[r + 0], (int) bytes[r + 1], (int) bytes[r + 2], (int) bytes[r + 3],
+				(int) PRINTABLECHAR(bytes[r + 0]), (int) PRINTABLECHAR(bytes[r + 1]), (int) PRINTABLECHAR(bytes[r + 2]),
+				(int) PRINTABLECHAR(bytes[r + 3]), (int) bytes[r + 4], (int) bytes[r + 5], (int) bytes[r + 6],
+				(int) bytes[r + 7], (int) PRINTABLECHAR(bytes[r + 4]), (int) PRINTABLECHAR(bytes[r + 5]),
+				(int) PRINTABLECHAR(bytes[r + 6]), (int) PRINTABLECHAR(bytes[r + 7]), (int) bytes[r + 8],
+				(int) bytes[r + 9], (int) bytes[r + 10], (int) bytes[r + 11], (int) PRINTABLECHAR(bytes[r + 8]),
+				(int) PRINTABLECHAR(bytes[r + 9]), (int) PRINTABLECHAR(bytes[r + 10]),
+				(int) PRINTABLECHAR(bytes[r + 11]), (int) bytes[r + 12], (int) bytes[r + 13], (int) bytes[r + 14],
+				(int) bytes[r + 15], (int) PRINTABLECHAR(bytes[r + 12]), (int) PRINTABLECHAR(bytes[r + 13]),
+				(int) PRINTABLECHAR(bytes[r + 14]), (int) PRINTABLECHAR(bytes[r + 15]));
 	}
 }
 
@@ -154,6 +168,10 @@ int main(void) {
 				tiny_printf("mfr: 0x%02x dev: 0x%02x\n", (unsigned) id->mfrid, (unsigned) id->deviceid);
 			}
 				break;
+
+			case 's':
+				ymodemsend();
+				break;
 			case 'r':
 				// read rom
 				tiny_printf("Reading ROM into memory..");
@@ -161,22 +179,10 @@ int main(void) {
 					romdata[i] = flash_read_byte(i);
 				}
 				tiny_printf("Done\n");
-				ymodemsend();
 				break;
-
-				//case 'R':
-				//for(uint16_t i = 0; i < ROMSIZE/8; i++){
-				//	for(uint8_t j = 0; j < 8; j++){
-				//		mon_print(itoa(romdata[(i * 8) + j]));
-				//		mon_print(" ");
-				//		}
-				//		mon_print("\n");
-				//	}
-				//break;
 
 			case 'd':
 				tiny_printf("Dumping ROM .. hold tight!\n");
-
 				for (unsigned r = 0; r < ROMSIZE; r += PAGESIZE) {
 					tiny_printf("-- page --\n");
 					printfhexblock(&(eeprom[r]), r, 4);
@@ -186,14 +192,9 @@ int main(void) {
 			case 'D':
 				tiny_printf("Dumping temp data.. hold tight!\n");
 
-				for (unsigned r = 0; r < ROMSIZE; r += 16) {
-					tiny_printf(
-							"0%04x - 0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x   0x%02x 0x%02x 0x%02x 0x%02x\n",
-							(int) r, (int) romdata[r + 0], (int) romdata[r + 1], (int) romdata[r + 2],
-							(int) romdata[r + 3], (int) romdata[r + 4], (int) romdata[r + 5], (int) romdata[r + 6],
-							(int) romdata[r + 7], (int) romdata[r + 8], (int) romdata[r + 9], (int) romdata[r + 10],
-							(int) romdata[r + 11], (int) romdata[r + 12], (int) romdata[r + 13], (int) romdata[r + 14],
-							(int) romdata[r + 15]);
+				for (unsigned r = 0; r < ROMSIZE; r += PAGESIZE) {
+					tiny_printf("-- page --\n");
+					printfhexblock(&(romdata[r]), r, 4);
 				}
 				break;
 
@@ -243,6 +244,9 @@ int main(void) {
 					tiny_printf("Offset 0x%04x\n", (int) page);
 					for (int i = 0; i < 64; i++) {
 						dummy[i] = (page & 0xF0) + i;
+						if (dummy[i] & 0x1) {
+							dummy[i] = ~dummy[i];
+						}
 					}
 					atmel_writepage(false, false, page, dummy);
 				}

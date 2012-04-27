@@ -145,7 +145,7 @@ static uint32_t str_to_u32(char* str) {
 }
 
 /* Returns 0 on success, 1 on corrupt packet, -1 on error (timeout): */
-static int receive_packet(char *data, int *length) {
+static int receive_packet(uint8_t* data, int* length) {
 
 	int i, c;
 	unsigned int packet_size;
@@ -209,13 +209,13 @@ static int receive_packet(char *data, int *length) {
 }
 
 /* Returns the length of the file received, or 0 on error: */
-unsigned long ymodem_receive(unsigned char *buf, unsigned long length) {
+unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 
-	unsigned char packet_data[PACKET_1K_SIZE + PACKET_OVERHEAD];
+	uint8_t packet_data[PACKET_1K_SIZE + PACKET_OVERHEAD];
 	int packet_length, i, file_done, session_done, crc_tries, crc_nak;
 	unsigned int packets_received, errors, first_try = 1;
 	char file_name[FILE_NAME_LENGTH], file_size[FILE_SIZE_LENGTH], *file_ptr;
-	unsigned char *buf_ptr;
+	uint8_t* buf_ptr;
 	unsigned long size = 0;
 
 #ifdef DEBUG
@@ -359,7 +359,7 @@ unsigned long ymodem_receive(unsigned char *buf, unsigned long length) {
 	return size;
 }
 
-static void send_packet(unsigned char *data, int block_no) {
+static void send_packet(uint8_t *data, int block_no) {
 	int count, crc, packet_size;
 
 	/* We use a short packet for block 0 - all others are 1K */
