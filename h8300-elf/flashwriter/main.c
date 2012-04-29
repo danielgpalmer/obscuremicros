@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 #include <stdbool.h>
 #include "io3069.h"
 #include "vect3069.h"
@@ -64,12 +65,12 @@ void flash_sleep(uint8_t millis) {
 	}
 }
 
-static void ymodemsend() {
+static void ymodemsend(void) {
 	tiny_printf("Start your ymodem receive now..\n");
 	ymodem_send(romdata, ROMSIZE, "rom.bin");
 }
 
-static bool ymodemrecv() {
+static bool ymodemrecv(void) {
 	memset((void*) romdata, 0, ROMSIZE);
 	tiny_printf("Start your ymodem send now..\n");
 	int len = (ymodem_receive(romdata, ROMSIZE));
@@ -89,6 +90,7 @@ static char* decodeymodemerror(int error) {
 			return "Too many recv errors";
 	}
 
+	return NULL;
 }
 
 void crappygetchar(char* ch) {
@@ -112,7 +114,7 @@ void crappygetchar(char* ch) {
 #define HEXLINE "0x%02x 0x%02x 0x%02x 0x%02x [%c%c%c%c]  "
 
 // offset isn't an offset in the bytes, it's just for the printing!
-void printfhexblock(uint8_t* bytes, unsigned offset, unsigned rows) {
+static void printfhexblock(uint8_t* bytes, unsigned offset, unsigned rows) {
 	for (unsigned r = 0; r < rows * 16; r += 16) {
 		tiny_printf("0x%04x - "
 		HEXLINE
@@ -131,6 +133,28 @@ void printfhexblock(uint8_t* bytes, unsigned offset, unsigned rows) {
 				(int) PRINTABLECHAR(bytes[r + 14]), (int) PRINTABLECHAR(bytes[r + 15]));
 	}
 }
+static volatile uint8_t dummy[64];
+
+static void writebuffertochip() {
+	for (uint16_t page = 0; page < ROMSIZE; page += 64) {
+		tiny_printf("Offset 0x%04x\n", (int) page);
+		// FIXME this fucking sucks.. copying the data from DRAM causes 0 to get written!!
+		for (int i = 0; i < 64; i++) {
+			dummy[i] = romdata[page + i];
+			if (dummy[i] != romdata[page + i]) {
+				tiny_printf("ON NO!!!\n");
+			}
+		}
+		tiny_printf("data in buffer\n");
+		printfhexblock(dummy, page, 4);
+		atmel_writepage(false, false, page, dummy);
+		for (int i = 0; i < 64; i++) {
+			if (eeprom[page + i] != dummy[i]) {
+				tiny_printf("Write failed\n");
+			}
+		}
+	}
+}
 
 int main(void) {
 
@@ -138,7 +162,6 @@ int main(void) {
 	P2DDR = 0xFF;
 	sysDRAMRASUp();
 
-	static uint8_t dummy[64];
 	for (int i = 0; i < sizeof(dummy); i++) {
 		dummy[i] = 0xFF;
 	}
@@ -156,6 +179,7 @@ int main(void) {
 		tiny_printf("r - read ROM to buffer\n");
 		tiny_printf("w - write buffer to the ROM\n");
 		tiny_printf("t - write a pattern to the rom\n");
+		tiny_printf("e - erase chip\n");
 		tiny_printf("q - GTFO!\n");
 
 		char ch = 0;
@@ -213,43 +237,24 @@ int main(void) {
 				//atmel_identify();
 				_sleep(0);
 				tiny_printf("Writing ROM..\n");
-				for (uint16_t page = 0; page < ROMSIZE; page += 64) {
-					tiny_printf("Offset 0x%04x\n", (int) page);
-					// FIXME this fucking sucks.. copying the data from DRAM causes 0 to get written!!
-					for (int i = 0; i < 64; i++) {
-						dummy[i] = romdata[page + i];
-						if (dummy[i] != romdata[page + i]) {
-							tiny_printf("ON NO!!!\n");
-						}
-					}
-					tiny_printf("data in buffer\n");
-					printfhexblock(dummy, page, 4);
-					atmel_writepage(false, false, page, dummy);
-					for (int i = 0; i < 64; i++) {
-						if (eeprom[page + i] != dummy[i]) {
-							tiny_printf("Write failed\n");
-						}
-					}
-				}
+				writebuffertochip();
 				tiny_printf("Done\n");
 
 				break;
 
 			case 't':
-
 				//atmel_identify();
 				_sleep(0);
-				tiny_printf("Writing ROM..\n");
+				tiny_printf("Writing test pattern to ROM..\n");
 				for (uint16_t page = 0; page < ROMSIZE; page += 64) {
-					tiny_printf("Offset 0x%04x\n", (int) page);
 					for (int i = 0; i < 64; i++) {
-						dummy[i] = (page & 0xF0) + i;
-						if (dummy[i] & 0x1) {
-							dummy[i] = ~dummy[i];
+						romdata[page + i] = (page & 0xF0) + i;
+						if (romdata[page + i] & 0x1) {
+							romdata[page + i] = ~romdata[page + i];
 						}
 					}
-					atmel_writepage(false, false, page, dummy);
 				}
+				writebuffertochip();
 				tiny_printf("Done\n");
 
 				break;
@@ -258,12 +263,6 @@ int main(void) {
 				tiny_printf("Erasing chip..");
 				atmel_chiperase();
 				tiny_printf("Done\n");
-				break;
-
-			case 'f':
-				for (uint16_t page = 0; page < ROMSIZE; page += 64) {
-					atmel_writepage(false, false, page, dummy);
-				}
 				break;
 
 			case 'q':

@@ -53,7 +53,7 @@
 #define MAX_ERRORS    (5)
 
 extern unsigned long ymodem_receive(uint8_t* buf, uint32_t length);
-extern unsigned long ymodem_send(unsigned char *buf, unsigned long size, char* filename);
+extern unsigned long ymodem_send(uint8_t* buf, uint32_t size, char* filename);
 
 int _getchar(int timeout);
 void _sleep(unsigned long seconds);

@@ -43,9 +43,9 @@
 #ifdef DEBUG
 #ifdef WITH_CRC32
 /* http://csbruce.com/~csbruce/software/crc32.c */
-static unsigned long crc32(const unsigned char* buf, unsigned long count) {
-	unsigned long crc = 0xFFFFFFFF;
-	unsigned long i;
+static uint32_t crc32(const uint8_t* buf, unsigned long count) {
+	uint32_t crc = 0xFFFFFFFF;
+	uint32_t i;
 
 	/* This static table adds 1K */
 	static const uint32_t crc_table[256] = {0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA, 0x076DC419,
@@ -87,8 +87,8 @@ static unsigned long crc32(const unsigned char* buf, unsigned long count) {
 #endif
 
 /* http://www.ccsinfo.com/forum/viewtopic.php?t=24977 */
-static unsigned short crc16(const unsigned char *buf, unsigned long count) {
-	unsigned short crc = 0;
+static uint16_t crc16(const uint8_t *buf, uint32_t count) {
+	uint16_t crc = 0;
 	int i;
 
 	while (count--) {
@@ -212,10 +212,10 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 
 	uint8_t packet_data[PACKET_1K_SIZE + PACKET_OVERHEAD];
 	int packet_length, i, file_done, session_done, crc_tries, crc_nak;
-	unsigned int packets_received, errors, first_try = 1;
+	uint32_t packets_received, errors, first_try = 1;
 	char file_name[FILE_NAME_LENGTH], file_size[FILE_SIZE_LENGTH], *file_ptr;
 	uint8_t* buf_ptr;
-	unsigned long size = 0;
+	uint32_t size = 0;
 
 #ifdef DEBUG
 	printf("Ymodem rcv:\n");
