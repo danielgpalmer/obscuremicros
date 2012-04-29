@@ -26,4 +26,4 @@ main.bin: main.ihx
 .PHONY: clean
 
 clean:
-	rm -f *.o
+	rm -f *.o *.sym *.lst *.asm *.bin *.ihx *.lnk *.map
