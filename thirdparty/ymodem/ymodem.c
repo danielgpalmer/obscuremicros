@@ -354,7 +354,6 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 #endif
 	}
 #endif
-	errno = 0xAA;
 	return size;
 }
 
@@ -450,7 +449,7 @@ static void send_data_packets(unsigned char* data, unsigned long size) {
 	}
 }
 
-unsigned long ymodem_send(unsigned char* buf, unsigned long size, char* filename) {
+unsigned long ymodem_send(uint8_t* buf, uint32_t size, char* filename) {
 	int ch, crc_nak = 1;
 
 #ifdef DEBUG

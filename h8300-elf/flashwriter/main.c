@@ -18,7 +18,7 @@
 #define PAGESIZE 64
 
 uint8_t volatile * const eeprom = (uint8_t volatile * const ) 0xC00000;
-static volatile uint8_t romdata[ROMSIZE];
+static volatile uint8_t romdata[ROMSIZE + 1];
 
 void _putchar(int c) {
 	char ch = (char) c;
@@ -72,8 +72,14 @@ static void ymodemsend(void) {
 
 static bool ymodemrecv(void) {
 	memset((void*) romdata, 0, ROMSIZE);
+	romdata[ROMSIZE] = 0xAA;
 	tiny_printf("Start your ymodem send now..\n");
 	int len = (ymodem_receive(romdata, ROMSIZE));
+	if (romdata[ROMSIZE] != 0xAA) {
+		for (int i = 0; i < 255; i++) {
+			tiny_printf("canary got killed\n");
+		}
+	}
 	return len > 0;
 }
 
@@ -88,6 +94,8 @@ static char* decodeymodemerror(int error) {
 			return "Buffer too small";
 		case YMODEM_ERROR_TOOMANYRECVERRORS:
 			return "Too many recv errors";
+		default:
+			return "unknown error\n";
 	}
 
 	return NULL;
@@ -227,7 +235,7 @@ int main(void) {
 					tiny_printf("buffer saved\n");
 				}
 				else {
-					tiny_printf("ymodem receive failed - %s\n", decodeymodemerror(errno));
+					tiny_printf("ymodem receive failed - %d, %s\n", (int) errno, decodeymodemerror(errno));
 				}
 				break;
 
