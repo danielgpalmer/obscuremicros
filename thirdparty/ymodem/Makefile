@@ -5,7 +5,7 @@ CFLAGS=`pkg-config --cflags argtable2`
 all: testharness
 
 ymodem.o: ymodem.c ymodem.h
-	$(CC) -c $< -o $@
+	$(CC) -DDEBUG -c $< -o $@
 
 testharness.o: testharness.c
 	$(CC) $(CFLAGS) -c $< -o $@

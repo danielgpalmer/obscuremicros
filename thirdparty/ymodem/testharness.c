@@ -1,18 +1,39 @@
+#define _POSIX_SOURCE 1 /* POSIX compliant source */
 #include <stdio.h>
 #include <argtable2.h>
 #include "ymodem.h"
 
-int _getchar(int timeout){
-	return -1;
-}
-void _sleep(unsigned long seconds){
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <termios.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
 
-}
-void _putchar(int c){
+#define BAUDRATE B115200
 
+static int fd;
+
+int _getchar(int timeout) {
+	char ch = 0;
+	int res = read(fd, &ch, 1);
+	return res == 1 ? (int) ch : -1;
+}
+void _sleep(unsigned long seconds) {
+	sleep(seconds);
+}
+void _putchar(int c) {
+	char ch = (char) c;
+	write(fd, &ch, 1);
 }
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]) {
+
+	uint8_t* buff = malloc(5000);
 
 	struct arg_file *device = arg_file1("d", "device", "", "serial device");
 	struct arg_file *file = arg_file1("f", "file", "", "file to send or receive too");
@@ -40,13 +61,44 @@ int main(int argc, char* argv[]){
 		return 1;
 	}
 
-	if((send->count) == 0 && (recv->count == 0)){
+	if ((send->count) == 0 && (recv->count == 0)) {
 		printf("you need to specify either send or receive\n");
 		return 1;
 	}
 
+//	int c;
+	struct termios oldtio, newtio;
+
+	fd = open(*(device->filename), O_RDWR | O_NOCTTY);
+	if (fd < 0) {
+		return 1;
+	}
+
+	tcgetattr(fd, &oldtio); /* save current port settings */
+
+	memset(&newtio, 0, sizeof(newtio));
+	newtio.c_cflag = BAUDRATE | CS8 | CLOCAL | CREAD;
+	newtio.c_iflag = IGNPAR;
+	newtio.c_oflag = 0;
+
+	/* set input mode (non-canonical, no echo,...) */
+	newtio.c_lflag = 0;
+
+	newtio.c_cc[VTIME] = 1; /* inter-character timer unused */
+	newtio.c_cc[VMIN] = 0; /* blocking read until 5 chars received */
+
+	tcflush(fd, TCIFLUSH);
+	tcsetattr(fd, TCSANOW, &newtio);
+
+	if (ymodem_receive(buff, 5000)) {
+		printf("done!\n");
+	}
+	else {
+		printf("Failed! Error %d\n", errno);
+	}
+
+	tcsetattr(fd, TCSANOW, &oldtio);
+
 	arg_free(argtable);
-
-
 }
 

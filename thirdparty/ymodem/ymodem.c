@@ -41,6 +41,9 @@
 #include <stdint.h>
 
 #ifdef DEBUG
+#include <stdio.h>
+#endif
+
 #ifdef WITH_CRC32
 /* http://csbruce.com/~csbruce/software/crc32.c */
 static uint32_t crc32(const uint8_t* buf, unsigned long count) {
@@ -83,7 +86,7 @@ static uint32_t crc32(const uint8_t* buf, unsigned long count) {
 	}
 	return (crc ^ 0xFFFFFFFF);
 }
-#endif
+
 #endif
 
 /* http://www.ccsinfo.com/forum/viewtopic.php?t=24977 */
@@ -225,7 +228,7 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 	for (session_done = 0, errors = 0;;) {
 		crc_tries = crc_nak = 1;
 		if (!first_try) {
-			_putchar(CRC);
+			_putchar (CRC);
 		}
 		first_try = 0;
 		for (packets_received = 0, file_done = 0, buf_ptr = buf;;) {
@@ -235,8 +238,11 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 					errors = 0;
 					switch (packet_length) {
 						case -1: /* abort */
-							_putchar(ACK);
+							_putchar (ACK);
 							errno = YMODEM_ERROR_ABORT;
+#ifdef DEBUG
+							printf("abort\n");
+#endif
 							return 0;
 						case 0: /* end of transmission */
 							_putchar(ACK);
@@ -247,7 +253,7 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 							break;
 						default: /* normal packet */
 							if ((packet_data[PACKET_SEQNO_INDEX] & 0xff) != (packets_received & 0xff)) {
-								_putchar(NAK);
+								_putchar (NAK);
 							}
 							else {
 								if (packets_received == 0) {
@@ -273,7 +279,7 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 										file_size[i++] = '\0';
 										size = str_to_u32(file_size);
 										if (size > length) {
-											_putchar(CAN);
+											_putchar (CAN);
 											_putchar(CAN);
 											_sleep(1);
 #ifdef DEBUG
@@ -298,7 +304,7 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 									 * sender lied in its filename packet:
 									 */
 									if ((buf_ptr + packet_length) - buf > length) {
-										_putchar(CAN);
+										_putchar (CAN);
 										_putchar(CAN);
 										_sleep(1);
 #ifdef DEBUG
@@ -321,7 +327,7 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 				default:
 					if (packets_received != 0) {
 						if (++errors >= MAX_ERRORS) {
-							_putchar(CAN);
+							_putchar (CAN);
 							_putchar(CAN);
 							_sleep(1);
 
@@ -332,7 +338,7 @@ unsigned long ymodem_receive(uint8_t* buf, uint32_t length) {
 							return 0;
 						}
 					}
-					_putchar(CRC);
+					_putchar (CRC);
 			}
 			if (file_done) {
 				break;
@@ -433,7 +439,7 @@ static void send_data_packets(unsigned char* data, unsigned long size) {
 	}
 
 	do {
-		_putchar(EOT);
+		_putchar (EOT);
 		ch = _getchar(PACKET_TIMEOUT);
 	} while ((ch != ACK) && (ch != -1));
 
@@ -462,7 +468,7 @@ unsigned long ymodem_send(uint8_t* buf, uint32_t size, char* filename) {
 
 	/* Not in the specs, just for balance */
 	do {
-		_putchar(CRC);
+		_putchar (CRC);
 		ch = _getchar(1);
 	} while (ch < 0);
 
@@ -500,7 +506,7 @@ unsigned long ymodem_send(uint8_t* buf, uint32_t size, char* filename) {
 			}
 		} while (1);
 	}
-	_putchar(CAN);
+	_putchar (CAN);
 	_putchar(CAN);
 	_sleep(1);
 #ifdef DEBUG
