@@ -1,6 +1,7 @@
 all: toolchains
 	$(MAKE) -C arm-softfloat-eabi
 	$(MAKE) -C h8300-elf
+	$(MAKE) -C thirdparty
 
 .PHONY: clean toolchains
 
