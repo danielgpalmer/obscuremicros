@@ -15,25 +15,26 @@
 #include <errno.h>
 
 #define BAUDRATE B115200
+#define BUFFSIZE 0x8000
 
 static int fd;
 
 int _getchar(int timeout) {
-	char ch = 0;
-	int res = read(fd, &ch, 1);
+	uint8_t ch;
+	int res = read(fd, &ch, sizeof(ch));
 	return res == 1 ? (int) ch : -1;
 }
 void _sleep(unsigned long seconds) {
 	sleep(seconds);
 }
 void _putchar(int c) {
-	char ch = (char) c;
+	uint8_t ch = (uint8_t) c;
 	write(fd, &ch, 1);
 }
 
 int main(int argc, char* argv[]) {
 
-	uint8_t* buff = malloc(5000);
+	uint8_t* buff = malloc(BUFFSIZE);
 
 	struct arg_file *device = arg_file1("d", "device", "", "serial device");
 	struct arg_file *file = arg_file1("f", "file", "", "file to send or receive too");
@@ -90,15 +91,38 @@ int main(int argc, char* argv[]) {
 	tcflush(fd, TCIFLUSH);
 	tcsetattr(fd, TCSANOW, &newtio);
 
-	if (ymodem_receive(buff, 5000)) {
-		printf("done!\n");
+	FILE* target;
+	if (recv->count) {
+		target = fopen(*(file->filename), "wb");
+		if (target == NULL) {
+			printf("failed to open file\n");
+			return 1;
+		}
+		int len;
+		if ((len = ymodem_receive(buff, BUFFSIZE))) {
+			fwrite(buff, 1, len, target);
+			printf("done!\n");
+		}
+		else {
+			printf("Failed! Error %d\n", errno);
+		}
 	}
-	else {
-		printf("Failed! Error %d\n", errno);
+	else if (send->count) {
+		target = fopen(*(file->filename), "rb");
+		if (target == NULL) {
+			printf("failed to open file\n");
+			return 1;
+		}
+		int len = fread(buff, 1, BUFFSIZE, target);
+		printf("read %d bytes to buffer\n", len);
+		ymodem_send(buff, len, "rom.xyz");
 	}
 
 	tcsetattr(fd, TCSANOW, &oldtio);
-
+	free(buff);
+	fclose(target);
+	close(fd);
 	arg_free(argtable);
+	return 0;
 }
 

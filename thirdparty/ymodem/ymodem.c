@@ -130,8 +130,8 @@ static const char *u32_to_str(uint32_t val) {
 
 static uint32_t str_to_u32(char* str) {
 	const char *s = str;
-	unsigned long acc;
-	int c;
+	uint32_t acc;
+	uint8_t c;
 
 	/* strip leading spaces if any */
 	do {
