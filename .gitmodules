@@ -7,3 +7,6 @@
 [submodule "thirdparty/lwip-contrib"]
 	path = thirdparty/lwip-contrib
 	url = git://git.sv.gnu.org/lwip/lwip-contrib.git
+[submodule "obscuremicros.thirdparty"]
+	path = obscuremicros.thirdparty
+	url = https://danieruru@code.google.com/p/obscuremicros.thirdparty/
