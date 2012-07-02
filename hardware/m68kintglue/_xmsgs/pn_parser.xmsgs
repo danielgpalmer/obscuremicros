@@ -11,5 +11,8 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/daniel/coding/obscuremicros/hardware/m68kintglue/shiftreg.vhd&quot; into library work</arg>
 </msg>
 
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/daniel/coding/obscuremicros/hardware/m68kintglue/toplevel.vhd&quot; into library work</arg>
+</msg>
+
 </messages>
 

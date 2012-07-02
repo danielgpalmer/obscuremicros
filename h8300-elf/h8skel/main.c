@@ -21,7 +21,7 @@
 uint8_t iramvar __attribute__((section(".ibss"))); //
 uint8_t iramvar = 0x00;
 const char iramdata[] __attribute__((section(".idata"))); //
-const char iramdata[] = "Hello, world!";
+const char iramdata[] = "Hello, iram!\n";
 void iramfunction() __attribute__((section(".itext"))); //
 void iramfunction(){
 	mon_print(iramdata);
@@ -50,6 +50,8 @@ int main(void)
 
 	mon_print("Hello, world!\n");
 	
+	mon_print("exit\n");
+
 	return 0;
 }
 

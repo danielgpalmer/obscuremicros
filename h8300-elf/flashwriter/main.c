@@ -156,9 +156,10 @@ static void writebuffertochip() {
 		tiny_printf("data in buffer\n");
 		printfhexblock(dummy, page, 4);
 		atmel_writepage(false, false, page, dummy);
-		for (int i = 0; i < 64; i++) {
+		for (uint8_t i = 0; i < 64; i++) {
 			if (eeprom[page + i] != dummy[i]) {
-				tiny_printf("Write failed\n");
+				tiny_printf("Write failed at page 0x%x byte 0x%x; Wrote 0x%x got 0x%x\n", page, i, dummy[i],
+						eeprom[page + i]);
 			}
 		}
 	}

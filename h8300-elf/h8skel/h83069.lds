@@ -15,10 +15,9 @@ PROVIDE (__stack = 0xFFFF00);
 SECTIONS
 { 
 .text :	{
-	*(.text)
+	*(.text .text.*)
 	*(.strings)
-	*(.rodata)
-	*(.rodata.str1.1)
+	*(.rodata .rodata.*)
 	} > dram
 
 .data : 
