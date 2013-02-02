@@ -8,4 +8,4 @@ all:
 clean:
 	$(MAKE) -C skel clean
 	$(MAKE) -C lwipslip clean
-	$(MAKE) -C flashwriter
+	$(MAKE) -C flashwriter clean
